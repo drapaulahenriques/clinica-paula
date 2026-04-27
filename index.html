@@ -9,14 +9,14 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
 :root{
-  --rose:#C4937A;--rose-d:#9E6B52;--rose-l:#FDF5F0;--rose-ll:#FEF9F7;
+  --rose:#B89080;--rose-d:#8A6355;--rose-l:#FAF3F0;--rose-ll:#FDF8F6;
   --gold:#C9A96E;--gold-l:#FBF5EA;
-  --nude:#F5EDE3;--nude2:#EAD9C8;--nude3:#DEC8B0;
-  --white:#FDFCFA;--ink:#2C2118;--ink2:#6B5B4E;--ink3:#A8917F;
+  --nude:#F5EDE7;--nude2:#EDD8CE;--nude3:#D9C0B5;
+  --white:#FDFCFA;--ink:#2C1A14;--ink2:#6B4E45;--ink3:#A8877A;
   --green:#2E7D5E;--green-l:#EDF7F2;
   --red:#B04040;--red-l:#FAEAEA;
   --amber:#A0720A;--amber-l:#FDF6E3;
-  --border:#EAD9C9;
+  --border:#E8D5CB;
   --fd:'Cormorant Garamond',serif;
   --fb:'DM Sans',sans-serif;
   --r:14px;--rs:10px;
@@ -28,7 +28,7 @@ body{font-family:var(--fb);color:var(--ink);-webkit-font-smoothing:antialiased;}
 @media(min-width:520px){.app{border-radius:24px;height:92vh;margin:4vh auto;}}
 
 /* LOGIN */
-#login-screen{position:fixed;inset:0;background:linear-gradient(150deg,#F0D8C4 0%,#C4937A 55%,#9E6B52 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:1000;padding:24px;}
+#login-screen{position:fixed;inset:0;background:linear-gradient(150deg,#D4B8AC 0%,#C4A090 55%,#8A6355 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:1000;padding:24px;}
 .login-brand{text-align:center;margin-bottom:28px;}
 .login-circle{width:80px;height:80px;border-radius:50%;background:rgba(255,255,255,.2);border:1.5px solid rgba(255,255,255,.4);display:flex;align-items:center;justify-content:center;margin:0 auto 14px;font-family:var(--fd);font-size:28px;color:white;}
 .login-title{font-family:var(--fd);font-size:32px;font-weight:300;color:white;line-height:1.2;}
@@ -56,11 +56,11 @@ body{font-family:var(--fb);color:var(--ink);-webkit-font-smoothing:antialiased;}
 .page.on{display:flex;}
 
 /* HEADERS */
-.hero-hdr{background:linear-gradient(150deg,#EDD8C5 0%,#C9A07A 100%);padding:44px 20px 16px;flex-shrink:0;}
+.hero-hdr{background:linear-gradient(150deg,#D4B8AC 0%,#C4A090 100%);padding:44px 20px 16px;flex-shrink:0;}
 .hero-greeting{font-size:10px;color:rgba(255,255,255,.7);letter-spacing:.08em;text-transform:uppercase;}
 .hero-name{font-family:var(--fd);font-size:28px;font-weight:300;color:white;margin-top:2px;}
 .hero-date{font-size:10px;color:rgba(255,255,255,.55);margin-top:3px;}
-.hero-kpis{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:14px 16px;background:linear-gradient(150deg,#EDD8C5 0%,#C9A07A 100%);}
+.hero-kpis{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:14px 16px;background:linear-gradient(150deg,#D4B8AC 0%,#C4A090 100%);}
 .hkpi{background:rgba(255,255,255,.18);border-radius:var(--rs);padding:13px;}
 .hkpi-l{font-size:9px;color:rgba(255,255,255,.65);letter-spacing:.06em;text-transform:uppercase;margin-bottom:4px;}
 .hkpi-v{font-family:var(--fd);font-size:24px;font-weight:400;color:white;}
@@ -265,9 +265,12 @@ body{font-family:var(--fb);color:var(--ink);-webkit-font-smoothing:antialiased;}
 <!-- LOGIN -->
 <div id="login-screen">
   <div class="login-brand">
-    <div class="login-circle">PH</div>
-    <div class="login-title">Dra. Paula Henriques</div>
-    <div class="login-sub">Dermatologia · Gestão</div>
+    <img src="https://raw.githubusercontent.com/drapaulahenriques/clinica-paula/main/PH%20-%20LOGOTIPO.png" alt="Dra. Paula Henriques" style="width:220px;height:auto;margin:0 auto 10px;display:block;" onerror="this.style.display='none';document.getElementById('login-fallback').style.display='block';">
+    <div id="login-fallback" style="display:none;">
+      <div class="login-circle">PH</div>
+      <div class="login-title">Dra. Paula Henriques</div>
+    </div>
+    <div class="login-sub" style="color:rgba(255,255,255,.7);margin-top:4px;">Sistema de Gestão</div>
   </div>
   <div class="login-card">
     <div class="lfield"><label>E-mail</label><input class="linput" type="email" id="l-email" placeholder="paula@email.com" autocomplete="email"></div>
@@ -287,8 +290,9 @@ body{font-family:var(--fb);color:var(--ink);-webkit-font-smoothing:antialiased;}
   <div class="hero-hdr">
     <div style="display:flex;align-items:flex-start;justify-content:space-between;">
       <div>
+        <img src="https://raw.githubusercontent.com/drapaulahenriques/clinica-paula/main/PH%20-%20SUBMARCA.png" alt="PH" style="width:48px;height:48px;border-radius:50%;object-fit:cover;margin-bottom:8px;opacity:0.85;" onerror="this.style.display='none'">
         <div class="hero-greeting">Bem-vinda,</div>
-        <div class="hero-name">Dra. Paula ✨</div>
+        <div class="hero-name">Dra. Paula</div>
         <div class="hero-date" id="dash-date"></div>
       </div>
       <button onclick="atualizarSistema()" id="btn-refresh" style="background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.3);border-radius:50%;width:38px;height:38px;display:flex;align-items:center;justify-content:center;cursor:pointer;margin-top:4px;transition:transform .3s;">
@@ -401,7 +405,8 @@ body{font-family:var(--fb);color:var(--ink);-webkit-font-smoothing:antialiased;}
     <div class="pf"><div class="pf-lbl">Conduta</div><div class="pf-val" contenteditable id="pf-c" placeholder="Conduta adotada..."></div></div>
     <div class="pf"><div class="pf-lbl">Prescrição</div><div class="pf-val" contenteditable id="pf-p" placeholder="Medicamentos prescritos..."></div></div>
   </div>
-  <button onclick="togglePront()" style="margin:0 16px 12px;width:calc(100% - 32px);padding:10px;background:var(--nude);border:1px solid var(--border);border-radius:var(--rs);font-size:12px;color:var(--ink3);cursor:pointer;font-family:var(--fb);" id="btn-pront-toggle">Mostrar campos do prontuário</button>
+  <button onclick="togglePront()" style="margin:0 16px 4px;width:calc(100% - 32px);padding:10px;background:var(--nude);border:1px solid var(--border);border-radius:var(--rs);font-size:12px;color:var(--ink3);cursor:pointer;font-family:var(--fb);" id="btn-pront-toggle">Mostrar campos do prontuário</button>
+  <button onclick="imprimirProntuario()" style="margin:0 16px 12px;width:calc(100% - 32px);padding:10px;background:var(--nude2);border:1px solid var(--border);border-radius:var(--rs);font-size:12px;color:var(--ink2);cursor:pointer;font-family:var(--fb);">🖨 Imprimir prontuário</button>
 
   <div style="padding:0 16px 16px;">
     <div class="field"><label>Observação</label><input type="text" id="at-obs" placeholder="Ex: retorno em 30 dias..."></div>
@@ -1104,6 +1109,94 @@ ${transcricao}`;
     document.getElementById('ia-load').classList.remove('show');
     document.getElementById('btn-ia').disabled=false;
   }
+}
+
+// IMPRIMIR PRONTUÁRIO
+function imprimirProntuario(){
+  const pac = document.getElementById('at-pac');
+  const pacNome = pac.options[pac.selectedIndex]?.text || 'Paciente';
+  const data = document.getElementById('at-data').value;
+  const dataFmt = data ? new Date(data+'T12:00:00').toLocaleDateString('pt-BR') : new Date().toLocaleDateString('pt-BR');
+  const q = document.getElementById('pf-q').textContent.trim();
+  const h = document.getElementById('pf-h').textContent.trim();
+  const e = document.getElementById('pf-e').textContent.trim();
+  const hd = document.getElementById('pf-hd').textContent.trim();
+  const cid = document.getElementById('pf-cid').textContent.trim();
+  const cidd = document.getElementById('pf-cidd').textContent.trim();
+  const c = document.getElementById('pf-c').textContent.trim();
+  const p = document.getElementById('pf-p').textContent.trim();
+  const LOGO = 'https://raw.githubusercontent.com/drapaulahenriques/clinica-paula/main/PH%20-%20LOGOTIPO.png';
+
+  const html = `<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',sans-serif;color:#2C1A14;background:white;}
+@page{margin:0;size:A4;}
+.page{width:210mm;min-height:297mm;position:relative;background:white;display:flex;flex-direction:column;}
+.header{text-align:center;padding:28px 40px 16px;border-bottom:1px solid #E8D5CB;}
+.header img{width:180px;height:auto;}
+.content{padding:28px 50px;flex:1;}
+.patient-bar{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:20px;padding-bottom:10px;border-bottom:1px solid #E8D5CB;}
+.patient-name{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:400;color:#2C1A14;}
+.patient-date{font-size:11px;color:#A8877A;}
+.field{margin-bottom:14px;}
+.field-label{font-size:9px;color:#A8877A;letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px;}
+.field-value{font-size:13px;color:#2C1A14;line-height:1.6;padding:8px 12px;background:#FAF5F2;border-radius:6px;}
+.row2{display:grid;grid-template-columns:100px 1fr;gap:10px;}
+.assinatura{margin-top:28px;padding-top:16px;border-top:1px solid #E8D5CB;text-align:center;}
+.assinatura-linha{width:200px;height:1px;background:#C4A090;margin:36px auto 8px;}
+.assinatura-nome{font-family:'Cormorant Garamond',serif;font-size:14px;color:#2C1A14;}
+.assinatura-crm{font-size:10px;color:#A8877A;margin-top:2px;}
+.footer{background:#C4A090;padding:14px 40px;display:flex;align-items:center;gap:16px;margin-top:auto;position:relative;overflow:hidden;}
+.footer-watermark{position:absolute;left:-10px;bottom:-20px;font-family:'Cormorant Garamond',serif;font-size:100px;font-weight:300;color:rgba(255,255,255,.15);line-height:1;user-select:none;}
+.footer-crm{font-size:11px;color:white;font-weight:500;margin-bottom:4px;}
+.footer-item{font-size:11px;color:rgba(255,255,255,.85);margin-bottom:2px;}
+@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact;}}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="header"><img src="${LOGO}" alt="Dra. Paula Henriques"></div>
+  <div class="content">
+    <div class="patient-bar">
+      <div>
+        <div style="font-size:9px;color:#A8877A;letter-spacing:.08em;text-transform:uppercase;margin-bottom:2px;">Paciente</div>
+        <div class="patient-name">${pacNome}</div>
+      </div>
+      <div class="patient-date">Data: ${dataFmt}</div>
+    </div>
+    ${q ? '<div class="field"><div class="field-label">Queixa principal</div><div class="field-value">'+q+'</div></div>' : ''}
+    ${h ? '<div class="field"><div class="field-label">Historia da doenca</div><div class="field-value">'+h+'</div></div>' : ''}
+    ${e ? '<div class="field"><div class="field-label">Exame fisico / dermatologico</div><div class="field-value">'+e+'</div></div>' : ''}
+    ${hd ? '<div class="field"><div class="field-label">Hipotese diagnostica</div><div class="field-value">'+hd+'</div></div>' : ''}
+    ${(cid||cidd) ? '<div class="field row2"><div><div class="field-label">CID</div><div class="field-value">'+cid+'</div></div><div><div class="field-label">Descricao</div><div class="field-value">'+cidd+'</div></div></div>' : ''}
+    ${c ? '<div class="field"><div class="field-label">Conduta / Tratamento</div><div class="field-value">'+c+'</div></div>' : ''}
+    ${p ? '<div class="field"><div class="field-label">Prescricao</div><div class="field-value">'+p+'</div></div>' : ''}
+    <div class="assinatura">
+      <div class="assinatura-linha"></div>
+      <div class="assinatura-nome">Dra. Paula Henriques</div>
+      <div class="assinatura-crm">CRM MG 98077</div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="footer-watermark">ph</div>
+    <div style="margin-left:100px;">
+      <div class="footer-crm">CRM MG 98077</div>
+      <div class="footer-item">(032) 99819-9107</div>
+      <div class="footer-item">@dra.paulahenriques</div>
+    </div>
+  </div>
+</div>
+<script>window.onload=function(){window.print();}<\/script>
+</body></html>`;
+
+  const win = window.open('','_blank');
+  win.document.write(html);
+  win.document.close();
 }
 
 // ATUALIZAR SISTEMA
