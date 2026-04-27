@@ -4,51 +4,51 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Dra. Paula Henriques — Dermatologia</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
 :root{
-  --rose:#9E6B52;--rose-d:#7A4F3A;--rose-l:#FAF0EB;--rose-ll:#FDF7F4;
-  --gold:#B8924A;--gold-l:#FBF5EA;
-  --nude:#F5EDE7;--nude2:#E8D5C8;--nude3:#D4B8A8;
-  --white:#FDFCFA;--ink:#1A0F0A;--ink2:#4A3028;--ink3:#8A6858;
-  --green:#1E6B47;--green-l:#E8F5EE;
-  --red:#9E3030;--red-l:#FAEAEA;
+  --brand:#9E6B52;--brand-d:#7A4F3A;--brand-l:#F5EBE6;
+  --nude:#F5EDE7;--nude2:#E8D5C5;--nude3:#D4B8A5;
+  --white:#FDFCFA;
+  --ink:#1A0F0A;--ink2:#3D2416;--ink3:#7A5548;
+  --green:#1A6640;--green-l:#E8F5EE;
+  --red:#9E2020;--red-l:#FAEAEA;
   --amber:#8A5E08;--amber-l:#FDF6E3;
-  --border:#DEC8B8;
+  --border:#D4B8A5;
   --fd:'Cormorant Garamond',serif;
   --fb:'DM Sans',sans-serif;
   --r:14px;--rs:10px;
   --sb:env(safe-area-inset-bottom,0px);
 }
-html,body{height:100%;overflow:hidden;background:#D4B8A8;}
+html,body{height:100%;overflow:hidden;background:#C4A090;}
 body{font-family:var(--fb);color:var(--ink);-webkit-font-smoothing:antialiased;}
-.app{display:flex;height:100vh;height:100dvh;max-width:500px;margin:0 auto;background:var(--white);position:relative;box-shadow:0 0 80px rgba(44,33,24,.15);flex-direction:column;}
+
+/* APP */
+.app{display:flex;height:100vh;height:100dvh;max-width:480px;margin:0 auto;background:var(--white);position:relative;box-shadow:0 0 60px rgba(44,20,10,.25);flex-direction:column;}
 @media(min-width:520px){.app{border-radius:24px;height:92vh;margin:4vh auto;}}
 
 /* LOGIN */
-#login-screen{position:fixed;inset:0;background:linear-gradient(150deg,#C4A090 0%,#9E7060 55%,#7A4F3A 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:1000;padding:24px;}
-.login-brand{text-align:center;margin-bottom:28px;}
-.login-circle{width:80px;height:80px;border-radius:50%;background:rgba(255,255,255,.2);border:1.5px solid rgba(255,255,255,.4);display:flex;align-items:center;justify-content:center;margin:0 auto 14px;font-family:var(--fd);font-size:28px;color:white;}
-.login-title{font-family:var(--fd);font-size:32px;font-weight:300;color:white;line-height:1.2;}
-.login-sub{font-size:11px;color:rgba(255,255,255,.65);letter-spacing:.12em;text-transform:uppercase;margin-top:4px;}
-.login-card{background:rgba(255,255,255,.97);border-radius:20px;padding:28px 22px;width:100%;max-width:360px;box-shadow:0 20px 60px rgba(44,33,24,.2);}
-.lfield{margin-bottom:14px;}
-.lfield label{font-size:10px;color:var(--ink3);display:block;margin-bottom:5px;letter-spacing:.05em;text-transform:uppercase;}
-.linput{width:100%;background:var(--nude);border:1.5px solid var(--border);border-radius:var(--rs);padding:12px 14px;font-size:14px;color:var(--ink);font-family:var(--fb);outline:none;transition:border-color .2s;}
-.linput:focus{border-color:var(--rose);}
-.lbtn{width:100%;padding:14px;background:var(--rose);color:white;border:none;border-radius:var(--rs);font-size:15px;font-weight:500;cursor:pointer;font-family:var(--fb);margin-top:4px;}
-.lbtn-g{width:100%;padding:12px;background:transparent;color:var(--rose);border:1.5px solid var(--rose);border-radius:var(--rs);font-size:14px;cursor:pointer;font-family:var(--fb);margin-top:8px;}
+#login-screen{position:fixed;inset:0;background:linear-gradient(160deg,#C4A090 0%,#9E6B52 60%,#7A4F3A 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:1000;padding:24px;}
+.login-logo{width:200px;height:auto;margin:0 auto 8px;display:block;}
+.login-sub-txt{font-size:11px;color:rgba(255,255,255,.65);letter-spacing:.12em;text-transform:uppercase;text-align:center;margin-bottom:28px;}
+.login-card{background:rgba(255,255,255,.97);border-radius:20px;padding:26px 22px;width:100%;max-width:360px;box-shadow:0 20px 60px rgba(44,20,10,.25);}
+.lf{margin-bottom:14px;}
+.lf label{font-size:10px;color:var(--ink3);display:block;margin-bottom:5px;letter-spacing:.05em;text-transform:uppercase;}
+.li{width:100%;background:var(--nude);border:1.5px solid var(--border);border-radius:var(--rs);padding:12px 14px;font-size:14px;color:var(--ink);font-family:var(--fb);outline:none;transition:border-color .2s;}
+.li:focus{border-color:var(--brand);}
+.lbtn{width:100%;padding:14px;background:var(--brand);color:white;border:none;border-radius:var(--rs);font-size:15px;font-weight:500;cursor:pointer;font-family:var(--fb);margin-top:4px;}
+.lbtn-g{width:100%;padding:12px;background:transparent;color:var(--brand);border:1.5px solid var(--brand);border-radius:var(--rs);font-size:14px;cursor:pointer;font-family:var(--fb);margin-top:8px;}
 #l-msg{font-size:12px;text-align:center;margin:8px 0;min-height:18px;}
 
-/* NAV */
-.bottom-nav{display:flex;background:rgba(253,252,250,.97);backdrop-filter:blur(20px);border-top:1.5px solid var(--border);padding:6px 0 calc(6px + var(--sb));flex-shrink:0;}
-.nav-btn{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer;border:none;background:none;padding:5px 2px;}
-.nav-btn svg{width:20px;height:20px;stroke:var(--ink3);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;transition:stroke .2s;}
-.nav-lbl{font-size:9px;color:var(--ink3);transition:color .2s;}
-.nav-btn.on svg{stroke:#9E6B52;}
-.nav-btn.on .nav-lbl{color:#9E6B52;font-weight:500;}
+/* BOTTOM NAV */
+.bot-nav{display:flex;background:var(--white);border-top:2px solid var(--nude2);padding:6px 0 calc(6px + var(--sb));flex-shrink:0;}
+.nb{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer;border:none;background:none;padding:5px 2px;}
+.nb svg{width:20px;height:20px;stroke:var(--ink3);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;transition:all .2s;}
+.nb-lbl{font-size:9px;color:var(--ink3);transition:all .2s;letter-spacing:.02em;}
+.nb.on svg{stroke:var(--brand);}
+.nb.on .nb-lbl{color:var(--brand);font-weight:500;}
 
 /* PAGES */
 .page{display:none;flex-direction:column;flex:1;overflow-y:auto;overflow-x:hidden;}
@@ -56,225 +56,230 @@ body{font-family:var(--fb);color:var(--ink);-webkit-font-smoothing:antialiased;}
 .page.on{display:flex;}
 
 /* HEADERS */
-.hero-hdr{background:linear-gradient(150deg,#C4A090 0%,#9E7060 100%);padding:44px 20px 16px;flex-shrink:0;}
-.hero-greeting{font-size:10px;color:rgba(255,255,255,.7);letter-spacing:.08em;text-transform:uppercase;}
-.hero-name{font-family:var(--fd);font-size:28px;font-weight:300;color:white;margin-top:2px;}
-.hero-date{font-size:10px;color:rgba(255,255,255,.55);margin-top:3px;}
-.hero-kpis{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:14px 16px;background:linear-gradient(150deg,#C4A090 0%,#9E7060 100%);}
-.hkpi{background:rgba(255,255,255,.18);border-radius:var(--rs);padding:13px;}
-.hkpi-l{font-size:9px;color:rgba(255,255,255,.65);letter-spacing:.06em;text-transform:uppercase;margin-bottom:4px;}
-.hkpi-v{font-family:var(--fd);font-size:24px;font-weight:400;color:white;}
-.hkpi-s{font-size:9px;color:rgba(255,255,255,.5);margin-top:3px;}
-.pg-hdr{padding:44px 20px 14px;background:var(--white);border-bottom:1px solid var(--border);flex-shrink:0;}
+.hero-hdr{background:linear-gradient(160deg,#C4A090 0%,#9E6B52 100%);padding:44px 20px 16px;flex-shrink:0;}
+.hero-top{display:flex;align-items:flex-start;justify-content:space-between;}
+.hero-logo{width:44px;height:44px;border-radius:50%;object-fit:cover;opacity:.9;border:1.5px solid rgba(255,255,255,.3);}
+.hero-greeting{font-size:10px;color:rgba(255,255,255,.7);letter-spacing:.08em;text-transform:uppercase;margin-top:10px;}
+.hero-name{font-family:var(--fd);font-size:28px;font-weight:300;color:white;margin-top:2px;line-height:1.2;}
+.hero-date{font-size:10px;color:rgba(255,255,255,.6);margin-top:3px;}
+.refresh-btn{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;}
+.refresh-btn svg{width:18px;height:18px;stroke:white;fill:none;stroke-width:2;stroke-linecap:round;}
+@keyframes spin{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
+
+.pg-hdr{padding:44px 20px 14px;background:var(--white);border-bottom:2px solid var(--nude2);flex-shrink:0;}
 .pg-hdr-row{display:flex;align-items:flex-end;justify-content:space-between;}
 .pg-title{font-family:var(--fd);font-size:26px;font-weight:300;color:var(--ink);}
 .pg-sub{font-size:11px;color:var(--ink3);margin-top:2px;}
 
-/* UTILS */
-.sec{padding:14px 16px 0;}
-.sec-lbl{font-size:9px;color:var(--ink3);letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px;}
-.spacer{height:20px;}
-.divider{height:1px;background:var(--border);}
+/* KPI CARDS */
+.hero-kpis{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:14px;}
+.hkpi{background:rgba(255,255,255,.2);border-radius:var(--rs);padding:14px;border:1px solid rgba(255,255,255,.15);}
+.hkpi-l{font-size:9px;color:rgba(255,255,255,.75);letter-spacing:.06em;text-transform:uppercase;margin-bottom:5px;}
+.hkpi-v{font-family:var(--fd);font-size:26px;font-weight:400;color:white;line-height:1;}
+.hkpi-s{font-size:10px;color:rgba(255,255,255,.55);margin-top:4px;}
+
+.kpi-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-bottom:2px solid var(--nude2);}
+.kpi-item{padding:14px 12px;border-right:1px solid var(--nude2);}
+.kpi-item:last-child{border-right:none;}
+.kpi-l{font-size:9px;color:var(--ink3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:5px;}
+.kpi-v{font-family:var(--fd);font-size:22px;font-weight:400;color:var(--ink);}
 
 /* ALERTS */
-.alert{display:flex;align-items:flex-start;gap:10px;padding:10px 12px;margin:10px 16px 0;border-radius:var(--rs);}
-.alert-rose{background:var(--rose-l);border-left:3px solid var(--rose);}
-.alert-amber{background:var(--amber-l);border-left:3px solid var(--gold);}
-.alert-green{background:var(--green-l);border-left:3px solid var(--green);}
-.al-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;margin-top:4px;}
-.al-text{font-size:12px;color:var(--ink2);line-height:1.5;}
-.al-b{font-weight:500;color:var(--ink);}
-
-/* KPIS */
-.kpi-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:12px 16px 0;}
-.kpi{background:var(--nude);border-radius:var(--rs);padding:11px 10px;}
-.kpi-l{font-size:9px;color:var(--ink3);text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px;}
-.kpi-v{font-family:var(--fd);font-size:20px;font-weight:400;color:var(--ink);}
+.alert-bar{display:flex;align-items:center;gap:10px;padding:10px 16px;border-bottom:1px solid var(--nude2);}
+.alert-bar svg{width:14px;height:14px;flex-shrink:0;fill:none;stroke-width:2;stroke-linecap:round;}
+.alert-bar-text{font-size:12px;line-height:1.4;flex:1;}
+.ab-warn{background:#FDF3E8;color:#8A5E08;}
+.ab-warn svg{stroke:#8A5E08;}
+.ab-err{background:#FDE8E8;color:#9E2020;}
+.ab-err svg{stroke:#9E2020;}
 
 /* CHART */
-.bar-chart{display:flex;align-items:flex-end;gap:5px;height:70px;padding:0 16px 12px;}
+.chart-wrap{padding:14px 16px;}
+.chart-label{font-size:9px;color:var(--ink3);letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px;}
+.bar-chart{display:flex;align-items:flex-end;gap:6px;height:72px;}
 .bc-g{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;}
-.bc-b{width:100%;border-radius:3px 3px 0 0;background:var(--rose);opacity:.7;}
-.bc-b.hi{background:var(--rose-d);opacity:1;}
+.bc-b{width:100%;border-radius:3px 3px 0 0;background:var(--brand);opacity:.6;transition:height .4s;}
+.bc-b.hi{opacity:1;}
 .bc-lbl{font-size:8px;color:var(--ink3);}
 
-/* BADGES */
-.badge{font-size:9px;padding:2px 8px;border-radius:20px;font-weight:500;display:inline-block;}
-.b-paid{background:var(--green-l);color:var(--green);}
-.b-pend{background:var(--amber-l);color:var(--amber);}
-.b-red{background:var(--red-l);color:var(--red);}
-.b-gray{background:var(--nude2);color:var(--ink3);}
-.b-rose{background:var(--rose-l);color:var(--rose-d);}
-.b-blue{background:#E8F0FB;color:#3A5A9E;}
-.b-conf{background:var(--green-l);color:var(--green);}
-.b-pend2{background:var(--amber-l);color:var(--amber);}
-.b-cancel{background:var(--red-l);color:var(--red);}
-.b-faltou{background:var(--nude2);color:var(--ink3);}
+/* QUICK ACTIONS */
+.qa-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:14px 16px;}
+.qa-btn{border-radius:var(--r);padding:16px 14px;cursor:pointer;font-family:var(--fb);font-size:13px;font-weight:500;display:flex;align-items:center;gap:10px;border:none;transition:transform .15s;}
+.qa-btn:active{transform:scale(.97);}
+.qa-btn svg{width:18px;height:18px;fill:none;stroke-width:2;stroke-linecap:round;flex-shrink:0;}
+.qa-primary{background:var(--brand);color:white;}
+.qa-primary svg{stroke:white;}
+.qa-sec{background:var(--nude);color:var(--ink2);border:1.5px solid var(--border);}
+.qa-sec svg{stroke:var(--brand);}
 
-/* BUTTONS */
-.btn-p{width:100%;padding:15px;background:var(--rose);color:white;border:none;border-radius:var(--rs);font-size:15px;font-weight:500;cursor:pointer;font-family:var(--fb);transition:background .2s;}
-.btn-p:hover{background:var(--rose-d);}
-.btn-p:active{transform:scale(.98);}
-.btn-g{width:100%;padding:13px;background:transparent;border:1.5px solid var(--border);border-radius:var(--rs);font-size:14px;cursor:pointer;font-family:var(--fb);color:var(--ink3);margin-top:8px;}
-.btn-sm{padding:7px 14px;border-radius:20px;font-size:11px;font-weight:500;cursor:pointer;border:none;font-family:var(--fb);}
-.btn-sm-r{background:var(--rose);color:white;}
-.btn-sm-g{background:var(--nude);color:var(--ink2);border:1px solid var(--border);}
-.btn-icon{width:36px;height:36px;border-radius:50%;background:var(--rose);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-.btn-icon svg{width:16px;height:16px;stroke:white;fill:none;stroke-width:2;stroke-linecap:round;}
-.btn-wa{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:13px;background:#25D366;color:white;border:none;border-radius:var(--rs);font-size:14px;font-weight:500;cursor:pointer;font-family:var(--fb);margin-top:8px;text-decoration:none;}
+/* SECTION */
+.sec-hdr{display:flex;align-items:center;justify-content:space-between;padding:14px 16px 8px;}
+.sec-title{font-size:10px;color:var(--ink3);letter-spacing:.08em;text-transform:uppercase;font-weight:500;}
+.sec-action{font-size:11px;color:var(--brand);font-weight:500;cursor:pointer;}
 
-/* LIST */
-.li{display:flex;align-items:center;gap:11px;padding:12px 16px;border-bottom:1px solid var(--border);cursor:pointer;transition:background .15s;}
-.li:last-child{border-bottom:none;}
-.li:hover,.li:active{background:var(--rose-ll);}
-.li-av{width:40px;height:40px;border-radius:50%;background:var(--nude2);display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-size:15px;color:var(--rose-d);flex-shrink:0;}
+/* LIST ITEMS */
+.li-row{display:flex;align-items:center;gap:11px;padding:12px 16px;border-bottom:1px solid var(--nude2);cursor:pointer;transition:background .15s;}
+.li-row:last-child{border-bottom:none;}
+.li-row:hover,.li-row:active{background:var(--brand-l);}
+.li-av{width:40px;height:40px;border-radius:50%;background:var(--nude2);display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-size:15px;color:var(--brand-d);flex-shrink:0;font-weight:400;}
 .li-sq{width:40px;height:40px;border-radius:var(--rs);background:var(--nude);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-.li-sq svg{width:18px;height:18px;stroke:var(--rose);fill:none;stroke-width:1.5;stroke-linecap:round;}
+.li-sq svg{width:18px;height:18px;stroke:var(--brand);fill:none;stroke-width:1.5;stroke-linecap:round;}
 .li-main{flex:1;min-width:0;}
 .li-name{font-size:13px;font-weight:500;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 .li-sub{font-size:11px;color:var(--ink3);margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 .li-right{text-align:right;flex-shrink:0;}
-.li-val{font-size:13px;font-weight:500;}
+.li-val{font-size:13px;font-weight:500;color:var(--ink);}
+
+/* BADGES */
+.badge{font-size:9px;padding:3px 8px;border-radius:20px;font-weight:500;display:inline-block;margin-top:2px;}
+.b-paid{background:var(--green-l);color:var(--green);}
+.b-pend{background:var(--amber-l);color:var(--amber);}
+.b-red{background:var(--red-l);color:var(--red);}
+.b-gray{background:var(--nude2);color:var(--ink3);}
+.b-brand{background:var(--brand-l);color:var(--brand-d);}
+
+/* BUTTONS */
+.btn-p{width:100%;padding:15px;background:var(--brand);color:white;border:none;border-radius:var(--rs);font-size:15px;font-weight:500;cursor:pointer;font-family:var(--fb);transition:background .2s;}
+.btn-p:hover{background:var(--brand-d);}
+.btn-p:active{transform:scale(.98);}
+.btn-g{width:100%;padding:13px;background:transparent;border:1.5px solid var(--border);border-radius:var(--rs);font-size:14px;cursor:pointer;font-family:var(--fb);color:var(--ink3);margin-top:8px;}
+.btn-sm{padding:7px 14px;border-radius:20px;font-size:11px;font-weight:500;cursor:pointer;border:none;font-family:var(--fb);}
+.btn-sm-p{background:var(--brand);color:white;}
+.btn-sm-g{background:var(--nude);color:var(--ink2);border:1px solid var(--border);}
+.btn-icon{width:36px;height:36px;border-radius:50%;background:var(--brand);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.btn-icon svg{width:16px;height:16px;stroke:white;fill:none;stroke-width:2;stroke-linecap:round;}
 
 /* SEARCH */
 .search-wrap{padding:10px 16px;}
-.search-bar{display:flex;align-items:center;gap:8px;background:var(--nude);border:1px solid var(--border);border-radius:24px;padding:10px 14px;}
+.search-bar{display:flex;align-items:center;gap:8px;background:var(--nude);border:1.5px solid var(--border);border-radius:24px;padding:10px 14px;}
 .search-bar svg{width:14px;height:14px;stroke:var(--ink3);fill:none;stroke-width:2;flex-shrink:0;}
 .search-bar input{background:none;border:none;outline:none;font-size:13px;color:var(--ink);width:100%;font-family:var(--fb);}
+.search-bar input::placeholder{color:var(--ink3);}
 
 /* CAT TABS */
 .cat-tabs{display:flex;gap:6px;padding:10px 16px;overflow-x:auto;flex-shrink:0;}
 .cat-tabs::-webkit-scrollbar{display:none;}
-.cat-chip{flex-shrink:0;padding:6px 14px;border-radius:20px;font-size:11px;cursor:pointer;border:1px solid var(--border);background:var(--white);color:var(--ink2);transition:all .2s;white-space:nowrap;}
-.cat-chip.on{background:var(--rose);border-color:var(--rose);color:white;font-weight:500;}
-
-/* SHEET */
-.sheet-bg{position:fixed;inset:0;background:rgba(44,33,24,.4);z-index:200;display:none;align-items:flex-end;}
-.sheet-bg.open{display:flex;}
-.sheet{background:var(--white);border-radius:22px 22px 0 0;padding:20px 20px calc(24px + var(--sb));width:100%;max-height:94vh;overflow-y:auto;}
-.sheet::-webkit-scrollbar{display:none;}
-.sheet-handle{width:36px;height:3px;background:var(--nude3);border-radius:2px;margin:0 auto 18px;}
-.sheet-title{font-family:var(--fd);font-size:22px;font-weight:300;color:var(--ink);margin-bottom:18px;}
+.cat-chip{flex-shrink:0;padding:7px 16px;border-radius:20px;font-size:12px;cursor:pointer;border:1.5px solid var(--border);background:var(--white);color:var(--ink2);transition:all .2s;white-space:nowrap;}
+.cat-chip.on{background:var(--brand);border-color:var(--brand);color:white;font-weight:500;}
 
 /* FORM */
 .field{margin-bottom:13px;}
-.field label{font-size:10px;color:var(--ink3);letter-spacing:.05em;text-transform:uppercase;display:block;margin-bottom:5px;}
-.field input,.field select,.field textarea{width:100%;background:var(--nude);border:1.5px solid var(--border);border-radius:var(--rs);padding:12px 13px;font-size:14px;color:var(--ink);font-family:var(--fb);outline:none;transition:border-color .2s;-webkit-appearance:none;}
-.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--rose);}
-.field textarea{resize:none;height:72px;line-height:1.5;}
+.field label{font-size:10px;color:var(--ink3);letter-spacing:.05em;text-transform:uppercase;display:block;margin-bottom:5px;font-weight:500;}
+.finput{width:100%;background:var(--nude);border:1.5px solid var(--border);border-radius:var(--rs);padding:12px 13px;font-size:14px;color:var(--ink);font-family:var(--fb);outline:none;transition:border-color .2s;-webkit-appearance:none;}
+.finput:focus{border-color:var(--brand);background:var(--white);}
+.finput::placeholder{color:var(--ink3);}
+textarea.finput{resize:none;height:72px;line-height:1.5;}
 .field-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
 
-/* AGENDA */
+/* AGENDA DAYS */
 .days-row{display:flex;gap:6px;padding:10px 16px;overflow-x:auto;flex-shrink:0;}
 .days-row::-webkit-scrollbar{display:none;}
 .day-chip{flex-shrink:0;width:46px;height:62px;border-radius:var(--r);border:1.5px solid var(--border);background:var(--white);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;cursor:pointer;transition:all .2s;}
-.day-chip.on{background:var(--rose);border-color:var(--rose);}
-.day-chip.today{border-color:var(--rose);}
-.day-name{font-size:9px;color:var(--ink3);}
-.day-num{font-family:var(--fd);font-size:20px;font-weight:400;color:var(--ink);}
-.day-chip.on .day-name,.day-chip.on .day-num{color:white;}
-.day-chip.today:not(.on) .day-num{color:var(--rose);}
-.slot-empty{padding:24px;text-align:center;color:var(--ink3);font-size:13px;}
+.day-chip.on{background:var(--brand);border-color:var(--brand);}
+.day-chip.today:not(.on){border-color:var(--brand);}
+.day-name-s{font-size:9px;color:var(--ink3);}
+.day-num-s{font-family:var(--fd);font-size:20px;font-weight:400;color:var(--ink);}
+.day-chip.on .day-name-s,.day-chip.on .day-num-s{color:white;}
+.day-chip.today:not(.on) .day-num-s{color:var(--brand);}
 
 /* CONSULTA SLOT */
-.consult-item{display:flex;gap:10px;padding:10px 16px;border-bottom:1px solid var(--border);}
-.consult-time{font-size:11px;color:var(--ink3);min-width:44px;padding-top:2px;flex-shrink:0;}
-.consult-card{flex:1;border-radius:var(--rs);padding:10px 12px;}
-.consult-card.conf{background:#F0F9F4;border-left:3px solid var(--green);}
-.consult-card.pend{background:#FDF9F0;border-left:3px solid var(--gold);}
-.consult-card.faltou{background:var(--nude);border-left:3px solid #CCC;}
-.consult-name{font-size:13px;font-weight:500;color:var(--ink);}
-.consult-proc{font-size:11px;color:var(--ink3);margin-top:2px;}
-.consult-actions{display:flex;gap:6px;margin-top:8px;}
-.ca-btn{padding:5px 10px;border-radius:20px;font-size:10px;font-weight:500;cursor:pointer;border:none;font-family:var(--fb);}
-.ca-conf{background:var(--green-l);color:var(--green);}
-.ca-wa{background:#E8FAF0;color:#1A7A40;}
-.ca-att{background:var(--rose-l);color:var(--rose-d);}
+.slot-item{display:flex;gap:10px;padding:10px 16px;border-bottom:1px solid var(--nude2);}
+.slot-time{font-size:11px;color:var(--ink3);min-width:44px;padding-top:3px;flex-shrink:0;font-weight:500;}
+.slot-card{flex:1;border-radius:var(--rs);padding:11px 13px;}
+.slot-card.conf{background:#EDF7F2;border-left:3px solid var(--green);}
+.slot-card.pend{background:#FDF6E3;border-left:3px solid var(--amber);}
+.slot-card.faltou{background:var(--nude);border-left:3px solid #AAA;}
+.slot-name{font-size:13px;font-weight:500;color:var(--ink);}
+.slot-proc{font-size:11px;color:var(--ink3);margin-top:2px;}
+.slot-acts{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap;}
+.sa-btn{padding:5px 10px;border-radius:20px;font-size:10px;font-weight:500;cursor:pointer;border:none;font-family:var(--fb);}
+.sa-wa{background:#E0F7E9;color:#1A6640;}
+.sa-att{background:var(--brand-l);color:var(--brand-d);}
+.sa-conf{background:var(--green-l);color:var(--green);}
 
 /* RECORDING */
-.rec-box{border:1px solid var(--border);border-radius:var(--r);overflow:hidden;margin:0 16px 12px;}
+.rec-box{border:1.5px solid var(--border);border-radius:var(--r);overflow:hidden;margin:0 16px 12px;}
 .rec-top{padding:12px 14px;background:var(--nude);display:flex;align-items:center;justify-content:space-between;}
 .rec-title{font-size:13px;font-weight:500;color:var(--ink);}
-.rec-btn{display:flex;align-items:center;gap:6px;padding:8px 16px;border-radius:20px;border:none;cursor:pointer;font-size:12px;font-weight:500;font-family:var(--fb);}
-.rec-start{background:var(--rose);color:white;}
+.rec-btn{display:flex;align-items:center;gap:6px;padding:9px 16px;border-radius:20px;border:none;cursor:pointer;font-size:12px;font-weight:500;font-family:var(--fb);transition:all .2s;}
+.rec-start{background:var(--brand);color:white;}
 .rec-stop{background:var(--red-l);color:var(--red);}
 .rec-pulse{width:8px;height:8px;border-radius:50%;background:currentColor;}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.4;transform:scale(.75);}}
-.rec-body{padding:14px;min-height:80px;font-size:13px;color:var(--ink2);line-height:1.7;background:var(--white);}
-.rec-ph{color:var(--ink3);font-style:italic;}
-.rec-actions{padding:10px 14px;border-top:1px solid var(--border);display:flex;gap:8px;}
-.btn-ia{flex:1;padding:10px;background:var(--rose);color:white;border:none;border-radius:var(--rs);font-size:13px;font-weight:500;cursor:pointer;font-family:var(--fb);}
+.rec-body{padding:14px;min-height:90px;font-size:13px;color:var(--ink2);line-height:1.7;background:var(--white);}
+.rec-ph{color:var(--ink3);font-style:italic;font-size:13px;}
+.rec-acts{padding:10px 14px;border-top:1px solid var(--border);display:flex;gap:8px;}
+.btn-ia{flex:1;padding:11px;background:var(--brand);color:white;border:none;border-radius:var(--rs);font-size:13px;font-weight:500;cursor:pointer;font-family:var(--fb);}
 .btn-ia:disabled{opacity:.4;cursor:not-allowed;}
-.btn-clr{padding:10px 14px;background:var(--nude);border:1px solid var(--border);border-radius:var(--rs);font-size:13px;cursor:pointer;font-family:var(--fb);color:var(--ink3);}
-.ia-load{display:none;align-items:center;gap:10px;padding:10px 14px;background:var(--rose-l);}
+.btn-clr{padding:11px 14px;background:var(--nude);border:1.5px solid var(--border);border-radius:var(--rs);font-size:13px;cursor:pointer;font-family:var(--fb);color:var(--ink3);}
+.ia-load{display:none;align-items:center;gap:10px;padding:10px 14px;background:var(--brand-l);}
 .ia-load.show{display:flex;}
 .ia-dots{display:flex;gap:4px;}
-.ia-dot{width:6px;height:6px;border-radius:50%;background:var(--rose);}
+.ia-dot{width:6px;height:6px;border-radius:50%;background:var(--brand);}
 .ia-dot:nth-child(1){animation:pulse .8s 0s infinite;}
 .ia-dot:nth-child(2){animation:pulse .8s .15s infinite;}
 .ia-dot:nth-child(3){animation:pulse .8s .3s infinite;}
 
 /* PRONT FIELDS */
 .pf{margin-bottom:12px;}
-.pf-lbl{font-size:9px;color:var(--ink3);letter-spacing:.08em;text-transform:uppercase;margin-bottom:5px;}
-.pf-val{font-size:13px;color:var(--ink2);line-height:1.6;background:var(--nude);border-radius:var(--rs);padding:11px 12px;min-height:40px;cursor:text;border:1.5px solid transparent;transition:border-color .2s;outline:none;}
-.pf-val:focus{border-color:var(--rose);}
+.pf-lbl{font-size:9px;color:var(--ink3);letter-spacing:.08em;text-transform:uppercase;margin-bottom:5px;font-weight:500;}
+.pf-val{font-size:13px;color:var(--ink2);line-height:1.6;background:var(--nude);border-radius:var(--rs);padding:11px 12px;min-height:42px;cursor:text;border:1.5px solid transparent;transition:border-color .2s;outline:none;width:100%;}
+.pf-val:focus{border-color:var(--brand);background:var(--white);}
 .pf-val:empty:before{content:attr(placeholder);color:var(--ink3);font-style:italic;}
 
 /* WEEK ROW */
-.week-row{display:flex;align-items:center;gap:10px;padding:12px 16px;border-bottom:1px solid var(--border);}
+.week-row{display:flex;align-items:center;gap:10px;padding:12px 16px;border-bottom:1px solid var(--nude2);}
 .wr-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
-.wr-date{font-size:12px;font-weight:500;color:var(--ink);min-width:70px;}
+.wr-date{font-size:12px;font-weight:500;color:var(--ink);min-width:72px;}
 .wr-info{flex:1;min-width:0;}
-.wr-plans{font-size:11px;color:var(--ink2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.wr-plans{font-size:11px;color:var(--ink2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
 .wr-right{text-align:right;flex-shrink:0;}
 .wr-val{font-size:13px;font-weight:500;}
 
-/* ESTOQUE */
-.stk-bar-wrap{height:4px;background:var(--nude2);border-radius:2px;margin-top:5px;}
-.stk-bar{height:4px;border-radius:2px;}
+/* SHEET */
+.sheet-bg{position:fixed;inset:0;background:rgba(26,15,10,.45);z-index:200;display:none;align-items:flex-end;}
+.sheet-bg.open{display:flex;}
+.sheet{background:var(--white);border-radius:22px 22px 0 0;padding:20px 20px calc(24px + var(--sb));width:100%;max-height:94vh;overflow-y:auto;}
+.sheet::-webkit-scrollbar{display:none;}
+.sheet-handle{width:36px;height:3px;background:var(--nude2);border-radius:2px;margin:0 auto 18px;}
+.sheet-title{font-family:var(--fd);font-size:22px;font-weight:300;color:var(--ink);margin-bottom:18px;}
 
-/* BACK */
-.back-btn{display:flex;align-items:center;gap:6px;padding:14px 16px 0;font-size:13px;color:var(--rose);cursor:pointer;background:none;border:none;font-family:var(--fb);}
-.back-btn svg{width:16px;height:16px;stroke:var(--rose);fill:none;stroke-width:2;stroke-linecap:round;}
-
-/* CONFIG */
-.cfg-item{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--border);}
-.cfg-lbl{font-size:13px;font-weight:500;color:var(--ink);}
-.cfg-sub{font-size:11px;color:var(--ink3);margin-top:2px;}
+/* INLINE ADD */
+.inline-add{display:flex;gap:6px;align-items:center;margin-top:4px;}
+.inline-add input,.inline-add select{flex:1;background:var(--nude);border:1.5px solid var(--border);border-radius:var(--rs);padding:9px 11px;font-size:13px;color:var(--ink);font-family:var(--fb);outline:none;}
+.inline-add input:focus{border-color:var(--brand);}
+.ia-add-btn{padding:9px 14px;background:var(--brand);color:white;border:none;border-radius:var(--rs);font-size:12px;font-weight:500;cursor:pointer;white-space:nowrap;font-family:var(--fb);}
 
 /* TOAST */
-@keyframes spin{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
-.toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%) translateY(0);background:var(--ink);color:white;padding:10px 20px;border-radius:20px;font-size:13px;opacity:0;transition:opacity .3s;pointer-events:none;z-index:999;white-space:nowrap;box-shadow:0 4px 20px rgba(44,33,24,.3);}
+.toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%);background:var(--ink);color:white;padding:11px 22px;border-radius:22px;font-size:13px;opacity:0;transition:opacity .3s;pointer-events:none;z-index:999;white-space:nowrap;box-shadow:0 4px 20px rgba(26,15,10,.3);}
 .toast.show{opacity:1;}
 .toast.s{background:var(--green);}
 .toast.e{background:var(--red);}
 
-/* QUICK ACTIONS */
-.qa-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:0 16px 16px;}
-.qa-btn{border-radius:var(--r);padding:16px;cursor:pointer;font-family:var(--fb);font-size:13px;display:flex;align-items:center;gap:8px;border:none;}
-.qa-btn svg{width:18px;height:18px;fill:none;stroke-width:2;stroke-linecap:round;}
-.qa-rose{background:var(--rose);color:white;}
-.qa-rose svg{stroke:white;}
-.qa-nude{background:var(--nude);color:var(--ink);border:1px solid var(--border);}
-.qa-nude svg{stroke:var(--rose);}
+/* FINANCIAL TABLE */
+.fin-summary{display:grid;grid-template-columns:1fr 1fr 1fr;background:var(--ink);padding:16px;}
+.fs-item{text-align:center;}
+.fs-label{font-size:9px;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;}
+.fs-val{font-family:var(--fd);font-size:20px;font-weight:400;color:white;}
+
+/* CONFIG */
+.cfg-item{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--nude2);}
+.cfg-lbl{font-size:13px;font-weight:500;color:var(--ink);}
+.cfg-sub{font-size:11px;color:var(--ink3);margin-top:2px;}
+
+.spacer{height:20px;}
+.divider{height:2px;background:var(--nude2);}
 </style>
 </head>
 <body>
 
 <!-- LOGIN -->
 <div id="login-screen">
-  <div class="login-brand">
-    <img src="https://raw.githubusercontent.com/drapaulahenriques/clinica-paula/main/PH%20-%20LOGOTIPO.png" alt="Dra. Paula Henriques" style="width:220px;height:auto;margin:0 auto 10px;display:block;" onerror="this.style.display='none';document.getElementById('login-fallback').style.display='block';">
-    <div id="login-fallback" style="display:none;">
-      <div class="login-circle">PH</div>
-      <div class="login-title">Dra. Paula Henriques</div>
-    </div>
-    <div class="login-sub" style="color:rgba(255,255,255,.7);margin-top:4px;">Sistema de Gestão</div>
-  </div>
+  <img src="https://raw.githubusercontent.com/drapaulahenriques/clinica-paula/main/PH%20-%20LOGOTIPO.png" class="login-logo" alt="Dra. Paula Henriques" onerror="this.style.display='none'">
+  <div class="login-sub-txt">Sistema de Gestão</div>
   <div class="login-card">
-    <div class="lfield"><label>E-mail</label><input class="linput" type="email" id="l-email" placeholder="paula@email.com" autocomplete="email"></div>
-    <div class="lfield" style="margin-bottom:0;"><label>Senha</label><input class="linput" type="password" id="l-pass" placeholder="••••••••" onkeydown="if(event.key==='Enter')doLogin()"></div>
+    <div class="lf"><label>E-mail</label><input class="li" type="email" id="l-email" placeholder="paula@email.com" autocomplete="email"></div>
+    <div class="lf" style="margin-bottom:0;"><label>Senha</label><input class="li" type="password" id="l-pass" placeholder="••••••••" onkeydown="if(event.key==='Enter')doLogin()"></div>
     <div id="l-msg"></div>
     <button class="lbtn" onclick="doLogin()">Entrar</button>
     <button class="lbtn-g" onclick="doSignup()">Criar conta</button>
@@ -288,39 +293,47 @@ body{font-family:var(--fb);color:var(--ink);-webkit-font-smoothing:antialiased;}
 <!-- DASHBOARD -->
 <div class="page on" id="pg-dash">
   <div class="hero-hdr">
-    <div style="display:flex;align-items:flex-start;justify-content:space-between;">
+    <div class="hero-top">
       <div>
-        <img src="https://raw.githubusercontent.com/drapaulahenriques/clinica-paula/main/PH%20-%20SUBMARCA.png" alt="PH" style="width:48px;height:48px;border-radius:50%;object-fit:cover;margin-bottom:8px;opacity:0.85;" onerror="this.style.display='none'">
+        <img src="https://raw.githubusercontent.com/drapaulahenriques/clinica-paula/main/PH%20-%20SUBMARCA.png" class="hero-logo" alt="PH" onerror="this.style.display='none'">
         <div class="hero-greeting">Bem-vinda,</div>
         <div class="hero-name">Dra. Paula</div>
         <div class="hero-date" id="dash-date"></div>
       </div>
-      <button onclick="atualizarSistema()" id="btn-refresh" style="background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.3);border-radius:50%;width:38px;height:38px;display:flex;align-items:center;justify-content:center;cursor:pointer;margin-top:4px;transition:transform .3s;">
-        <svg id="refresh-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/>
-          <path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/>
-        </svg>
+      <button class="refresh-btn" onclick="atualizarSistema()" id="btn-refresh">
+        <svg id="refresh-icon" viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>
       </button>
     </div>
   </div>
   <div class="hero-kpis">
-    <div class="hkpi"><div class="hkpi-l">Produção total</div><div class="hkpi-v" id="d-prod">—</div><div class="hkpi-s" id="d-prod-s">carregando...</div></div>
-    <div class="hkpi"><div class="hkpi-l">A receber</div><div class="hkpi-v" id="d-recv" style="color:#FFD5BC;">—</div><div class="hkpi-s">convênios pendentes</div></div>
+    <div class="hkpi">
+      <div class="hkpi-l">Produção total</div>
+      <div class="hkpi-v" id="d-prod">—</div>
+      <div class="hkpi-s" id="d-prod-s">carregando...</div>
+    </div>
+    <div class="hkpi">
+      <div class="hkpi-l">A receber</div>
+      <div class="hkpi-v" id="d-recv" style="color:#FFE0CC;">—</div>
+      <div class="hkpi-s">convênios pendentes</div>
+    </div>
   </div>
-  <div class="kpi-row">
-    <div class="kpi"><div class="kpi-l">Recebido</div><div class="kpi-v" style="color:var(--green)" id="d-rec">—</div></div>
-    <div class="kpi"><div class="kpi-l">Pacientes</div><div class="kpi-v" id="d-pac">—</div></div>
-    <div class="kpi"><div class="kpi-l">Ticket</div><div class="kpi-v" id="d-tick">—</div></div>
+  <div class="kpi-strip">
+    <div class="kpi-item"><div class="kpi-l">Recebido</div><div class="kpi-v" style="color:var(--green)" id="d-rec">—</div></div>
+    <div class="kpi-item"><div class="kpi-l">Pacientes</div><div class="kpi-v" id="d-pac">—</div></div>
+    <div class="kpi-item"><div class="kpi-l">Ticket médio</div><div class="kpi-v" id="d-tick">—</div></div>
   </div>
-  <div id="d-alert" class="alert alert-rose" style="margin-top:12px;display:none;"></div>
-  <div class="sec" style="margin-top:14px;"><div class="sec-lbl">Faturamento por semana</div></div>
-  <div class="bar-chart" id="d-chart"></div>
-  <div class="sec"><div class="sec-lbl">Ações rápidas</div></div>
+  <div id="d-alerts"></div>
+  <div class="chart-wrap">
+    <div class="chart-label">Faturamento por semana</div>
+    <div class="bar-chart" id="d-chart"></div>
+  </div>
+  <div class="divider"></div>
+  <div class="sec-hdr"><span class="sec-title">Ações rápidas</span></div>
   <div class="qa-grid">
-    <button class="qa-btn qa-rose" onclick="navTo('agenda',null)"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Ver agenda</button>
-    <button class="qa-btn qa-nude" onclick="navTo('atend',null)"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>Novo atendimento</button>
-    <button class="qa-btn qa-nude" onclick="navTo('pac',null)"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>Pacientes</button>
-    <button class="qa-btn qa-nude" onclick="navTo('cad',null)"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>Cadastros</button>
+    <button class="qa-btn qa-primary" onclick="navTo('agenda',null)"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Ver agenda</button>
+    <button class="qa-btn qa-primary" onclick="navTo('atend',null)"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>Novo atendimento</button>
+    <button class="qa-btn qa-sec" onclick="navTo('pac',null)"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>Pacientes</button>
+    <button class="qa-btn qa-sec" onclick="navTo('fin',null)"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>Financeiro</button>
   </div>
   <div class="spacer"></div>
 </div>
@@ -343,74 +356,118 @@ body{font-family:var(--fb);color:var(--ink);-webkit-font-smoothing:antialiased;}
 <div class="page" id="pg-atend">
   <div class="pg-hdr"><div class="pg-title">Novo atendimento</div><div class="pg-sub">Registre a consulta completa</div></div>
   <div style="padding:14px 16px;">
-    <div class="field"><label>Paciente</label><select id="at-pac"><option value="">Selecione a paciente...</option></select></div>
-    <div class="field"><label>Clínica / Local</label><select id="at-clin"><option value="">Selecione a clínica...</option></select></div>
-    <div class="field"><label>Plano / Convênio</label><select id="at-plano" onchange="atAutoVal()"><option value="">Selecione o plano...</option></select></div>
-    <div class="field"><label>Procedimento</label><select id="at-prod" onchange="atAutoVal()"><option value="">Selecione o procedimento...</option></select></div>
+
+    <!-- Paciente com cadastro inline -->
+    <div class="field">
+      <label>Paciente</label>
+      <select id="at-pac" class="finput"></select>
+      <div class="inline-add" id="ia-pac-form" style="display:none;">
+        <input id="ia-pac-nome" placeholder="Nome da paciente" class="finput" style="margin:0;">
+        <button class="ia-add-btn" onclick="addPacInline()">+ Salvar</button>
+      </div>
+      <div style="margin-top:5px;"><span style="font-size:11px;color:var(--brand);cursor:pointer;" onclick="toggleInline('ia-pac-form')">+ Cadastrar nova paciente</span></div>
+    </div>
+
+    <!-- Clínica com cadastro inline -->
+    <div class="field">
+      <label>Clínica / Local</label>
+      <select id="at-clin" class="finput"></select>
+      <div class="inline-add" id="ia-clin-form" style="display:none;">
+        <input id="ia-clin-nome" placeholder="Nome da clínica" class="finput" style="margin:0;">
+        <button class="ia-add-btn" onclick="addClinInline()">+ Salvar</button>
+      </div>
+      <div style="margin-top:5px;"><span style="font-size:11px;color:var(--brand);cursor:pointer;" onclick="toggleInline('ia-clin-form')">+ Cadastrar nova clínica</span></div>
+    </div>
+
+    <!-- Plano com cadastro inline -->
+    <div class="field">
+      <label>Plano / Convênio</label>
+      <select id="at-plano" class="finput" onchange="atAutoVal()"></select>
+      <div class="inline-add" id="ia-plano-form" style="display:none;">
+        <input id="ia-plano-nome" placeholder="Nome do plano" class="finput" style="margin:0;">
+        <input id="ia-plano-val" placeholder="Valor R$" type="number" class="finput" style="margin:0;max-width:90px;">
+        <button class="ia-add-btn" onclick="addPlanoInline()">+ Salvar</button>
+      </div>
+      <div style="margin-top:5px;"><span style="font-size:11px;color:var(--brand);cursor:pointer;" onclick="toggleInline('ia-plano-form')">+ Cadastrar novo plano</span></div>
+    </div>
+
+    <!-- Procedimento com cadastro inline -->
+    <div class="field">
+      <label>Procedimento</label>
+      <select id="at-prod" class="finput" onchange="atAutoVal()"></select>
+      <div class="inline-add" id="ia-prod-form" style="display:none;">
+        <input id="ia-prod-nome" placeholder="Nome do procedimento" class="finput" style="margin:0;">
+        <input id="ia-prod-val" placeholder="Valor R$" type="number" class="finput" style="margin:0;max-width:90px;">
+        <button class="ia-add-btn" onclick="addProdInline()">+ Salvar</button>
+      </div>
+      <div style="margin-top:5px;"><span style="font-size:11px;color:var(--brand);cursor:pointer;" onclick="toggleInline('ia-prod-form')">+ Cadastrar novo procedimento</span></div>
+    </div>
+
     <div class="field-row">
-      <div class="field"><label>Data</label><input type="date" id="at-data"></div>
-      <div class="field"><label>Qtd. pacientes</label><input type="number" id="at-qtd" value="1" min="1" oninput="atCalc()"></div>
+      <div class="field"><label>Data</label><input type="date" id="at-data" class="finput"></div>
+      <div class="field"><label>Qtd. pacientes</label><input type="number" id="at-qtd" value="1" min="1" class="finput" oninput="atCalc()"></div>
     </div>
     <div class="field-row">
-      <div class="field"><label>Valor (R$)</label><input type="number" id="at-val" step="0.01" placeholder="0,00" oninput="atCalc()"></div>
-      <div class="field"><label>Total</label><input type="text" id="at-tot" readonly style="background:#F0E8DF;font-weight:500;"></div>
+      <div class="field"><label>Valor (R$)</label><input type="number" id="at-val" step="0.01" placeholder="0,00" class="finput" oninput="atCalc()"></div>
+      <div class="field"><label>Total</label><input type="text" id="at-tot" readonly class="finput" style="background:#EDD8C5;font-weight:500;color:var(--ink2);"></div>
     </div>
     <div class="field-row">
-      <div class="field"><label>Recebido hoje (R$)</label><input type="number" id="at-rec" value="0" step="0.01" oninput="atCalc()"></div>
-      <div class="field"><label>Uber (R$)</label><input type="number" id="at-uber" value="0" step="0.01"></div>
-    </div>
-    <div class="field-row">
+      <div class="field"><label>Recebido hoje (R$)</label><input type="number" id="at-rec" value="0" step="0.01" class="finput" oninput="atCalc()"></div>
       <div class="field"><label>Forma de recebimento</label>
-        <select id="at-forma">
+        <select id="at-forma" class="finput">
           <option value="">Não recebido</option>
           <option value="pix">📲 Pix</option>
           <option value="dinheiro">💵 Dinheiro</option>
-          <option value="credito">💳 Cartão de crédito</option>
-          <option value="debito">💳 Cartão de débito</option>
-          <option value="transferencia">🏦 Transferência</option>
+          <option value="credito">💳 Crédito</option>
+          <option value="debito">💳 Débito</option>
         </select>
       </div>
-      <div class="field"><label>Recebido a receber em</label>
-        <input type="date" id="at-prev" placeholder="Data prevista">
-      </div>
+    </div>
+    <div class="field-row">
+      <div class="field"><label>Data prev. recebimento</label><input type="date" id="at-prev" class="finput"></div>
+      <div class="field"><label>Despesa Uber (R$)</label><input type="number" id="at-uber" value="0" step="0.01" class="finput"></div>
     </div>
   </div>
 
-  <div class="sec-lbl" style="padding:0 16px;margin-bottom:10px;">Transcrição da consulta com IA</div>
+  <!-- TRANSCRIÇÃO -->
+  <div style="padding:0 16px;"><div style="font-size:10px;color:var(--ink3);letter-spacing:.08em;text-transform:uppercase;font-weight:500;margin-bottom:10px;">🎙 Transcrição da consulta com IA</div></div>
   <div class="rec-box">
     <div class="rec-top">
-      <div class="rec-title">🎙 Gravar consulta</div>
+      <div class="rec-title">Gravar consulta</div>
       <button class="rec-btn rec-start" id="rec-toggle" onclick="toggleRec()">
         <div class="rec-pulse" id="rec-pulse"></div><span id="rec-lbl">Gravar</span>
       </button>
     </div>
-    <div class="ia-load" id="ia-load"><div class="ia-dots"><div class="ia-dot"></div><div class="ia-dot"></div><div class="ia-dot"></div></div><span style="font-size:12px;color:var(--rose-d);">IA organizando prontuário...</span></div>
-    <div class="rec-body" id="rec-body"><span class="rec-ph">Toque em Gravar e fale normalmente durante a consulta. A IA preenche o prontuário automaticamente.</span></div>
-    <div class="rec-actions">
+    <div class="ia-load" id="ia-load"><div class="ia-dots"><div class="ia-dot"></div><div class="ia-dot"></div><div class="ia-dot"></div></div><span style="font-size:12px;color:var(--brand-d);">IA organizando prontuário...</span></div>
+    <div class="rec-body" id="rec-body"><span class="rec-ph">Toque em Gravar e fale normalmente. A IA preenche o prontuário automaticamente.</span></div>
+    <div class="rec-acts">
       <button class="btn-ia" id="btn-ia" onclick="processarIA()" disabled>✨ Organizar com IA</button>
       <button class="btn-clr" onclick="limparRec()">Limpar</button>
     </div>
   </div>
 
   <div id="pront-wrap" style="padding:0 16px;display:none;">
-    <div class="sec-lbl" style="margin-bottom:10px;">Prontuário</div>
+    <div style="font-size:10px;color:var(--ink3);letter-spacing:.08em;text-transform:uppercase;font-weight:500;margin-bottom:10px;">Prontuário</div>
     <div class="pf"><div class="pf-lbl">Queixa principal</div><div class="pf-val" contenteditable id="pf-q" placeholder="Motivo da consulta..."></div></div>
     <div class="pf"><div class="pf-lbl">História / Evolução</div><div class="pf-val" contenteditable id="pf-h" placeholder="Evolução dos sintomas..."></div></div>
     <div class="pf"><div class="pf-lbl">Exame físico</div><div class="pf-val" contenteditable id="pf-e" placeholder="Achados ao exame..."></div></div>
     <div class="pf"><div class="pf-lbl">Hipótese diagnóstica</div><div class="pf-val" contenteditable id="pf-hd" placeholder="Diagnóstico..."></div></div>
     <div class="field-row" style="margin-bottom:12px;">
-      <div class="pf" style="margin:0;"><div class="pf-lbl">CID</div><div class="pf-val" contenteditable id="pf-cid" placeholder="Ex: L70.0"></div></div>
-      <div class="pf" style="margin:0;"><div class="pf-lbl">Descrição</div><div class="pf-val" contenteditable id="pf-cidd" placeholder="Descrição do CID..."></div></div>
+      <div class="pf" style="margin:0;"><div class="pf-lbl">CID</div><div class="pf-val" contenteditable id="pf-cid" placeholder="L70.0"></div></div>
+      <div class="pf" style="margin:0;"><div class="pf-lbl">Descrição CID</div><div class="pf-val" contenteditable id="pf-cidd" placeholder="Descrição..."></div></div>
     </div>
-    <div class="pf"><div class="pf-lbl">Conduta</div><div class="pf-val" contenteditable id="pf-c" placeholder="Conduta adotada..."></div></div>
+    <div class="pf"><div class="pf-lbl">Conduta / Tratamento</div><div class="pf-val" contenteditable id="pf-c" placeholder="Conduta adotada..."></div></div>
     <div class="pf"><div class="pf-lbl">Prescrição</div><div class="pf-val" contenteditable id="pf-p" placeholder="Medicamentos prescritos..."></div></div>
   </div>
-  <button onclick="togglePront()" style="margin:0 16px 4px;width:calc(100% - 32px);padding:10px;background:var(--nude);border:1px solid var(--border);border-radius:var(--rs);font-size:12px;color:var(--ink3);cursor:pointer;font-family:var(--fb);" id="btn-pront-toggle">Mostrar campos do prontuário</button>
-  <button onclick="imprimirProntuario()" style="margin:0 16px 12px;width:calc(100% - 32px);padding:10px;background:var(--nude2);border:1px solid var(--border);border-radius:var(--rs);font-size:12px;color:var(--ink2);cursor:pointer;font-family:var(--fb);">🖨 Imprimir prontuário</button>
+
+  <div style="padding:0 16px;display:flex;gap:8px;margin-bottom:12px;">
+    <button onclick="togglePront()" id="btn-pt" style="flex:1;padding:10px;background:var(--nude);border:1.5px solid var(--border);border-radius:var(--rs);font-size:12px;color:var(--ink3);cursor:pointer;font-family:var(--fb);">Mostrar prontuário</button>
+    <button onclick="imprimirProntuario()" style="flex:1;padding:10px;background:var(--nude2);border:1.5px solid var(--border);border-radius:var(--rs);font-size:12px;color:var(--ink2);cursor:pointer;font-family:var(--fb);">🖨 Imprimir</button>
+  </div>
 
   <div style="padding:0 16px 16px;">
-    <div class="field"><label>Observação</label><input type="text" id="at-obs" placeholder="Ex: retorno em 30 dias..."></div>
-    <button class="btn-p" onclick="salvarAtend()">Registrar atendimento</button>
+    <div class="field"><label>Observação</label><input type="text" id="at-obs" placeholder="Ex: retorno em 30 dias..." class="finput"></div>
+    <button class="btn-p" onclick="salvarAtend()">✓ Registrar atendimento</button>
   </div>
   <div class="spacer"></div>
 </div>
@@ -437,34 +494,21 @@ body{font-family:var(--fb);color:var(--ink);-webkit-font-smoothing:antialiased;}
     <div class="cat-chip" onclick="showCadTab('produtos',this)">Procedimentos</div>
     <div class="cat-chip" onclick="showCadTab('insumos',this)">Insumos</div>
   </div>
-  <div id="cad-clinicas">
-    <div style="padding:0 16px 10px;display:flex;justify-content:flex-end;"><button class="btn-sm btn-sm-r" onclick="openSheet('sh-clin')">+ Nova clínica</button></div>
-    <div id="clin-list"></div>
-  </div>
-  <div id="cad-planos" style="display:none;">
-    <div style="padding:0 16px 10px;display:flex;justify-content:flex-end;"><button class="btn-sm btn-sm-r" onclick="openSheet('sh-plano')">+ Novo plano</button></div>
-    <div id="plano-list"></div>
-  </div>
-  <div id="cad-produtos" style="display:none;">
-    <div style="padding:0 16px 10px;display:flex;justify-content:flex-end;"><button class="btn-sm btn-sm-r" onclick="openSheet('sh-prod')">+ Novo procedimento</button></div>
-    <div id="prod-list"></div>
-  </div>
-  <div id="cad-insumos" style="display:none;">
-    <div style="padding:0 16px 10px;display:flex;justify-content:flex-end;"><button class="btn-sm btn-sm-r" onclick="openSheet('sh-ins')">+ Novo insumo</button></div>
-    <div id="ins-list"></div>
-  </div>
+  <div id="cad-clinicas"><div style="padding:0 16px 10px;display:flex;justify-content:flex-end;"><button class="btn-sm btn-sm-p" onclick="openSheet('sh-clin')">+ Nova clínica</button></div><div id="clin-list"></div></div>
+  <div id="cad-planos" style="display:none;"><div style="padding:0 16px 10px;display:flex;justify-content:flex-end;"><button class="btn-sm btn-sm-p" onclick="openSheet('sh-plano')">+ Novo plano</button></div><div id="plano-list"></div></div>
+  <div id="cad-produtos" style="display:none;"><div style="padding:0 16px 10px;display:flex;justify-content:flex-end;"><button class="btn-sm btn-sm-p" onclick="openSheet('sh-prod')">+ Novo procedimento</button></div><div id="prod-list"></div></div>
+  <div id="cad-insumos" style="display:none;"><div style="padding:0 16px 10px;display:flex;justify-content:flex-end;"><button class="btn-sm btn-sm-p" onclick="openSheet('sh-ins')">+ Novo insumo</button></div><div id="ins-list"></div></div>
   <div class="spacer"></div>
 </div>
 
 <!-- FINANCEIRO -->
 <div class="page" id="pg-fin">
-  <div class="pg-hdr"><div class="pg-title">Financeiro</div><div class="pg-sub" id="fin-sub">—</div></div>
-  <div class="kpi-row">
-    <div class="kpi"><div class="kpi-l">Produção</div><div class="kpi-v" id="fin-prod">—</div></div>
-    <div class="kpi"><div class="kpi-l">Recebido</div><div class="kpi-v" style="color:var(--green)" id="fin-rec">—</div></div>
-    <div class="kpi"><div class="kpi-l">Pendente</div><div class="kpi-v" style="color:var(--rose)" id="fin-pend">—</div></div>
+  <div class="fin-summary">
+    <div class="fs-item"><div class="fs-label">Produção</div><div class="fs-val" id="fin-prod">—</div></div>
+    <div class="fs-item"><div class="fs-label">Recebido</div><div class="fs-val" style="color:#7AFFC0" id="fin-rec">—</div></div>
+    <div class="fs-item"><div class="fs-label">Pendente</div><div class="fs-val" style="color:#FFAA80" id="fin-pend">—</div></div>
   </div>
-  <div class="sec" style="margin-top:14px;"><div class="sec-lbl">Por semana</div></div>
+  <div class="sec-hdr"><span class="sec-title">Por semana</span><span class="sec-action" id="fin-sub">—</span></div>
   <div id="fin-semanas"></div>
   <div class="spacer"></div>
 </div>
@@ -472,24 +516,20 @@ body{font-family:var(--fb);color:var(--ink);-webkit-font-smoothing:antialiased;}
 <!-- CONFIG -->
 <div class="page" id="pg-cfg">
   <div class="pg-hdr"><div class="pg-title">Configurações</div><div class="pg-sub">Personalizar o app</div></div>
-  <div class="sec-lbl" style="padding:14px 16px 6px;">Visual</div>
+  <div class="sec-hdr"><span class="sec-title">Visual</span></div>
   <div class="cfg-item">
     <div><div class="cfg-lbl">Cor principal</div><div class="cfg-sub">Toque para personalizar</div></div>
-    <input type="color" value="#C4937A" onchange="document.documentElement.style.setProperty('--rose',this.value)" style="width:36px;height:36px;border-radius:50%;border:2px solid var(--border);cursor:pointer;padding:2px;">
+    <input type="color" value="#9E6B52" onchange="document.documentElement.style.setProperty('--brand',this.value)" style="width:36px;height:36px;border-radius:50%;border:2px solid var(--border);cursor:pointer;padding:2px;">
+  </div>
+  <div class="sec-hdr"><span class="sec-title">WhatsApp</span></div>
+  <div class="cfg-item">
+    <div><div class="cfg-lbl">Número da clínica</div><div class="cfg-sub">+55 32 99819-9107</div></div>
   </div>
   <div class="cfg-item">
-    <div><div class="cfg-lbl">Logo da clínica</div><div class="cfg-sub">Envie sua logo</div></div>
-    <button class="btn-sm btn-sm-g" onclick="showToast('Envie a logo e atualizamos!')">Enviar</button>
-  </div>
-  <div class="sec-lbl" style="padding:14px 16px 6px;">Clínica</div>
-  <div class="cfg-item">
-    <div><div class="cfg-lbl">WhatsApp da clínica</div><div class="cfg-sub">+55 32 99819-9107</div></div>
-  </div>
-  <div class="cfg-item">
-    <div><div class="cfg-lbl">Mensagem de lembrete</div><div class="cfg-sub">Editável</div></div>
+    <div><div class="cfg-lbl">Mensagem de lembrete</div><div class="cfg-sub">Toque para editar</div></div>
     <button class="btn-sm btn-sm-g" onclick="openSheet('sh-msg')">Editar</button>
   </div>
-  <div class="sec-lbl" style="padding:14px 16px 6px;">Conta</div>
+  <div class="sec-hdr"><span class="sec-title">Conta</span></div>
   <div class="cfg-item">
     <div><div class="cfg-lbl">E-mail</div><div class="cfg-sub" id="cfg-email">—</div></div>
   </div>
@@ -503,160 +543,151 @@ body{font-family:var(--fb);color:var(--ink);-webkit-font-smoothing:antialiased;}
 </div>
 
 <!-- BOTTOM NAV -->
-<div class="bottom-nav">
-  <button class="nav-btn on" onclick="navTo('dash',this)">
+<div class="bot-nav">
+  <button class="nb on" onclick="navTo('dash',this)">
     <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
-    <span class="nav-lbl">Início</span>
+    <span class="nb-lbl">Início</span>
   </button>
-  <button class="nav-btn" onclick="navTo('agenda',this)">
+  <button class="nb" onclick="navTo('agenda',this)">
     <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-    <span class="nav-lbl">Agenda</span>
+    <span class="nb-lbl">Agenda</span>
   </button>
-  <button class="nav-btn" onclick="navTo('atend',this)">
+  <button class="nb" onclick="navTo('atend',this)">
     <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
-    <span class="nav-lbl">Atendimento</span>
+    <span class="nb-lbl">Atendimento</span>
   </button>
-  <button class="nav-btn" onclick="navTo('pac',this)">
+  <button class="nb" onclick="navTo('pac',this)">
     <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
-    <span class="nav-lbl">Pacientes</span>
+    <span class="nb-lbl">Pacientes</span>
   </button>
-  <button class="nav-btn" onclick="navTo('fin',this)">
+  <button class="nb" onclick="navTo('fin',this)">
     <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
-    <span class="nav-lbl">Financeiro</span>
+    <span class="nb-lbl">Financeiro</span>
   </button>
-  <button class="nav-btn" onclick="navTo('cfg',this)">
+  <button class="nb" onclick="navTo('cfg',this)">
     <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
-    <span class="nav-lbl">Config</span>
+    <span class="nb-lbl">Config</span>
   </button>
 </div>
 </div>
 
 <!-- SHEETS -->
-<!-- Agendamento -->
 <div class="sheet-bg" id="sh-ag" onclick="closeSheet('sh-ag',event)">
   <div class="sheet">
     <div class="sheet-handle"></div>
     <div class="sheet-title">Nova consulta</div>
-    <div class="field"><label>Paciente *</label><select id="ag-pac"><option value="">Selecione...</option></select></div>
-    <div class="field"><label>Procedimento</label><select id="ag-proc"><option value="">Selecione...</option></select></div>
+    <div class="field"><label>Paciente *</label><select id="ag-pac" class="finput"></select></div>
+    <div class="field"><label>Procedimento</label><select id="ag-proc" class="finput"></select></div>
     <div class="field-row">
-      <div class="field"><label>Data *</label><input type="date" id="ag-data"></div>
-      <div class="field"><label>Horário *</label><input type="time" id="ag-hora" value="09:00"></div>
+      <div class="field"><label>Data *</label><input type="date" id="ag-data" class="finput"></div>
+      <div class="field"><label>Horário *</label><input type="time" id="ag-hora" value="09:00" class="finput"></div>
     </div>
-    <div class="field"><label>Clínica</label><select id="ag-clin"><option value="">Selecione...</option></select></div>
-    <div class="field"><label>Observações</label><input type="text" id="ag-obs" placeholder="Ex: primeira consulta, retorno..."></div>
-    <button class="btn-p" onclick="salvarAgenda()">Agendar consulta</button>
+    <div class="field"><label>Clínica</label><select id="ag-clin" class="finput"></select></div>
+    <div class="field"><label>Observações</label><input type="text" id="ag-obs" placeholder="Ex: primeira consulta..." class="finput"></div>
+    <button class="btn-p" onclick="salvarAgenda()">Agendar</button>
     <button class="btn-g" onclick="closeSheet('sh-ag')">Cancelar</button>
   </div>
 </div>
 
-<!-- Mensagem WhatsApp -->
 <div class="sheet-bg" id="sh-msg" onclick="closeSheet('sh-msg',event)">
   <div class="sheet">
     <div class="sheet-handle"></div>
-    <div class="sheet-title">Mensagem de lembrete</div>
+    <div class="sheet-title">Mensagem WhatsApp</div>
     <div class="field">
       <label>Texto da mensagem</label>
-      <textarea id="msg-text" style="height:120px;">Olá {nome}! 👋
+      <textarea id="msg-text" class="finput" style="height:130px;">Olá {nome}! 👋
 
 Lembrando sua consulta com a Dra. Paula Henriques amanhã, {data} às {hora}.
 
 Local: {clinica}
 
-Confirme sua presença respondendo esta mensagem.
+Confirme respondendo esta mensagem. 🌸
 
-Dra. Paula Henriques — Dermatologia 🌸</textarea>
+Dra. Paula Henriques — Dermatologia</textarea>
     </div>
-    <div style="background:var(--nude);border-radius:var(--rs);padding:12px;font-size:11px;color:var(--ink3);margin-bottom:12px;">
-      Use {nome}, {data}, {hora} e {clinica} para personalizar automaticamente.
-    </div>
-    <button class="btn-p" onclick="closeSheet('sh-msg');showToast('Mensagem salva!','s')">Salvar mensagem</button>
+    <div style="background:var(--nude);border-radius:var(--rs);padding:10px 12px;font-size:11px;color:var(--ink3);margin-bottom:12px;">Use {nome}, {data}, {hora} e {clinica} para personalizar.</div>
+    <button class="btn-p" onclick="closeSheet('sh-msg');showToast('Mensagem salva!','s')">Salvar</button>
     <button class="btn-g" onclick="closeSheet('sh-msg')">Cancelar</button>
   </div>
 </div>
 
-<!-- Paciente -->
 <div class="sheet-bg" id="sh-pac" onclick="closeSheet('sh-pac',event)">
   <div class="sheet">
     <div class="sheet-handle"></div>
     <div class="sheet-title">Nova paciente</div>
-    <div class="field"><label>Nome completo *</label><input id="np-nome" placeholder="Nome completo"></div>
+    <div class="field"><label>Nome completo *</label><input id="np-nome" class="finput" placeholder="Nome completo"></div>
     <div class="field-row">
-      <div class="field"><label>Nascimento</label><input id="np-nasc" type="date"></div>
-      <div class="field"><label>Telefone *</label><input id="np-tel" placeholder="(32) 99999-9999" type="tel"></div>
+      <div class="field"><label>Nascimento</label><input id="np-nasc" type="date" class="finput"></div>
+      <div class="field"><label>Telefone</label><input id="np-tel" placeholder="(32) 99999-9999" type="tel" class="finput"></div>
     </div>
-    <div class="field"><label>E-mail</label><input id="np-email" placeholder="email@email.com" type="email"></div>
-    <div class="field"><label>Convênio principal</label><select id="np-plano"><option value="">Selecione...</option></select></div>
-    <div class="field"><label>Alergias / Observações</label><textarea id="np-obs" placeholder="Alergias, condições especiais..."></textarea></div>
+    <div class="field"><label>E-mail</label><input id="np-email" placeholder="email@email.com" type="email" class="finput"></div>
+    <div class="field"><label>Convênio principal</label><select id="np-plano" class="finput"></select></div>
+    <div class="field"><label>Alergias / Observações</label><textarea id="np-obs" class="finput" placeholder="Alergias, condições especiais..."></textarea></div>
     <button class="btn-p" onclick="salvarPac()">Cadastrar paciente</button>
     <button class="btn-g" onclick="closeSheet('sh-pac')">Cancelar</button>
   </div>
 </div>
 
-<!-- Clínica -->
 <div class="sheet-bg" id="sh-clin" onclick="closeSheet('sh-clin',event)">
   <div class="sheet">
     <div class="sheet-handle"></div>
     <div class="sheet-title">Nova clínica</div>
-    <div class="field"><label>Nome *</label><input id="nc-nome" placeholder="Ex: Clínica IPSM"></div>
-    <div class="field"><label>Endereço</label><input id="nc-end" placeholder="Rua, número, bairro"></div>
-    <div class="field"><label>Cidade</label><input id="nc-cid" placeholder="Juiz de Fora"></div>
-    <div class="field"><label>Observações</label><textarea id="nc-obs" placeholder="Dias de atendimento, horários..."></textarea></div>
+    <div class="field"><label>Nome *</label><input id="nc-nome" class="finput" placeholder="Ex: Clínica IPSM"></div>
+    <div class="field"><label>Endereço</label><input id="nc-end" class="finput" placeholder="Rua, número, bairro"></div>
+    <div class="field"><label>Cidade</label><input id="nc-cid" class="finput" placeholder="Juiz de Fora"></div>
+    <div class="field"><label>Observações</label><textarea id="nc-obs" class="finput" placeholder="Dias de atendimento..."></textarea></div>
     <button class="btn-p" onclick="salvarClin()">Cadastrar clínica</button>
     <button class="btn-g" onclick="closeSheet('sh-clin')">Cancelar</button>
   </div>
 </div>
 
-<!-- Plano -->
 <div class="sheet-bg" id="sh-plano" onclick="closeSheet('sh-plano',event)">
   <div class="sheet">
     <div class="sheet-handle"></div>
     <div class="sheet-title">Novo plano / convênio</div>
-    <div class="field"><label>Nome *</label><input id="npl-nome" placeholder="Ex: IPSM - PM/BM"></div>
+    <div class="field"><label>Nome *</label><input id="npl-nome" class="finput" placeholder="Ex: IPSM - PM/BM"></div>
     <div class="field-row">
-      <div class="field"><label>Valor consulta (R$)</label><input id="npl-val" type="number" step="0.01" placeholder="0,00"></div>
-      <div class="field"><label>Prazo pgto. (dias)</label><input id="npl-prazo" type="number" placeholder="30" value="30"></div>
+      <div class="field"><label>Valor consulta (R$)</label><input id="npl-val" type="number" step="0.01" placeholder="0,00" class="finput"></div>
+      <div class="field"><label>Prazo pgto. (dias)</label><input id="npl-prazo" type="number" placeholder="30" value="30" class="finput"></div>
     </div>
-    <div class="field"><label>Observações</label><input id="npl-obs" placeholder="Ex: paga dia 15 do mês seguinte"></div>
+    <div class="field"><label>Observações</label><input id="npl-obs" class="finput" placeholder="Ex: paga dia 15"></div>
     <button class="btn-p" onclick="salvarPlano()">Cadastrar plano</button>
     <button class="btn-g" onclick="closeSheet('sh-plano')">Cancelar</button>
   </div>
 </div>
 
-<!-- Produto -->
 <div class="sheet-bg" id="sh-prod" onclick="closeSheet('sh-prod',event)">
   <div class="sheet">
     <div class="sheet-handle"></div>
     <div class="sheet-title">Novo procedimento</div>
-    <div class="field"><label>Nome *</label><input id="npr-nome" placeholder="Ex: Toxina Botulínica, Sculptra"></div>
+    <div class="field"><label>Nome *</label><input id="npr-nome" class="finput" placeholder="Ex: Toxina Botulínica"></div>
     <div class="field"><label>Categoria</label>
-      <select id="npr-cat"><option>Toxina botulínica</option><option>Preenchimento</option><option>Bioestimulador</option><option>MMP / Intradermoterapia</option><option>Crioterapia</option><option>Consulta</option><option>Outro</option></select>
+      <select id="npr-cat" class="finput"><option>Toxina botulínica</option><option>Preenchimento</option><option>Bioestimulador</option><option>MMP / Intradermoterapia</option><option>Crioterapia</option><option>Consulta</option><option>Outro</option></select>
     </div>
     <div class="field-row">
-      <div class="field"><label>Valor padrão (R$)</label><input id="npr-val" type="number" step="0.01" placeholder="0,00"></div>
-      <div class="field"><label>Unidade</label><input id="npr-uni" placeholder="sessão, UI, ml"></div>
+      <div class="field"><label>Valor padrão (R$)</label><input id="npr-val" type="number" step="0.01" placeholder="0,00" class="finput"></div>
+      <div class="field"><label>Unidade</label><input id="npr-uni" class="finput" placeholder="sessão, UI, ml"></div>
     </div>
     <button class="btn-p" onclick="salvarProd()">Cadastrar procedimento</button>
     <button class="btn-g" onclick="closeSheet('sh-prod')">Cancelar</button>
   </div>
 </div>
 
-<!-- Insumo -->
 <div class="sheet-bg" id="sh-ins" onclick="closeSheet('sh-ins',event)">
   <div class="sheet">
     <div class="sheet-handle"></div>
     <div class="sheet-title">Novo insumo</div>
-    <div class="field"><label>Nome *</label><input id="ni-nome" placeholder="Ex: Botox 100UI, Seringa 1ml"></div>
+    <div class="field"><label>Nome *</label><input id="ni-nome" class="finput" placeholder="Ex: Botox 100UI"></div>
     <div class="field"><label>Categoria</label>
-      <select id="ni-cat"><option>Medicamento</option><option>Descartável</option><option>EPI</option><option>Material clínico</option><option>Outro</option></select>
+      <select id="ni-cat" class="finput"><option>Medicamento</option><option>Descartável</option><option>EPI</option><option>Material clínico</option><option>Outro</option></select>
     </div>
     <div class="field-row">
-      <div class="field"><label>Unidade</label><input id="ni-uni" placeholder="frasco, cx..."></div>
-      <div class="field"><label>Custo unit. (R$)</label><input id="ni-custo" type="number" step="0.01" placeholder="0,00"></div>
+      <div class="field"><label>Unidade</label><input id="ni-uni" class="finput" placeholder="frasco, cx..."></div>
+      <div class="field"><label>Custo unit. (R$)</label><input id="ni-custo" type="number" step="0.01" placeholder="0,00" class="finput"></div>
     </div>
     <div class="field-row">
-      <div class="field"><label>Estoque atual</label><input id="ni-est" type="number" value="0"></div>
-      <div class="field"><label>Estoque mínimo</label><input id="ni-min" type="number" value="0"></div>
+      <div class="field"><label>Estoque atual</label><input id="ni-est" type="number" value="0" class="finput"></div>
+      <div class="field"><label>Estoque mínimo</label><input id="ni-min" type="number" value="0" class="finput"></div>
     </div>
     <button class="btn-p" onclick="salvarIns()">Cadastrar insumo</button>
     <button class="btn-g" onclick="closeSheet('sh-ins')">Cancelar</button>
@@ -667,13 +698,12 @@ Dra. Paula Henriques — Dermatologia 🌸</textarea>
 
 <script>
 const sb=supabase.createClient('https://qchrfkqxnwmqbzfrfiig.supabase.co','sb_publishable_o3CaCmjQ2jTGLI7-L7MaMw_pOFCAg1Q');
-const WA_NUM='5532998199107';
-let pacientes=[],clinicas=[],planos=[],produtos=[],agenda=[];
+const GEMINI='AIzaSyDm9Lb5wMGCU5xS3vDpwSlul6KVv96N6jo';
+const LOGO_URL='https://raw.githubusercontent.com/drapaulahenriques/clinica-paula/main/PH%20-%20LOGOTIPO.png';
+let pacientes=[],clinicas=[],planos=[],produtos=[];
 let recognition=null,isRec=false,transcricao='';
-let selectedDay=null;
-let prontVisible=false;
+let selectedDay=null,prontVisible=false;
 
-// INIT
 window.addEventListener('DOMContentLoaded',async()=>{
   const d=new Date();
   document.getElementById('dash-date').textContent=d.toLocaleDateString('pt-BR',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
@@ -684,26 +714,25 @@ window.addEventListener('DOMContentLoaded',async()=>{
   renderDays();
 });
 
-// AUTH
 async function doLogin(){
   const email=document.getElementById('l-email').value.trim();
   const pass=document.getElementById('l-pass').value;
   setMsg('');
-  if(!email||!pass){setMsg('Preencha e-mail e senha.','#B04040');return;}
+  if(!email||!pass){setMsg('Preencha e-mail e senha.','#9E2020');return;}
   const {data,error}=await sb.auth.signInWithPassword({email,password:pass});
-  if(error){setMsg('E-mail ou senha incorretos.','#B04040');return;}
+  if(error){setMsg('E-mail ou senha incorretos.','#9E2020');return;}
   showApp(data.user);
 }
 async function doSignup(){
   const email=document.getElementById('l-email').value.trim();
   const pass=document.getElementById('l-pass').value;
-  if(!email||!pass){setMsg('Preencha e-mail e senha.','#B04040');return;}
+  if(!email||!pass){setMsg('Preencha e-mail e senha.','#9E2020');return;}
   const {error}=await sb.auth.signUp({email,password:pass});
-  if(error){setMsg(error.message,'#B04040');return;}
-  setMsg('Conta criada! Verifique seu e-mail.','#2E7D5E');
+  if(error){setMsg(error.message,'#9E2020');return;}
+  setMsg('Conta criada! Verifique seu e-mail.','#1A6640');
 }
 async function doLogout(){await sb.auth.signOut();location.reload();}
-function setMsg(txt,color='#B04040'){const el=document.getElementById('l-msg');el.textContent=txt;el.style.color=color;}
+function setMsg(txt,color='#9E2020'){const el=document.getElementById('l-msg');el.textContent=txt;el.style.color=color;}
 function showApp(user){
   document.getElementById('login-screen').style.display='none';
   document.getElementById('main-app').style.display='flex';
@@ -711,18 +740,24 @@ function showApp(user){
   loadAll();
 }
 async function loadAll(){
-  await Promise.all([loadDash(),loadPacientes(),loadClinicas(),loadPlanos(),loadProdutos(),loadInsumos(),loadFin(),loadAgenda()]);
+  await Promise.all([loadDash(),loadPacientes(),loadClinicas(),loadPlanos(),loadProdutos(),loadFin(),loadAgenda()]);
+}
+async function atualizarSistema(){
+  const icon=document.getElementById('refresh-icon');
+  icon.style.animation='spin 1s linear infinite';
+  showToast('Atualizando...');
+  await loadAll();
+  icon.style.animation='none';
+  showToast('Atualizado!','s');
 }
 
-// NAV
 function navTo(id,btn){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('on'));
-  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('on'));
+  document.querySelectorAll('.nb').forEach(b=>b.classList.remove('on'));
   document.getElementById('pg-'+id).classList.add('on');
   if(btn)btn.classList.add('on');
 }
 
-// DASHBOARD
 async function loadDash(){
   const {data}=await sb.from('v_resumo_semanas').select('*');
   if(!data)return;
@@ -734,8 +769,10 @@ async function loadDash(){
   set('d-prod','R$ '+fmt(prod));set('d-rec','R$ '+fmt(rec));set('d-recv','R$ '+fmt(pend));
   set('d-pac',pacs||'—');set('d-tick',atends>0?'R$ '+fmt(prod/atends):'—');
   set('d-prod-s',data.filter(s=>s.status==='normal').length+' semanas ativas');
-  const al=document.getElementById('d-alert');
-  if(pend>0){al.innerHTML='<div class="al-dot" style="background:var(--rose)"></div><div class="al-text"><span class="al-b">R$ '+fmt(pend)+'</span> a receber dos convênios</div>';al.style.display='flex';}
+  const alerts=document.getElementById('d-alerts');
+  let html='';
+  if(pend>0)html+=`<div class="alert-bar ab-warn"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg><div class="alert-bar-text"><strong>R$ ${fmt(pend)}</strong> a receber dos convênios</div></div>`;
+  alerts.innerHTML=html;
   const ativos=data.filter(s=>parseFloat(s.producao_total)>0);
   const maxP=Math.max(...ativos.map(s=>parseFloat(s.producao_total)||0),1);
   document.getElementById('d-chart').innerHTML=data.slice(-8).map(s=>{
@@ -746,92 +783,6 @@ async function loadDash(){
   }).join('');
 }
 
-// AGENDA
-function renderDays(){
-  const today=new Date();
-  const row=document.getElementById('days-row');
-  const names=['Dom','Seg','Ter','Qua','Qui','Sex','Sáb'];
-  let html='';
-  for(let i=-3;i<=7;i++){
-    const d=new Date(today);d.setDate(today.getDate()+i);
-    const isToday=i===0;
-    const iso=d.toISOString().split('T')[0];
-    if(i===0)selectedDay=iso;
-    html+=`<div class="day-chip${isToday?' on today':''}" onclick="selectDay('${iso}',this)">
-      <div class="day-name">${names[d.getDay()]}</div>
-      <div class="day-num">${d.getDate()}</div>
-    </div>`;
-  }
-  row.innerHTML=html;
-}
-function selectDay(iso,el){
-  selectedDay=iso;
-  document.querySelectorAll('.day-chip').forEach(c=>c.classList.remove('on'));
-  el.classList.add('on');
-  renderSlots();
-}
-async function loadAgenda(){
-  const {data}=await sb.from('agenda').select('*,pacientes(nome,telefone),procedimentos(nome),clinicas(nome)').order('hora');
-  if(!data)return;
-  agenda=data;
-  document.getElementById('ag-sub').textContent=data.length+' consultas agendadas';
-  renderSlots();
-}
-function renderSlots(){
-  const slots=agenda.filter(a=>a.data_consulta===selectedDay);
-  const el=document.getElementById('agenda-slots');
-  if(!slots.length){el.innerHTML='<div class="slot-empty">Nenhuma consulta neste dia.<br><br><button onclick="openSheet(\'sh-ag\')" style="background:var(--rose);color:white;border:none;border-radius:20px;padding:8px 18px;font-size:13px;cursor:pointer;font-family:var(--fb);">+ Agendar</button></div>';return;}
-  el.innerHTML=slots.map(s=>{
-    const statusClass=s.status==='confirmada'?'conf':s.status==='faltou'?'faltou':'pend';
-    const nome=s.pacientes?.nome||'Paciente';
-    const tel=s.pacientes?.telefone||'';
-    const proc=s.procedimentos?.nome||'Consulta';
-    const clin=s.clinicas?.nome||'';
-    // Gerar link WhatsApp
-    const msgTemplate=document.getElementById('msg-text')?.value||'';
-    const dataFmt=new Date(s.data_consulta+'T12:00:00').toLocaleDateString('pt-BR');
-    const msg=msgTemplate.replace('{nome}',nome).replace('{data}',dataFmt).replace('{hora}',s.hora||'').replace('{clinica}',clin);
-    const telLimpo=tel.replace(/\D/g,'');
-    const waLink=telLimpo?`https://wa.me/55${telLimpo}?text=${encodeURIComponent(msg)}`:'';
-    return `<div class="consult-item">
-      <div class="consult-time">${s.hora||'—'}</div>
-      <div class="consult-card ${statusClass}">
-        <div class="consult-name">${nome}</div>
-        <div class="consult-proc">${proc}${clin?' · '+clin:''}</div>
-        <div class="consult-actions">
-          <span class="badge ${s.status==='confirmada'?'b-conf':s.status==='faltou'?'b-faltou':'b-pend2'}">${s.status==='confirmada'?'Confirmada':s.status==='faltou'?'Faltou':'Pendente'}</span>
-          ${waLink?`<a href="${waLink}" target="_blank" class="ca-btn ca-wa">📱 WhatsApp</a>`:''}
-          <button class="ca-btn ca-att" onclick="irAtendimento('${s.pacientes_id||''}','${s.plano_id||''}')">Atender</button>
-        </div>
-      </div>
-    </div>`;
-  }).join('');
-}
-async function salvarAgenda(){
-  const pac=document.getElementById('ag-pac').value;
-  const data=document.getElementById('ag-data').value;
-  const hora=document.getElementById('ag-hora').value;
-  if(!pac||!data||!hora){showToast('Preencha paciente, data e horário','e');return;}
-  const {error}=await sb.from('agenda').insert({
-    paciente_id:pac,
-    procedimento_id:document.getElementById('ag-proc').value||null,
-    clinica_id:document.getElementById('ag-clin').value||null,
-    data_consulta:data,hora,
-    status:'pendente',
-    observacao:document.getElementById('ag-obs').value||null,
-  });
-  if(error){showToast('Erro: '+error.message,'e');return;}
-  closeSheet('sh-ag');showToast('Consulta agendada!','s');
-  loadAgenda();
-  ['ag-obs'].forEach(id=>document.getElementById(id).value='');
-}
-function irAtendimento(pacId,planoId){
-  navTo('atend',document.querySelectorAll('.nav-btn')[2]);
-  if(pacId)document.getElementById('at-pac').value=pacId;
-  if(planoId)document.getElementById('at-plano').value=planoId;
-}
-
-// FINANCEIRO
 async function loadFin(){
   const {data}=await sb.from('v_resumo_semanas').select('*');
   if(!data)return;
@@ -839,7 +790,7 @@ async function loadFin(){
   const rec=data.reduce((s,r)=>s+(parseFloat(r.total_recebido)||0),0);
   const pend=data.reduce((s,r)=>s+(parseFloat(r.total_a_receber)||0),0);
   set('fin-prod','R$ '+fmt(prod));set('fin-rec','R$ '+fmt(rec));set('fin-pend','R$ '+fmt(pend));
-  set('fin-sub',data.length+' semanas registradas');
+  set('fin-sub',data.length+' semanas');
   document.getElementById('fin-semanas').innerHTML=data.map(s=>{
     const p=parseFloat(s.producao_total)||0,r=parseFloat(s.total_recebido)||0,pn=parseFloat(s.total_a_receber)||0;
     const dt=new Date(s.data_semana+'T12:00:00').toLocaleDateString('pt-BR',{day:'2-digit',month:'2-digit',year:'2-digit'});
@@ -847,33 +798,30 @@ async function loadFin(){
     if(s.status==='sem_atendimento'){dot='#CCC';badge='b-gray';lbl='Sem atend.';}
     else if(s.status==='feriado'){dot='#C0A0D0';badge='b-gray';lbl='Feriado';}
     else if(r>=p&&p>0){dot='var(--green)';badge='b-paid';lbl='Recebido';}
-    else if(r>0){dot='var(--gold)';badge='b-rose';lbl='Parcial';}
+    else if(r>0){dot='var(--brand)';badge='b-brand';lbl='Parcial';}
     return `<div class="week-row"><div class="wr-dot" style="background:${dot};"></div><div class="wr-date">${dt}</div>
       <div class="wr-info"><div class="wr-plans">${s.total_lancamentos||0} lançamentos</div></div>
-      <div class="wr-right"><div class="wr-val" style="color:${p>0?(pn>0?'var(--rose)':'var(--green)'):'var(--ink3)'};">${p>0?'R$ '+fmt(p):'—'}</div><span class="badge ${badge}">${lbl}</span></div></div>`;
+      <div class="wr-right"><div class="wr-val" style="color:${p>0?(pn>0?'var(--red)':'var(--green)'):'var(--ink3)'};">${p>0?'R$ '+fmt(p):'—'}</div><span class="badge ${badge}">${lbl}</span></div></div>`;
   }).join('');
 }
 
-// PACIENTES
 async function loadPacientes(){
   const {data}=await sb.from('pacientes').select('*,planos(nome)').order('nome');
   if(!data)return;
   pacientes=data;
   set('pac-sub',data.length+' cadastradas');
   renderPac(data);
-  const sel=document.getElementById('at-pac');
-  const selAg=document.getElementById('ag-pac');
+  const opts='<option value="">Selecione...</option>'+data.map(p=>`<option value="${p.id}">${p.nome}</option>`).join('');
+  ['at-pac','ag-pac'].forEach(id=>{const el=document.getElementById(id);if(el)el.innerHTML=opts;});
   const selNp=document.getElementById('np-plano');
-  sel.innerHTML='<option value="">Selecione a paciente...</option>'+data.map(p=>`<option value="${p.id}">${p.nome}</option>`).join('');
-  selAg.innerHTML='<option value="">Selecione...</option>'+data.map(p=>`<option value="${p.id}">${p.nome}</option>`).join('');
-  selNp.innerHTML='<option value="">Selecione...</option>'+planos.map(p=>`<option value="${p.id}">${p.nome}</option>`).join('');
+  if(selNp)selNp.innerHTML='<option value="">Selecione...</option>'+planos.map(p=>`<option value="${p.id}">${p.nome}</option>`).join('');
 }
 function renderPac(lista){
   const el=document.getElementById('pac-list');
   if(!lista.length){el.innerHTML='<div style="padding:24px;text-align:center;color:var(--ink3);font-size:13px;">Nenhuma paciente cadastrada ainda</div>';return;}
   el.innerHTML=lista.map(p=>{
     const ini=(p.nome||'?').split(' ').map(w=>w[0]).slice(0,2).join('').toUpperCase();
-    return `<div class="li"><div class="li-av">${ini}</div>
+    return `<div class="li-row"><div class="li-av">${ini}</div>
       <div class="li-main"><div class="li-name">${p.nome}</div><div class="li-sub">${p.planos?.nome||'Sem plano'}${p.telefone?' · '+p.telefone:''}</div></div>
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--ink3)" stroke-width="2" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
     </div>`;
@@ -885,76 +833,76 @@ async function salvarPac(){
   if(!nome){showToast('Informe o nome','e');return;}
   const {error}=await sb.from('pacientes').insert({nome,data_nascimento:document.getElementById('np-nasc').value||null,telefone:document.getElementById('np-tel').value||null,email:document.getElementById('np-email').value||null,plano_id:document.getElementById('np-plano').value||null,observacoes:document.getElementById('np-obs').value||null});
   if(error){showToast('Erro: '+error.message,'e');return;}
-  closeSheet('sh-pac');showToast('Paciente cadastrada!','s');loadPacientes();
+  closeSheet('sh-pac');showToast('Paciente cadastrada!','s');
   ['np-nome','np-nasc','np-tel','np-email','np-obs'].forEach(id=>document.getElementById(id).value='');
+  await loadPacientes();
 }
 
-// CLÍNICAS
 async function loadClinicas(){
   const {data}=await sb.from('clinicas').select('*').order('nome');
   if(!data)return;
   clinicas=data;
-  const sels=['at-clin','ag-clin'];
-  sels.forEach(id=>{const s=document.getElementById(id);if(s)s.innerHTML='<option value="">Selecione...</option>'+data.map(c=>`<option value="${c.id}">${c.nome}</option>`).join('');});
-  document.getElementById('clin-list').innerHTML=data.length?data.map(c=>`<div class="li"><div class="li-sq"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg></div><div class="li-main"><div class="li-name">${c.nome}</div><div class="li-sub">${c.cidade||''}${c.endereco?' · '+c.endereco:''}</div></div></div>`).join(''):'<div style="padding:24px;text-align:center;color:var(--ink3);font-size:13px;">Nenhuma clínica cadastrada</div>';
+  const opts='<option value="">Selecione...</option>'+data.map(c=>`<option value="${c.id}">${c.nome}</option>`).join('');
+  ['at-clin','ag-clin'].forEach(id=>{const el=document.getElementById(id);if(el)el.innerHTML=opts;});
+  document.getElementById('clin-list').innerHTML=data.length?data.map(c=>`<div class="li-row"><div class="li-sq"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg></div><div class="li-main"><div class="li-name">${c.nome}</div><div class="li-sub">${c.cidade||''}${c.endereco?' · '+c.endereco:''}</div></div></div>`).join(''):'<div style="padding:24px;text-align:center;color:var(--ink3);font-size:13px;">Nenhuma clínica cadastrada</div>';
 }
 async function salvarClin(){
   const nome=document.getElementById('nc-nome').value.trim();
   if(!nome){showToast('Informe o nome','e');return;}
   const {error}=await sb.from('clinicas').insert({nome,endereco:document.getElementById('nc-end').value||null,cidade:document.getElementById('nc-cid').value||null,observacao:document.getElementById('nc-obs').value||null});
   if(error){showToast('Erro: '+error.message,'e');return;}
-  closeSheet('sh-clin');showToast('Clínica cadastrada!','s');loadClinicas();
+  closeSheet('sh-clin');showToast('Clínica cadastrada!','s');
   ['nc-nome','nc-end','nc-cid','nc-obs'].forEach(id=>document.getElementById(id).value='');
+  await loadClinicas();
 }
 
-// PLANOS
 async function loadPlanos(){
   const {data}=await sb.from('planos').select('*').order('nome');
   if(!data)return;
   planos=data;
-  const sel=document.getElementById('at-plano');
-  sel.innerHTML='<option value="">Selecione o plano...</option>'+data.map(p=>`<option value="${p.id}" data-val="${p.valor_consulta||0}">${p.nome}${p.valor_consulta?' — R$ '+fmt(p.valor_consulta):''}</option>`).join('');
-  document.getElementById('plano-list').innerHTML=data.length?data.map(p=>`<div class="li"><div class="li-sq"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg></div><div class="li-main"><div class="li-name">${p.nome}</div><div class="li-sub">Prazo: ${p.prazo_pagamento_dias||30} dias</div></div><div class="li-right"><div class="li-val">${p.valor_consulta?'R$ '+fmt(p.valor_consulta):'—'}</div></div></div>`).join(''):'<div style="padding:24px;text-align:center;color:var(--ink3);font-size:13px;">Nenhum plano cadastrado</div>';
+  const opts='<option value="">Selecione...</option>'+data.map(p=>`<option value="${p.id}" data-val="${p.valor_consulta||0}">${p.nome}${p.valor_consulta?' — R$ '+fmt(p.valor_consulta):''}</option>`).join('');
+  const sel=document.getElementById('at-plano');if(sel)sel.innerHTML=opts;
+  document.getElementById('plano-list').innerHTML=data.length?data.map(p=>`<div class="li-row"><div class="li-sq"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg></div><div class="li-main"><div class="li-name">${p.nome}</div><div class="li-sub">Prazo: ${p.prazo_pagamento_dias||30} dias</div></div><div class="li-right"><div class="li-val">${p.valor_consulta?'R$ '+fmt(p.valor_consulta):'—'}</div></div></div>`).join(''):'<div style="padding:24px;text-align:center;color:var(--ink3);font-size:13px;">Nenhum plano cadastrado</div>';
 }
 async function salvarPlano(){
   const nome=document.getElementById('npl-nome').value.trim();
   if(!nome){showToast('Informe o nome','e');return;}
   const {error}=await sb.from('planos').insert({nome,valor_consulta:parseFloat(document.getElementById('npl-val').value)||null,prazo_pagamento_dias:parseInt(document.getElementById('npl-prazo').value)||30,observacao:document.getElementById('npl-obs').value||null});
   if(error){showToast('Erro: '+error.message,'e');return;}
-  closeSheet('sh-plano');showToast('Plano cadastrado!','s');loadPlanos();
+  closeSheet('sh-plano');showToast('Plano cadastrado!','s');
   ['npl-nome','npl-val','npl-obs'].forEach(id=>document.getElementById(id).value='');
+  await loadPlanos();
 }
 
-// PRODUTOS
 async function loadProdutos(){
   const {data}=await sb.from('procedimentos').select('*').order('nome');
   if(!data)return;
   produtos=data;
-  const sel=document.getElementById('at-prod');
-  const selAg=document.getElementById('ag-proc');
-  sel.innerHTML='<option value="">Selecione o procedimento...</option>'+data.map(p=>`<option value="${p.id}" data-val="${p.valor_padrao||0}">${p.nome}${p.valor_padrao?' — R$ '+fmt(p.valor_padrao):''}</option>`).join('');
-  selAg.innerHTML='<option value="">Selecione...</option>'+data.map(p=>`<option value="${p.id}">${p.nome}</option>`).join('');
-  document.getElementById('prod-list').innerHTML=data.length?data.map(p=>`<div class="li"><div class="li-sq"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><div class="li-main"><div class="li-name">${p.nome}</div><div class="li-sub">${p.categoria||''}</div></div><div class="li-right"><div class="li-val">${p.valor_padrao?'R$ '+fmt(p.valor_padrao):'—'}</div></div></div>`).join(''):'<div style="padding:24px;text-align:center;color:var(--ink3);font-size:13px;">Nenhum procedimento cadastrado</div>';
+  const opts='<option value="">Selecione...</option>'+data.map(p=>`<option value="${p.id}" data-val="${p.valor_padrao||0}">${p.nome}${p.valor_padrao?' — R$ '+fmt(p.valor_padrao):''}</option>`).join('');
+  ['at-prod','ag-proc'].forEach(id=>{const el=document.getElementById(id);if(el)el.innerHTML=opts;});
+  document.getElementById('prod-list').innerHTML=data.length?data.map(p=>`<div class="li-row"><div class="li-sq"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><div class="li-main"><div class="li-name">${p.nome}</div><div class="li-sub">${p.categoria||''}</div></div><div class="li-right"><div class="li-val">${p.valor_padrao?'R$ '+fmt(p.valor_padrao):'—'}</div></div></div>`).join(''):'<div style="padding:24px;text-align:center;color:var(--ink3);font-size:13px;">Nenhum procedimento cadastrado</div>';
 }
 async function salvarProd(){
   const nome=document.getElementById('npr-nome').value.trim();
   if(!nome){showToast('Informe o nome','e');return;}
   const {error}=await sb.from('procedimentos').insert({nome,categoria:document.getElementById('npr-cat').value,valor_padrao:parseFloat(document.getElementById('npr-val').value)||null});
   if(error){showToast('Erro: '+error.message,'e');return;}
-  closeSheet('sh-prod');showToast('Procedimento cadastrado!','s');loadProdutos();
+  closeSheet('sh-prod');showToast('Procedimento cadastrado!','s');
   ['npr-nome','npr-val','npr-uni'].forEach(id=>document.getElementById(id).value='');
+  await loadProdutos();
 }
 
-// INSUMOS
 async function loadInsumos(){
   const {data}=await sb.from('produtos').select('*').order('nome');
   if(!data)return;
   document.getElementById('ins-list').innerHTML=data.length?data.map(i=>{
     const pct=i.estoque_minimo>0?Math.min(100,Math.round((i.estoque_atual/i.estoque_minimo)*50)):50;
-    const cor=parseFloat(i.estoque_atual)<=parseFloat(i.estoque_minimo)?'var(--red)':'var(--rose)';
-    return `<div class="li"><div class="li-sq"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg></div>
-      <div class="li-main"><div class="li-name">${i.nome}</div><div class="stk-bar-wrap"><div class="stk-bar" style="width:${pct}%;background:${cor};"></div></div><div class="li-sub" style="margin-top:3px;">${i.estoque_atual} ${i.unidade||'un'} · mín: ${i.estoque_minimo}</div></div>
-      <div class="li-right"><div class="li-val" style="font-size:11px;color:var(--ink3);">${i.custo_unitario?'R$ '+fmt(i.custo_unitario):''}</div></div></div>`;
+    const cor=parseFloat(i.estoque_atual)<=parseFloat(i.estoque_minimo)?'var(--red)':'var(--brand)';
+    return `<div class="li-row"><div class="li-sq"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg></div>
+      <div class="li-main"><div class="li-name">${i.nome}</div>
+        <div style="height:3px;background:var(--nude2);border-radius:2px;margin-top:4px;overflow:hidden;"><div style="height:3px;width:${pct}%;background:${cor};border-radius:2px;"></div></div>
+        <div class="li-sub" style="margin-top:3px;">${i.estoque_atual} ${i.unidade||'un'} · mín: ${i.estoque_minimo}</div>
+      </div><div class="li-right"><div style="font-size:11px;color:var(--ink3);">${i.custo_unitario?'R$ '+fmt(i.custo_unitario):''}</div></div></div>`;
   }).join(''):'<div style="padding:24px;text-align:center;color:var(--ink3);font-size:13px;">Nenhum insumo cadastrado</div>';
 }
 async function salvarIns(){
@@ -962,15 +910,138 @@ async function salvarIns(){
   if(!nome){showToast('Informe o nome','e');return;}
   const {error}=await sb.from('produtos').insert({nome,categoria:document.getElementById('ni-cat').value,unidade:document.getElementById('ni-uni').value||null,custo_unitario:parseFloat(document.getElementById('ni-custo').value)||null,estoque_atual:parseFloat(document.getElementById('ni-est').value)||0,estoque_minimo:parseFloat(document.getElementById('ni-min').value)||0});
   if(error){showToast('Erro: '+error.message,'e');return;}
-  closeSheet('sh-ins');showToast('Insumo cadastrado!','s');loadInsumos();
+  closeSheet('sh-ins');showToast('Insumo cadastrado!','s');
   ['ni-nome','ni-uni','ni-custo'].forEach(id=>document.getElementById(id).value='');
+  await loadInsumos();
 }
 
-// CADASTROS TABS
 function showCadTab(id,el){
   ['clinicas','planos','produtos','insumos'].forEach(t=>document.getElementById('cad-'+t).style.display=t===id?'block':'none');
   document.querySelectorAll('.cat-chip').forEach(c=>c.classList.remove('on'));
   el.classList.add('on');
+}
+
+// INLINE ADD
+function toggleInline(id){const el=document.getElementById(id);el.style.display=el.style.display==='none'?'flex':'none';}
+async function addPacInline(){
+  const nome=document.getElementById('ia-pac-nome').value.trim();
+  if(!nome)return;
+  const {data,error}=await sb.from('pacientes').insert({nome}).select();
+  if(error){showToast('Erro','e');return;}
+  showToast('Paciente cadastrada!','s');
+  document.getElementById('ia-pac-nome').value='';
+  document.getElementById('ia-pac-form').style.display='none';
+  await loadPacientes();
+  document.getElementById('at-pac').value=data[0].id;
+}
+async function addClinInline(){
+  const nome=document.getElementById('ia-clin-nome').value.trim();
+  if(!nome)return;
+  const {data,error}=await sb.from('clinicas').insert({nome}).select();
+  if(error){showToast('Erro','e');return;}
+  showToast('Clínica cadastrada!','s');
+  document.getElementById('ia-clin-nome').value='';
+  document.getElementById('ia-clin-form').style.display='none';
+  await loadClinicas();
+  document.getElementById('at-clin').value=data[0].id;
+}
+async function addPlanoInline(){
+  const nome=document.getElementById('ia-plano-nome').value.trim();
+  const val=parseFloat(document.getElementById('ia-plano-val').value)||null;
+  if(!nome)return;
+  const {data,error}=await sb.from('planos').insert({nome,valor_consulta:val}).select();
+  if(error){showToast('Erro','e');return;}
+  showToast('Plano cadastrado!','s');
+  ['ia-plano-nome','ia-plano-val'].forEach(id=>document.getElementById(id).value='');
+  document.getElementById('ia-plano-form').style.display='none';
+  await loadPlanos();
+  document.getElementById('at-plano').value=data[0].id;
+  atAutoVal();
+}
+async function addProdInline(){
+  const nome=document.getElementById('ia-prod-nome').value.trim();
+  const val=parseFloat(document.getElementById('ia-prod-val').value)||null;
+  if(!nome)return;
+  const {data,error}=await sb.from('procedimentos').insert({nome,valor_padrao:val}).select();
+  if(error){showToast('Erro','e');return;}
+  showToast('Procedimento cadastrado!','s');
+  ['ia-prod-nome','ia-prod-val'].forEach(id=>document.getElementById(id).value='');
+  document.getElementById('ia-prod-form').style.display='none';
+  await loadProdutos();
+  document.getElementById('at-prod').value=data[0].id;
+  atAutoVal();
+}
+
+// AGENDA
+function renderDays(){
+  const today=new Date();
+  const names=['Dom','Seg','Ter','Qua','Qui','Sex','Sáb'];
+  let html='';
+  for(let i=-2;i<=8;i++){
+    const d=new Date(today);d.setDate(today.getDate()+i);
+    const iso=d.toISOString().split('T')[0];
+    if(i===0)selectedDay=iso;
+    html+=`<div class="day-chip${i===0?' on today':''}" onclick="selectDay('${iso}',this)">
+      <div class="day-name-s">${names[d.getDay()]}</div>
+      <div class="day-num-s">${d.getDate()}</div>
+    </div>`;
+  }
+  document.getElementById('days-row').innerHTML=html;
+}
+function selectDay(iso,el){
+  selectedDay=iso;
+  document.querySelectorAll('.day-chip').forEach(c=>c.classList.remove('on'));
+  el.classList.add('on');
+  renderSlots();
+}
+let agendaData=[];
+async function loadAgenda(){
+  const {data}=await sb.from('agenda').select('*,pacientes(nome,telefone),procedimentos(nome),clinicas(nome)').order('hora');
+  if(!data)return;
+  agendaData=data;
+  set('ag-sub',data.length+' consultas agendadas');
+  renderSlots();
+}
+function renderSlots(){
+  const slots=agendaData.filter(a=>a.data_consulta===selectedDay);
+  const el=document.getElementById('agenda-slots');
+  if(!slots.length){
+    el.innerHTML=`<div style="padding:28px;text-align:center;color:var(--ink3);font-size:13px;">Nenhuma consulta neste dia.<br><br><button onclick="openSheet('sh-ag')" style="background:var(--brand);color:white;border:none;border-radius:20px;padding:9px 20px;font-size:13px;cursor:pointer;font-family:var(--fb);">+ Agendar consulta</button></div>`;
+    return;
+  }
+  el.innerHTML=slots.map(s=>{
+    const sc=s.status==='confirmada'?'conf':s.status==='faltou'?'faltou':'pend';
+    const nome=s.pacientes?.nome||'Paciente';
+    const tel=(s.pacientes?.telefone||'').replace(/\D/g,'');
+    const proc=s.procedimentos?.nome||'Consulta';
+    const clin=s.clinicas?.nome||'';
+    const dataFmt=new Date(s.data_consulta+'T12:00:00').toLocaleDateString('pt-BR');
+    const msg=`Olá ${nome}! 👋\n\nLembrando sua consulta com a Dra. Paula Henriques amanhã, ${dataFmt} às ${s.hora||''}.\n\nLocal: ${clin}\n\nConfirme respondendo esta mensagem. 🌸\n\nDra. Paula Henriques — Dermatologia`;
+    const waLink=tel?`https://wa.me/55${tel}?text=${encodeURIComponent(msg)}`:'';
+    return `<div class="slot-item">
+      <div class="slot-time">${s.hora||'—'}</div>
+      <div class="slot-card ${sc}">
+        <div class="slot-name">${nome}</div>
+        <div class="slot-proc">${proc}${clin?' · '+clin:''}</div>
+        <div class="slot-acts">
+          <span class="badge ${s.status==='confirmada'?'b-paid':s.status==='faltou'?'b-gray':'b-pend'}">${s.status==='confirmada'?'Confirmada':s.status==='faltou'?'Faltou':'Pendente'}</span>
+          ${waLink?`<a href="${waLink}" target="_blank" class="sa-btn sa-wa">📱 WhatsApp</a>`:''}
+          <button class="sa-btn sa-att" onclick="navTo('atend',document.querySelectorAll('.nb')[2])">Atender</button>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+async function salvarAgenda(){
+  const pac=document.getElementById('ag-pac').value;
+  const data=document.getElementById('ag-data').value;
+  const hora=document.getElementById('ag-hora').value;
+  if(!pac||!data||!hora){showToast('Preencha paciente, data e horário','e');return;}
+  const {error}=await sb.from('agenda').insert({paciente_id:pac,procedimento_id:document.getElementById('ag-proc').value||null,clinica_id:document.getElementById('ag-clin').value||null,data_consulta:data,hora,status:'pendente',observacao:document.getElementById('ag-obs').value||null});
+  if(error){showToast('Erro: '+error.message,'e');return;}
+  closeSheet('sh-ag');showToast('Consulta agendada!','s');
+  document.getElementById('ag-obs').value='';
+  await loadAgenda();
 }
 
 // ATENDIMENTO
@@ -985,8 +1056,7 @@ function atAutoVal(){
 function atCalc(){
   const qtd=parseInt(document.getElementById('at-qtd').value)||1;
   const val=parseFloat(document.getElementById('at-val').value)||0;
-  const tot=val*qtd;
-  document.getElementById('at-tot').value=tot>0?'R$ '+fmt(tot):'—';
+  document.getElementById('at-tot').value=val*qtd>0?'R$ '+fmt(val*qtd):'—';
 }
 async function salvarAtend(){
   const data=document.getElementById('at-data').value;
@@ -999,11 +1069,14 @@ async function salvarAtend(){
   const aRec=Math.max(0,tot-rec);
   const status=rec>=tot&&tot>0?'recebido':rec>0?'parcial':'pendente';
   const {data:atData,error}=await sb.from('atendimentos').insert({
-    data_atendimento:data,paciente_id:document.getElementById('at-pac').value||null,
+    data_atendimento:data,
+    paciente_id:document.getElementById('at-pac').value||null,
     plano_id:document.getElementById('at-plano').value||null,
     procedimento_id:document.getElementById('at-prod').value||null,
     quantidade_pacientes:qtd,valor_plano:val,total_plano:tot,
-    valor_recebido:rec,valor_a_receber:aRec,status_pagamento:status,data_prevista_recebimento:document.getElementById('at-prev').value||null,
+    valor_recebido:rec,valor_a_receber:aRec,status_pagamento:status,
+    forma_recebimento:document.getElementById('at-forma').value||null,
+    data_prevista_recebimento:document.getElementById('at-prev').value||null,
     observacao:document.getElementById('at-obs').value||null,
   }).select();
   if(error){showToast('Erro: '+error.message,'e');return;}
@@ -1028,19 +1101,20 @@ async function salvarAtend(){
   limparAtend();loadDash();loadFin();
 }
 function limparAtend(){
-  ['at-pac','at-clin','at-plano','at-prod'].forEach(id=>{const el=document.getElementById(id);if(el)el.value='';});
-  ['at-val','at-obs'].forEach(id=>document.getElementById(id).value='');
+  ['at-pac','at-clin','at-plano','at-prod','at-forma'].forEach(id=>{const el=document.getElementById(id);if(el)el.value='';});
+  ['at-val','at-obs','at-prev'].forEach(id=>document.getElementById(id).value='');
   document.getElementById('at-qtd').value='1';
   document.getElementById('at-rec').value='0';
   document.getElementById('at-uber').value='0';
   document.getElementById('at-tot').value='—';
   limparRec();
-  ['pf-q','pf-h','pf-e','pf-hd','pf-cid','pf-cidd','pf-c','pf-p'].forEach(id=>document.getElementById(id).textContent='');
+  ['pf-q','pf-h','pf-e','pf-hd','pf-cid','pf-cidd','pf-c','pf-p'].forEach(id=>{const el=document.getElementById(id);if(el)el.textContent='';});
+  if(prontVisible)togglePront();
 }
 function togglePront(){
   prontVisible=!prontVisible;
   document.getElementById('pront-wrap').style.display=prontVisible?'block':'none';
-  document.getElementById('btn-pront-toggle').textContent=prontVisible?'Ocultar prontuário':'Mostrar campos do prontuário';
+  document.getElementById('btn-pt').textContent=prontVisible?'Ocultar prontuário':'Mostrar prontuário';
 }
 
 // GRAVAÇÃO
@@ -1058,7 +1132,7 @@ function iniciarRec(){
     document.getElementById('rec-body').innerHTML='<span style="color:var(--ink2)">'+transcricao+'</span><span style="color:var(--ink3);font-style:italic;">'+interim+'</span>';
     document.getElementById('btn-ia').disabled=!transcricao.trim();
   };
-  recognition.onerror=e=>{if(e.error!=='aborted')showToast('Erro no microfone — use Chrome','e');pararRec();};
+  recognition.onerror=e=>{if(e.error!=='aborted')showToast('Erro no microfone — use Chrome no computador','e');pararRec();};
   recognition.start();isRec=true;
   document.getElementById('rec-toggle').className='rec-btn rec-stop';
   document.getElementById('rec-lbl').textContent='Parar';
@@ -1073,32 +1147,26 @@ function pararRec(){
 }
 function limparRec(){
   pararRec();transcricao='';
-  document.getElementById('rec-body').innerHTML='<span class="rec-ph">Toque em Gravar e fale normalmente durante a consulta.</span>';
+  document.getElementById('rec-body').innerHTML='<span class="rec-ph">Toque em Gravar e fale normalmente. A IA preenche o prontuário automaticamente.</span>';
   document.getElementById('btn-ia').disabled=true;
 }
 
-// IA
+// IA GEMINI
 async function processarIA(){
   if(!transcricao.trim())return;
   document.getElementById('ia-load').classList.add('show');
   document.getElementById('btn-ia').disabled=true;
   try{
-    const GEMINI_KEY='AIzaSyDm9Lb5wMGCU5xS3vDpwSlul6KVv96N6jo';
-    const prompt=`Você é assistente médico de dermatologia. Analise a transcrição abaixo e extraia as informações médicas. Responda APENAS em JSON válido, sem texto adicional, sem marcadores de código:
-{"queixa_principal":"","historia_doenca_atual":"","exame_fisico":"","hipotese_diagnostica":"","cid_codigo":"","cid_descricao":"","conduta":"","prescricao":""}
-
-Transcrição:
-${transcricao}`;
-    const r=await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key='+GEMINI_KEY,{
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
+    const prompt='Você é assistente médico de dermatologia. Analise a transcrição e extraia as informações médicas. Responda APENAS em JSON válido sem texto adicional:\n{"queixa_principal":"","historia_doenca_atual":"","exame_fisico":"","hipotese_diagnostica":"","cid_codigo":"","cid_descricao":"","conduta":"","prescricao":""}\n\nTranscrição:\n'+transcricao;
+    const r=await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key='+GEMINI,{
+      method:'POST',headers:{'Content-Type':'application/json'},
       body:JSON.stringify({contents:[{parts:[{text:prompt}]}]})
     });
     const d=await r.json();
     const txt=d.candidates?.[0]?.content?.parts?.[0]?.text||'{}';
     const p=JSON.parse(txt.replace(/```json|```/g,'').trim());
     const map={queixa_principal:'pf-q',historia_doenca_atual:'pf-h',exame_fisico:'pf-e',hipotese_diagnostica:'pf-hd',cid_codigo:'pf-cid',cid_descricao:'pf-cidd',conduta:'pf-c',prescricao:'pf-p'};
-    Object.entries(map).forEach(([k,id])=>{if(p[k])document.getElementById(id).textContent=p[k];});
+    Object.entries(map).forEach(([k,id])=>{if(p[k]){const el=document.getElementById(id);if(el)el.textContent=p[k];}});
     if(!prontVisible)togglePront();
     showToast('Prontuário preenchido pela IA!','s');
   }catch(e){
@@ -1111,105 +1179,65 @@ ${transcricao}`;
   }
 }
 
-// IMPRIMIR PRONTUÁRIO
+// IMPRIMIR
 function imprimirProntuario(){
-  const pac = document.getElementById('at-pac');
-  const pacNome = pac.options[pac.selectedIndex]?.text || 'Paciente';
-  const data = document.getElementById('at-data').value;
-  const dataFmt = data ? new Date(data+'T12:00:00').toLocaleDateString('pt-BR') : new Date().toLocaleDateString('pt-BR');
-  const q = document.getElementById('pf-q').textContent.trim();
-  const h = document.getElementById('pf-h').textContent.trim();
-  const e = document.getElementById('pf-e').textContent.trim();
-  const hd = document.getElementById('pf-hd').textContent.trim();
-  const cid = document.getElementById('pf-cid').textContent.trim();
-  const cidd = document.getElementById('pf-cidd').textContent.trim();
-  const c = document.getElementById('pf-c').textContent.trim();
-  const p = document.getElementById('pf-p').textContent.trim();
-  const LOGO = 'https://raw.githubusercontent.com/drapaulahenriques/clinica-paula/main/PH%20-%20LOGOTIPO.png';
+  const pac=document.getElementById('at-pac');
+  const pacNome=pac.options[pac.selectedIndex]?.text||'Paciente';
+  const data=document.getElementById('at-data').value;
+  const dataFmt=data?new Date(data+'T12:00:00').toLocaleDateString('pt-BR'):new Date().toLocaleDateString('pt-BR');
+  const q=document.getElementById('pf-q').textContent.trim();
+  const h=document.getElementById('pf-h').textContent.trim();
+  const e=document.getElementById('pf-e').textContent.trim();
+  const hd=document.getElementById('pf-hd').textContent.trim();
+  const cid=document.getElementById('pf-cid').textContent.trim();
+  const cidd=document.getElementById('pf-cidd').textContent.trim();
+  const c=document.getElementById('pf-c').textContent.trim();
+  const p=document.getElementById('pf-p').textContent.trim();
 
-  const html = `<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
-*{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'DM Sans',sans-serif;color:#2C1A14;background:white;}
-@page{margin:0;size:A4;}
-.page{width:210mm;min-height:297mm;position:relative;background:white;display:flex;flex-direction:column;}
-.header{text-align:center;padding:28px 40px 16px;border-bottom:1px solid #E8D5CB;}
-.header img{width:180px;height:auto;}
-.content{padding:28px 50px;flex:1;}
-.patient-bar{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:20px;padding-bottom:10px;border-bottom:1px solid #E8D5CB;}
-.patient-name{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:400;color:#2C1A14;}
-.patient-date{font-size:11px;color:#A8877A;}
-.field{margin-bottom:14px;}
-.field-label{font-size:9px;color:#A8877A;letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px;}
-.field-value{font-size:13px;color:#2C1A14;line-height:1.6;padding:8px 12px;background:#FAF5F2;border-radius:6px;}
-.row2{display:grid;grid-template-columns:100px 1fr;gap:10px;}
-.assinatura{margin-top:28px;padding-top:16px;border-top:1px solid #E8D5CB;text-align:center;}
-.assinatura-linha{width:200px;height:1px;background:#C4A090;margin:36px auto 8px;}
-.assinatura-nome{font-family:'Cormorant Garamond',serif;font-size:14px;color:#2C1A14;}
-.assinatura-crm{font-size:10px;color:#A8877A;margin-top:2px;}
-.footer{background:#C4A090;padding:14px 40px;display:flex;align-items:center;gap:16px;margin-top:auto;position:relative;overflow:hidden;}
-.footer-watermark{position:absolute;left:-10px;bottom:-20px;font-family:'Cormorant Garamond',serif;font-size:100px;font-weight:300;color:rgba(255,255,255,.15);line-height:1;user-select:none;}
-.footer-crm{font-size:11px;color:white;font-weight:500;margin-bottom:4px;}
-.footer-item{font-size:11px;color:rgba(255,255,255,.85);margin-bottom:2px;}
-@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact;}}
-</style>
-</head>
-<body>
-<div class="page">
-  <div class="header"><img src="${LOGO}" alt="Dra. Paula Henriques"></div>
-  <div class="content">
-    <div class="patient-bar">
-      <div>
-        <div style="font-size:9px;color:#A8877A;letter-spacing:.08em;text-transform:uppercase;margin-bottom:2px;">Paciente</div>
-        <div class="patient-name">${pacNome}</div>
-      </div>
-      <div class="patient-date">Data: ${dataFmt}</div>
-    </div>
-    ${q ? '<div class="field"><div class="field-label">Queixa principal</div><div class="field-value">'+q+'</div></div>' : ''}
-    ${h ? '<div class="field"><div class="field-label">Historia da doenca</div><div class="field-value">'+h+'</div></div>' : ''}
-    ${e ? '<div class="field"><div class="field-label">Exame fisico / dermatologico</div><div class="field-value">'+e+'</div></div>' : ''}
-    ${hd ? '<div class="field"><div class="field-label">Hipotese diagnostica</div><div class="field-value">'+hd+'</div></div>' : ''}
-    ${(cid||cidd) ? '<div class="field row2"><div><div class="field-label">CID</div><div class="field-value">'+cid+'</div></div><div><div class="field-label">Descricao</div><div class="field-value">'+cidd+'</div></div></div>' : ''}
-    ${c ? '<div class="field"><div class="field-label">Conduta / Tratamento</div><div class="field-value">'+c+'</div></div>' : ''}
-    ${p ? '<div class="field"><div class="field-label">Prescricao</div><div class="field-value">'+p+'</div></div>' : ''}
-    <div class="assinatura">
-      <div class="assinatura-linha"></div>
-      <div class="assinatura-nome">Dra. Paula Henriques</div>
-      <div class="assinatura-crm">CRM MG 98077</div>
-    </div>
-  </div>
-  <div class="footer">
-    <div class="footer-watermark">ph</div>
-    <div style="margin-left:100px;">
-      <div class="footer-crm">CRM MG 98077</div>
-      <div class="footer-item">(032) 99819-9107</div>
-      <div class="footer-item">@dra.paulahenriques</div>
-    </div>
-  </div>
-</div>
-<script>window.onload=function(){window.print();}<\/script>
-</body></html>`;
+  const html='<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"><style>'+
+  '*{box-sizing:border-box;margin:0;padding:0;}body{font-family:"DM Sans",sans-serif;color:#1A0F0A;background:white;}'+
+  '@page{margin:0;size:A4;}'+
+  '.page{width:210mm;min-height:297mm;position:relative;background:white;display:flex;flex-direction:column;}'+
+  '.header{text-align:center;padding:28px 50px 20px;border-bottom:1.5px solid #E8D5CB;}'+
+  '.header img{width:180px;height:auto;}'+
+  '.content{padding:28px 50px;flex:1;}'+
+  '.patient-bar{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:24px;padding-bottom:12px;border-bottom:1px solid #E8D5CB;}'+
+  '.p-name{font-family:"Cormorant Garamond",serif;font-size:20px;font-weight:400;color:#1A0F0A;}'+
+  '.p-label{font-size:9px;color:#A8877A;letter-spacing:.1em;text-transform:uppercase;margin-bottom:3px;}'+
+  '.p-date{font-size:12px;color:#7A5548;}'+
+  '.field{margin-bottom:14px;}'+
+  '.f-label{font-size:9px;color:#A8877A;letter-spacing:.1em;text-transform:uppercase;margin-bottom:5px;}'+
+  '.f-value{font-size:13px;color:#1A0F0A;line-height:1.6;padding:9px 13px;background:#FAF5F2;border-radius:6px;border-left:2px solid #D4B8A5;}'+
+  '.row2{display:grid;grid-template-columns:110px 1fr;gap:12px;}'+
+  '.assinatura{margin-top:32px;padding-top:20px;border-top:1px solid #E8D5CB;display:flex;flex-direction:column;align-items:center;}'+
+  '.assinatura-linha{width:220px;height:1px;background:#9E6B52;margin-bottom:8px;}'+
+  '.assinatura-nome{font-family:"Cormorant Garamond",serif;font-size:15px;color:#1A0F0A;font-weight:400;}'+
+  '.assinatura-crm{font-size:10px;color:#A8877A;margin-top:3px;}'+
+  '.footer{background:#9E6B52;padding:16px 50px;display:flex;align-items:center;position:relative;overflow:hidden;}'+
+  '.footer-wm{position:absolute;left:-5px;bottom:-25px;font-family:"Cormorant Garamond",serif;font-size:110px;font-weight:300;color:rgba(255,255,255,.12);line-height:1;user-select:none;}'+
+  '.footer-content{margin-left:110px;}'+
+  '.footer-crm{font-size:11px;color:white;font-weight:500;margin-bottom:5px;}'+
+  '.footer-item{font-size:11px;color:rgba(255,255,255,.85);margin-bottom:3px;}'+
+  '@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact;}}'+
+  '</style></head><body><div class="page">'+
+  '<div class="header"><img src="'+LOGO_URL+'" alt="Dra. Paula Henriques" onerror="this.style.display=\'none\'"></div>'+
+  '<div class="content">'+
+  '<div class="patient-bar"><div><div class="p-label">Paciente</div><div class="p-name">'+pacNome+'</div></div><div><div class="p-label">Data</div><div class="p-date">'+dataFmt+'</div></div></div>'+
+  (q?'<div class="field"><div class="f-label">Queixa principal</div><div class="f-value">'+q+'</div></div>':'')+
+  (h?'<div class="field"><div class="f-label">História da doença</div><div class="f-value">'+h+'</div></div>':'')+
+  (e?'<div class="field"><div class="f-label">Exame físico / Dermatológico</div><div class="f-value">'+e+'</div></div>':'')+
+  (hd?'<div class="field"><div class="f-label">Hipótese diagnóstica</div><div class="f-value">'+hd+'</div></div>':'')+
+  ((cid||cidd)?'<div class="field row2"><div><div class="f-label">CID</div><div class="f-value">'+cid+'</div></div><div><div class="f-label">Descrição</div><div class="f-value">'+cidd+'</div></div></div>':'')+
+  (c?'<div class="field"><div class="f-label">Conduta / Tratamento</div><div class="f-value">'+c+'</div></div>':'')+
+  (p?'<div class="field"><div class="f-label">Prescrição</div><div class="f-value">'+p+'</div></div>':'')+
+  '<div class="assinatura"><div class="assinatura-linha"></div><div class="assinatura-nome">Dra. Paula Henriques</div><div class="assinatura-crm">CRM MG 98077</div></div>'+
+  '</div>'+
+  '<div class="footer"><div class="footer-wm">ph</div><div class="footer-content"><div class="footer-crm">CRM MG 98077</div><div class="footer-item">📞 (032) 99819-9107</div><div class="footer-item">📷 @dra.paulahenriques</div></div></div>'+
+  '</div><script>window.onload=function(){window.print();}<\/script></body></html>';
 
-  const win = window.open('','_blank');
+  const win=window.open('','_blank');
   win.document.write(html);
   win.document.close();
-}
-
-// ATUALIZAR SISTEMA
-async function atualizarSistema(){
-  const btn=document.getElementById('btn-refresh');
-  const icon=document.getElementById('refresh-icon');
-  icon.style.animation='spin 1s linear infinite';
-  btn.style.transform='scale(0.9)';
-  showToast('Atualizando...');
-  await loadAll();
-  icon.style.animation='none';
-  btn.style.transform='scale(1)';
-  showToast('Sistema atualizado!','s');
 }
 
 // UTILS
@@ -1221,21 +1249,6 @@ function showToast(msg,type=''){
   const t=document.getElementById('toast');
   t.textContent=msg;t.className='toast '+(type||'');
   t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2800);
-}
-
-// AGENDA TABLE
-async function createAgendaTable(){
-  await sb.rpc('exec_sql',{sql:`CREATE TABLE IF NOT EXISTS agenda (
-    id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
-    paciente_id UUID REFERENCES pacientes(id),
-    procedimento_id UUID REFERENCES procedimentos(id),
-    clinica_id UUID REFERENCES clinicas(id),
-    data_consulta DATE NOT NULL,
-    hora TIME,
-    status TEXT DEFAULT 'pendente',
-    observacao TEXT,
-    criado_em TIMESTAMPTZ DEFAULT NOW()
-  );`});
 }
 </script>
 </body>
