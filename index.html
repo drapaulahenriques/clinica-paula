@@ -1078,24 +1078,27 @@ async function processarIA(){
   document.getElementById('ia-load').classList.add('show');
   document.getElementById('btn-ia').disabled=true;
   try{
-    const r=await fetch('https://api.anthropic.com/v1/messages',{
+    const GEMINI_KEY='AIzaSyDm9Lb5wMGCU5xS3vDpwSlul6KVv96N6jo';
+    const prompt=`Você é assistente médico de dermatologia. Analise a transcrição abaixo e extraia as informações médicas. Responda APENAS em JSON válido, sem texto adicional, sem marcadores de código:
+{"queixa_principal":"","historia_doenca_atual":"","exame_fisico":"","hipotese_diagnostica":"","cid_codigo":"","cid_descricao":"","conduta":"","prescricao":""}
+
+Transcrição:
+${transcricao}`;
+    const r=await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key='+GEMINI_KEY,{
       method:'POST',
-      headers:{'Content-Type':'application/json','x-api-key':'SUA_ANTHROPIC_KEY_AQUI','anthropic-version':'2023-06-01'},
-      body:JSON.stringify({
-        model:'claude-sonnet-4-20250514',max_tokens:1500,
-        system:`Você é assistente médico de dermatologia. Analise a transcrição e extraia informações. Responda APENAS em JSON:
-{"queixa_principal":"","historia_doenca_atual":"","exame_fisico":"","hipotese_diagnostica":"","cid_codigo":"","cid_descricao":"","conduta":"","prescricao":""}`,
-        messages:[{role:'user',content:'Transcrição:\n\n'+transcricao}]
-      })
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({contents:[{parts:[{text:prompt}]}]})
     });
     const d=await r.json();
-    const p=JSON.parse((d.content?.[0]?.text||'{}').replace(/```json|```/g,'').trim());
+    const txt=d.candidates?.[0]?.content?.parts?.[0]?.text||'{}';
+    const p=JSON.parse(txt.replace(/```json|```/g,'').trim());
     const map={queixa_principal:'pf-q',historia_doenca_atual:'pf-h',exame_fisico:'pf-e',hipotese_diagnostica:'pf-hd',cid_codigo:'pf-cid',cid_descricao:'pf-cidd',conduta:'pf-c',prescricao:'pf-p'};
     Object.entries(map).forEach(([k,id])=>{if(p[k])document.getElementById(id).textContent=p[k];});
     if(!prontVisible)togglePront();
     showToast('Prontuário preenchido pela IA!','s');
   }catch(e){
-    showToast('Configure a chave da IA nas instruções','e');
+    console.error(e);
+    showToast('Erro na IA — preencha manualmente','e');
     if(!prontVisible)togglePront();
   }finally{
     document.getElementById('ia-load').classList.remove('show');
