@@ -384,7 +384,7 @@ textarea.fi{resize:none;height:68px;line-height:1.5;}
 <div class="app" id="main-app">
 <div class="sb" id="sidebar">
   <div class="sb-logo">
-    <img src="https://raw.githubusercontent.com/drapaulahenriques/clinica-paula/main/PH%20-%20LOGOTIPO.png" alt="Logo" onerror="this.style.display='none'">
+    <img src="https://raw.githubusercontent.com/drapaulahenriques/clinica-paula/main/PH%20-%20LOGOTIPO.png" alt="Logo" style="width:185px;height:auto;" onerror="this.style.display='none'">
     <div class="sb-logo-mini">PH</div>
     <div class="sb-name">Dra. Paula Henriques</div>
   </div>
@@ -392,7 +392,7 @@ textarea.fi{resize:none;height:68px;line-height:1.5;}
     <div class="sb-sec">Principal</div>
     <div class="nav-i on" onclick="nav('dash',this)" title="Dashboard"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg><span>Dashboard</span></div>
     <div class="nav-i" onclick="nav('agenda',this)" title="Agenda"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Agenda</span></div>
-    <div class="nav-i" onclick="nav('atend',this)" title="Novo atendimento"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg><span>Novo atendimento</span></div>
+    <div class="nav-i" onclick="nav('atend',this)" title="Novo atendimento" style="background:rgba(158,107,82,.25);border-left:3px solid var(--brand);"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg><span>Novo atendimento</span></div>
     <div class="sb-sec">Gestão</div>
     <div class="nav-i" onclick="nav('pac',this)" title="Pacientes"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg><span>Pacientes</span></div>
     <div class="nav-i" onclick="nav('hist',this)" title="Histórico"><svg viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><span>Histórico</span></div>
@@ -426,6 +426,10 @@ textarea.fi{resize:none;height:68px;line-height:1.5;}
     <button class="refresh-btn" onclick="refreshAll()">
       <svg id="ref-icon" viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>
       Atualizar
+    </button>
+    <button class="refresh-btn" onclick="doLogout()" style="color:var(--red);border-color:var(--red-l);">
+      <svg viewBox="0 0 24 24" style="stroke:var(--red);"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+      Sair
     </button>
   </div>
 </div>
@@ -500,7 +504,7 @@ textarea.fi{resize:none;height:68px;line-height:1.5;}
           </div>
           <div class="field">
             <label>Clínica / Local</label>
-            <select id="at-clin" class="fi"></select>
+            <select id="at-clin" class="fi" onchange="autoVal()"></select>
             <span class="add-link" onclick="toggleInline('il-clin')">+ Cadastrar nova clínica</span>
             <div class="inline-wrap" id="il-clin">
               <div class="inline-title">Nova clínica rápida</div>
@@ -552,8 +556,8 @@ textarea.fi{resize:none;height:68px;line-height:1.5;}
         <div class="form-sec">Valores</div>
         <div class="form-row r4">
           <div class="field"><label>Data</label><input type="date" id="at-data" class="fi"></div>
-          <div class="field"><label>Qtd. pacientes</label><input type="number" id="at-qtd" value="1" min="1" class="fi" oninput="calcVal()"></div>
-          <div class="field"><label>Valor unitário (R$)</label><input type="number" id="at-val" step="0.01" placeholder="0,00" class="fi" oninput="calcVal()"></div>
+          <div class="field"><label>Valor plano/convênio (R$)</label><input type="number" id="at-val" step="0.01" placeholder="0,00" class="fi" oninput="calcVal()"></div>
+          <div class="field"><label>Valor procedimento (R$)</label><input type="number" id="at-vproc" step="0.01" placeholder="0,00" value="0" class="fi" oninput="calcVal()"></div>
           <div class="field"><label>Desconto (%)</label><input type="number" id="at-desc" value="0" step="0.1" min="0" max="100" class="fi" oninput="calcVal()"></div>
         </div>
         <div class="form-row r4">
@@ -570,6 +574,19 @@ textarea.fi{resize:none;height:68px;line-height:1.5;}
             </select>
           </div>
           <div class="field"><label>Data prev. recebimento</label><input type="date" id="at-prev" class="fi"></div>
+        </div>
+        <div class="form-row r4" id="parc-row" style="display:none;">
+          <div class="field"><label>Parcelas</label>
+            <select id="at-parc" class="fi" onchange="calcParc()">
+              <option value="1">1x</option><option value="2">2x</option><option value="3">3x</option>
+              <option value="4">4x</option><option value="5">5x</option><option value="6">6x</option>
+              <option value="7">7x</option><option value="8">8x</option><option value="9">9x</option>
+              <option value="10">10x</option><option value="11">11x</option><option value="12">12x</option>
+            </select>
+          </div>
+          <div class="field"><label>Valor por parcela</label><input type="text" id="at-parc-val" readonly class="fi" style="background:var(--nude);"></div>
+          <div class="field"></div><div class="field"></div>
+        <div style="display:none;">
         </div>
         <div class="field" style="margin-bottom:16px;"><label>Observação</label><input type="text" id="at-obs" placeholder="Ex: retorno em 30 dias, paciente alérgica..." class="fi"></div>
         <div style="display:flex;gap:10px;">
@@ -707,6 +724,26 @@ textarea.fi{resize:none;height:68px;line-height:1.5;}
       <div><div class="cfg-label">Sair da conta</div><div class="cfg-sub">Encerrar sessão</div></div>
       <button class="btn btn-outline btn-sm" onclick="doLogout()">Sair</button>
     </div>
+
+    <!-- ADMIN ONLY -->
+    <div id="admin-section" style="display:none;">
+      <div class="cfg-section" style="color:var(--brand);margin-top:8px;">👑 Administração</div>
+      <div style="background:var(--brand-l);border:1.5px solid var(--brand);border-radius:var(--r);padding:18px;margin-top:6px;">
+        <div style="font-size:13px;font-weight:500;color:var(--ink);margin-bottom:14px;">Convidar novo usuário</div>
+        <div class="form-row r2" style="margin-bottom:12px;">
+          <div class="field"><label>E-mail do novo usuário</label><input id="inv-email" class="fi" type="email" placeholder="email@email.com"></div>
+          <div class="field"><label>Senha provisória</label><input id="inv-pass" class="fi" type="password" placeholder="Mínimo 6 caracteres"></div>
+        </div>
+        <div id="inv-msg" style="font-size:12px;margin-bottom:10px;min-height:16px;"></div>
+        <button class="btn btn-brand btn-sm" onclick="criarUsuario()">Criar acesso</button>
+        <div style="font-size:11px;color:var(--ink3);margin-top:10px;">O usuário poderá alterar a senha após o primeiro acesso.</div>
+      </div>
+
+      <div style="margin-top:14px;">
+        <div style="font-size:13px;font-weight:500;color:var(--ink);margin-bottom:10px;">Usuários cadastrados</div>
+        <div id="users-list" style="font-size:12px;color:var(--ink3);">Carregando...</div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -739,8 +776,9 @@ textarea.fi{resize:none;height:68px;line-height:1.5;}
 <div class="modal-bg" id="m-clin" onclick="closeModal('m-clin',event)">
   <div class="modal">
     <div class="modal-title">Nova clínica</div>
-    <div class="form-row r2"><div class="field"><label>Nome *</label><input id="nc-nome" class="fi" placeholder="Ex: Clínica CIA"></div><div class="field"><label>Cidade</label><input id="nc-cid" class="fi" placeholder="Juiz de Fora"></div></div>
-    <div class="field" style="margin-bottom:14px;"><label>Endereço completo</label><input id="nc-end" class="fi" placeholder="Rua, número, bairro"></div>
+    <div class="form-row r2"><div class="field"><label>Nome *</label><input id="nc-nome" class="fi" placeholder="Ex: Clínica CIA"></div><div class="field"><label>CEP</label><div style="display:flex;gap:8px;"><input id="nc-cep" class="fi" placeholder="00000-000" maxlength="9" oninput="buscaCEP(this.value)"><span id="nc-cep-load" style="display:none;font-size:11px;color:var(--brand);padding-top:10px;">buscando...</span></div></div></div>
+    <div class="form-row r2"><div class="field"><label>Rua / Logradouro</label><input id="nc-rua" class="fi" placeholder="Preenchido pelo CEP"></div><div class="field"><label>Número / Complemento</label><input id="nc-comp" class="fi" placeholder="Nº, sala, andar..."></div></div>
+    <div class="form-row r2"><div class="field"><label>Bairro</label><input id="nc-bairro" class="fi" placeholder="Preenchido pelo CEP"></div><div class="field"><label>Cidade</label><input id="nc-cid" class="fi" placeholder="Preenchido pelo CEP"></div></div>
     <div class="field"><label>Observações</label><textarea id="nc-obs" class="fi" placeholder="Dias de atendimento, horários..."></textarea></div>
     <div class="modal-foot"><button class="btn btn-outline" onclick="closeModal('m-clin')">Cancelar</button><button class="btn btn-brand" onclick="salvarClin()">Cadastrar</button></div>
   </div>
@@ -838,11 +876,19 @@ async function doSignup() {
 }
 async function doLogout() { await SB.auth.signOut(); location.reload(); }
 function lmsg(t, c='#8B1A1A') { const el=$('l-msg'); el.textContent=t; el.style.color=c; }
+const ADMIN_EMAIL = 'paulahenriquesmotta@gmail.com';
+
 function showApp(user) {
   $('login-screen').style.display = 'none';
   $('main-app').classList.add('open');
   $('sb-email').textContent = user.email;
   $('cfg-email').textContent = user.email;
+  // Show admin section only for Paula
+  if (user.email === ADMIN_EMAIL) {
+    const adminSec = $('admin-section');
+    if (adminSec) adminSec.style.display = 'block';
+    loadUsers();
+  }
   loadAll();
 }
 
@@ -900,7 +946,7 @@ async function loadProcs() {
 async function loadAtends() {
   // Use correct column names from real DB structure
   const {data, error} = await SB.from('atendimentos')
-    .select('*,pac:paciente_id(nome),pln:plano_id(nome),prc:id_do_procedimento(nome),cln:clinica_id(nome,endereco)')
+    .select('*,pac:paciente_id(nome),pln:plano_id(nome),prc:procedimento_id(nome),cln:clinica_id(nome,endereco)')
     .order('data_atendimento', {ascending:false});
   if (error) { console.error('Atends error:', error); return; }
   atends = data || [];
@@ -1130,13 +1176,17 @@ function renderClinTable() {
 async function salvarClin() {
   const nome = $('nc-nome').value.trim();
   if (!nome) { toast('Informe o nome','e'); return; }
+  const rua = $('nc-rua').value;
+  const comp = $('nc-comp').value;
+  const bairro = $('nc-bairro').value;
+  const end = [rua, comp, bairro].filter(Boolean).join(', ');
   const {error} = await SB.from('clinicas').insert({
-    nome, endereco:$('nc-end').value||null,
+    nome, endereco:end||null,
     cidade:$('nc-cid').value||null, observacao:$('nc-obs').value||null
   });
   if (error) { toast('Erro: '+error.message,'e'); return; }
   closeModal('m-clin'); toast('Clínica cadastrada!','s');
-  ['nc-nome','nc-end','nc-cid','nc-obs'].forEach(id=>$(id).value='');
+  ['nc-nome','nc-cep','nc-rua','nc-comp','nc-bairro','nc-cid','nc-obs'].forEach(id=>{const el=$(id);if(el)el.value='';});
   await loadClins(); renderDash();
 }
 
@@ -1180,7 +1230,7 @@ function renderProcTable() {
   const tbody = $('proc-tbody');
   if (!procs.length) { tbody.innerHTML='<tr><td colspan="5" class="empty">Nenhum procedimento cadastrado</td></tr>'; return; }
   tbody.innerHTML = procs.map(p => {
-    const ca = atends.filter(a=>a.id_do_procedimento===p.id);
+    const ca = atends.filter(a=>a.procedimento_id===p.id);
     return `<tr>
       <td class="td-name">${p.nome}</td>
       <td>${p.categoria||'—'}</td>
@@ -1339,41 +1389,52 @@ async function salvarAgenda() {
 function autoVal() {
   const pSel  = $('at-plano');
   const prSel = $('at-proc');
-  let val = parseFloat(pSel.options[pSel.selectedIndex]?.dataset?.val)||0;
-  if (!val) val = parseFloat(prSel.options[prSel.selectedIndex]?.dataset?.val)||0;
-  if (val) $('at-val').value = val.toFixed(2);
+  const pVal  = parseFloat(pSel.options[pSel.selectedIndex]?.dataset?.val)||0;
+  const prVal = parseFloat(prSel.options[prSel.selectedIndex]?.dataset?.val)||0;
+  if (pVal) $('at-val').value = pVal.toFixed(2);
+  if (prVal) $('at-vproc').value = prVal.toFixed(2);
+  // Auto set 90 days for CIA
+  const clinId = $('at-clin').value;
+  const CIA = '11111111-1111-1111-1111-111111111111';
+  if (clinId === CIA) {
+    const d = new Date($('at-data').value||new Date());
+    d.setDate(d.getDate()+90);
+    $('at-prev').value = d.toISOString().split('T')[0];
+  }
   calcVal();
 }
 function calcVal() {
-  const qtd  = parseInt($('at-qtd').value)||1;
-  const val  = parseFloat($('at-val').value)||0;
-  const desc = parseFloat($('at-desc').value)||0;
-  const sub  = val * qtd;
-  const tot  = Math.max(0, sub - (sub * desc/100));
+  const vPlano = parseFloat($('at-val').value)||0;
+  const vProc  = parseFloat($('at-vproc').value)||0;
+  const desc   = parseFloat($('at-desc').value)||0;
+  const sub    = vPlano + vProc;
+  const tot    = Math.max(0, sub - (sub * desc/100));
   $('at-tot').value = tot>0 ? 'R$ '+tot.toFixed(2).replace('.',',') : '—';
 }
 async function salvarAtend() {
   const data = $('at-data').value;
   if (!data) { toast('Informe a data','e'); return; }
-  const qtd  = parseInt($('at-qtd').value)||1;
   const val  = parseFloat($('at-val').value)||0;
+  const vProc2 = parseFloat($('at-vproc').value)||0;
   const desc = parseFloat($('at-desc').value)||0;
   const rec  = parseFloat($('at-rec').value)||0;
-  const sub  = val * qtd;
+  const sub  = val + vProc2;
   const tot  = Math.max(0, sub - (sub * desc/100));
   const pend = Math.max(0, tot - rec);
   const status = rec>=tot&&tot>0 ? 'recebido' : rec>0 ? 'parcial' : 'pendente';
 
   // Using correct column names from real DB
+  const vProc = parseFloat($('at-vproc').value)||0;
   const payload = {
     data_atendimento : data,
     paciente_id      : $('at-pac').value||null,
     plano_id         : $('at-plano').value||null,
     id_do_procedimento: $('at-proc').value||null,
     clinica_id       : $('at-clin').value||null,
-    pacientes        : qtd,
+    quantidade_pacientes: 1,
     valor_plano      : val,
-    plano_total      : tot,
+    valor_procedimento: vProc,
+    total_plano      : tot,
     valor_recebido   : rec,
     valor_a_receber  : pend,
     status_pagamento : status,
@@ -1413,8 +1474,9 @@ async function salvarAtend() {
 }
 function clearAtend() {
   ['at-pac','at-clin','at-plano','at-proc','at-forma'].forEach(id=>{const el=$(id);if(el)el.value='';});
-  ['at-val','at-obs','at-prev'].forEach(id=>$(id).value='');
-  $('at-qtd').value='1'; $('at-rec').value='0'; $('at-desc').value='0'; $('at-tot').value='—';
+  ['at-val','at-vproc','at-obs','at-prev'].forEach(id=>{const el=$(id);if(el)el.value='';});
+  $('at-rec').value='0'; $('at-desc').value='0'; $('at-tot').value='—';
+  const pr=$('parc-row');if(pr)pr.style.display='none';
   clearRec();
   ['pf-q','pf-h','pf-e','pf-hd','pf-cid','pf-cidd','pf-c','pf-p'].forEach(id=>{const el=$(id);if(el)el.textContent='';});
 }
@@ -1590,6 +1652,89 @@ ${p?`<div class="f"><div class="fl">Prescrição</div><div class="fv">${p}</div>
   const win = window.open('','_blank');
   win.document.write(html);
   win.document.close();
+}
+
+// ============================================================
+// ADMIN - CRIAR USUÁRIO
+async function criarUsuario() {
+  const email = $('inv-email').value.trim();
+  const pass  = $('inv-pass').value;
+  const msg   = $('inv-msg');
+  msg.textContent = '';
+  if (!email || !pass) { msg.textContent = 'Preencha e-mail e senha.'; msg.style.color='var(--red)'; return; }
+  if (pass.length < 6) { msg.textContent = 'Senha deve ter mínimo 6 caracteres.'; msg.style.color='var(--red)'; return; }
+  
+  msg.textContent = 'Criando usuário...'; msg.style.color='var(--brand)';
+  
+  const {data, error} = await SB.auth.admin?.createUser({
+    email, password: pass, email_confirm: true
+  }) || await SB.auth.signUp({email, password: pass});
+  
+  if (error) { 
+    msg.textContent = 'Erro: ' + error.message; 
+    msg.style.color = 'var(--red)'; 
+    return; 
+  }
+  msg.textContent = '✓ Usuário criado com sucesso!'; 
+  msg.style.color = 'var(--green)';
+  $('inv-email').value = '';
+  $('inv-pass').value = '';
+  setTimeout(() => { msg.textContent = ''; }, 4000);
+  loadUsers();
+}
+
+async function loadUsers() {
+  const el = $('users-list');
+  if (!el) return;
+  try {
+    const {data, error} = await SB.from('profiles').select('email,created_at').order('created_at');
+    if (error || !data?.length) {
+      el.innerHTML = '<div style="padding:10px;background:var(--nude);border-radius:var(--rs);color:var(--ink3);">Apenas você tem acesso ao sistema.</div>';
+      return;
+    }
+    el.innerHTML = data.map(u => `
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:9px 12px;background:var(--nude);border-radius:var(--rs);margin-bottom:6px;">
+        <div>
+          <div style="font-size:13px;font-weight:500;color:var(--ink);">${u.email}</div>
+          <div style="font-size:10px;color:var(--ink3);margin-top:2px;">Desde ${new Date(u.created_at).toLocaleDateString('pt-BR')}</div>
+        </div>
+        ${u.email !== ADMIN_EMAIL ? `<button class="btn btn-red" style="font-size:11px;padding:4px 10px;">Revogar</button>` : '<span style="font-size:10px;color:var(--brand);">👑 Admin</span>'}
+      </div>`).join('');
+  } catch(e) {
+    el.innerHTML = '<div style="font-size:12px;color:var(--ink3);">Não foi possível listar usuários.</div>';
+  }
+}
+
+// ============================================================
+// CEP AUTO-FILL
+async function buscaCEP(cep) {
+  cep = cep.replace(/\D/g,'');
+  if (cep.length !== 8) return;
+  $('nc-cep-load').style.display='inline';
+  try {
+    const r = await fetch('https://viacep.com.br/ws/'+cep+'/json/');
+    const d = await r.json();
+    if (d.erro) { toast('CEP não encontrado','e'); return; }
+    $('nc-rua').value = d.logradouro||'';
+    $('nc-bairro').value = d.bairro||'';
+    $('nc-cid').value = d.localidade||'';
+    $('nc-comp').focus();
+  } catch(e) { toast('Erro ao buscar CEP','e'); }
+  finally { $('nc-cep-load').style.display='none'; }
+}
+
+// PARCELAMENTO
+function showParc() {
+  const forma = $('at-forma').value;
+  const row = $('parc-row');
+  if (row) row.style.display = forma==='credito_parc' ? 'grid' : 'none';
+  calcParc();
+}
+function calcParc() {
+  const tot = parseFloat($('at-tot').value.replace('R$ ','').replace(',','.'))||0;
+  const parc = parseInt($('at-parc')?.value)||1;
+  const pp = $('at-parc-val');
+  if (pp && tot>0) pp.value = 'R$ '+(tot/parc).toFixed(2).replace('.',',')+'/parcela';
 }
 
 // ============================================================
