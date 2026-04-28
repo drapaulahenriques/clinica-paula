@@ -354,7 +354,7 @@ textarea.fi{resize:none;height:68px;line-height:1.5;}
 <div id="login-screen">
   <div class="login-left">
     <div class="login-left-content">
-      <img src="https://raw.githubusercontent.com/drapaulahenriques/clinica-paula/main/PH%20-%20SUBMARCA.png" class="login-brand-img" alt="PH" onerror="this.style.display='none'">
+      <img src="https://raw.githubusercontent.com/drapaulahenriques/clinica-paula/main/PH%20-%20SUBMARCA.png" class="login-brand-img" alt="PH" crossorigin="anonymous" onerror="this.style.display='none'">
       <div class="login-tagline">Beleza com delicadeza e naturalidade.</div>
       <div class="login-desc">Gestão inteligente para quem cuida com excelência. Seu consultório organizado, seus pacientes bem atendidos.</div>
       <div class="login-features">
@@ -367,7 +367,7 @@ textarea.fi{resize:none;height:68px;line-height:1.5;}
   </div>
   <div class="login-right">
     <div class="login-form-wrap">
-      <img src="https://raw.githubusercontent.com/drapaulahenriques/clinica-paula/main/PH%20-%20LOGOTIPO.png" class="login-logo-form" alt="Logo" onerror="this.style.display='none'">
+      <img src="https://raw.githubusercontent.com/drapaulahenriques/clinica-paula/main/PH%20-%20LOGOTIPO.png" class="login-logo-form" alt="Logo" crossorigin="anonymous" onerror="this.outerHTML='<div style=\'font-family:var(--fd);font-size:32px;color:var(--brand);text-align:center;margin-bottom:28px;\'>Dra. Paula Henriques</div>'">
       <div class="login-form-title">Acessar o sistema</div>
       <div class="login-form-sub">Entre com suas credenciais</div>
       <div class="lf"><label>E-mail</label><input class="linput" type="email" id="l-email" placeholder="paula@email.com" autocomplete="email"></div>
@@ -384,15 +384,15 @@ textarea.fi{resize:none;height:68px;line-height:1.5;}
 <div class="app" id="main-app">
 <div class="sb" id="sidebar">
   <div class="sb-logo">
-    <img src="https://raw.githubusercontent.com/drapaulahenriques/clinica-paula/main/PH%20-%20LOGOTIPO.png" alt="Logo" style="width:185px;height:auto;" onerror="this.style.display='none'">
+    <img src="https://raw.githubusercontent.com/drapaulahenriques/clinica-paula/main/PH%20-%20LOGOTIPO.png" alt="Logo" style="width:185px;height:auto;" crossorigin="anonymous" onerror="this.outerHTML='<span style=\'font-family:var(--fd);font-size:18px;color:rgba(255,255,255,.85);padding:2px 0;display:block;\'>Dra. Paula Henriques</span>'">
     <div class="sb-logo-mini">PH</div>
     <div class="sb-name">Dra. Paula Henriques</div>
   </div>
   <div class="sb-nav">
     <div class="sb-sec">Principal</div>
     <div class="nav-i on" onclick="nav('dash',this)" title="Dashboard"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg><span>Dashboard</span></div>
+    <div class="nav-i" onclick="nav('atend',this)" title="Novo atendimento" style="background:var(--brand);border-left:3px solid rgba(255,255,255,.5);margin:4px 8px;border-radius:var(--rs);"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg><span style="color:white;font-weight:600;">Novo atendimento</span></div>
     <div class="nav-i" onclick="nav('agenda',this)" title="Agenda"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Agenda</span></div>
-    <div class="nav-i" onclick="nav('atend',this)" title="Novo atendimento" style="background:rgba(158,107,82,.25);border-left:3px solid var(--brand);"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg><span>Novo atendimento</span></div>
     <div class="sb-sec">Gestão</div>
     <div class="nav-i" onclick="nav('pac',this)" title="Pacientes"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg><span>Pacientes</span></div>
     <div class="nav-i" onclick="nav('hist',this)" title="Histórico"><svg viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><span>Histórico</span></div>
@@ -442,11 +442,10 @@ textarea.fi{resize:none;height:68px;line-height:1.5;}
     <span class="chip-lbl">Filtrar por clínica:</span>
     <div class="chip on" onclick="setDashFilter('todas',this)">Todas</div>
   </div>
-  <div class="kpi-row c4" id="dash-kpis">
+  <div class="kpi-row c3" id="dash-kpis">
     <div class="kpi-card dark"><div class="kpi-lbl">Faturamento</div><div class="kpi-val" id="d-fat">—</div><div class="kpi-hint" id="d-fat-h">—</div></div>
     <div class="kpi-card dark"><div class="kpi-lbl">Recebido</div><div class="kpi-val green" id="d-rec">—</div><div class="kpi-hint">no caixa</div></div>
     <div class="kpi-card dark"><div class="kpi-lbl">A receber</div><div class="kpi-val amber" id="d-pend">—</div><div class="kpi-hint">convênios</div></div>
-    <div class="kpi-card"><div class="kpi-lbl">Ticket médio</div><div class="kpi-val" id="d-tick">—</div><div class="kpi-hint" id="d-pac-h">—</div></div>
   </div>
   <div id="d-alert"></div>
   <div class="grid2">
@@ -480,149 +479,165 @@ textarea.fi{resize:none;height:68px;line-height:1.5;}
 
 <!-- NOVO ATENDIMENTO -->
 <div class="page" id="pg-atend">
-  <div style="display:grid;grid-template-columns:1fr 400px;gap:16px;">
-    <div>
-      <div class="form-card">
-        <div class="form-title">Dados do atendimento</div>
-        <div class="form-sec">Paciente e local</div>
-        <div class="form-row r2">
-          <div class="field">
-            <label>Paciente</label>
-            <select id="at-pac" class="fi"></select>
-            <span class="add-link" onclick="toggleInline('il-pac')">+ Cadastrar nova paciente</span>
-            <div class="inline-wrap" id="il-pac">
-              <div class="inline-title">Nova paciente rápida</div>
-              <div class="form-row r2" style="margin-bottom:10px;">
-                <div class="field"><label>Nome *</label><input id="il-pac-nome" class="fi" placeholder="Nome completo"></div>
-                <div class="field"><label>Telefone</label><input id="il-pac-tel" class="fi" placeholder="(32) 99999-9999"></div>
-              </div>
-              <div style="display:flex;gap:8px;">
-                <button class="btn btn-brand btn-sm" onclick="addPacInline()">Salvar</button>
-                <button class="btn btn-outline btn-sm" onclick="toggleInline('il-pac')">Cancelar</button>
-              </div>
-            </div>
+  <div class="form-card">
+    <div class="form-title">Dados do atendimento</div>
+    <div class="form-sec">Paciente e local</div>
+    <div class="form-row" style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:16px;">
+      <div class="field">
+        <label>Paciente</label>
+        <select id="at-pac" class="fi"></select>
+        <span class="add-link" onclick="toggleInline('il-pac')">+ Cadastrar nova paciente</span>
+        <div class="inline-wrap" id="il-pac">
+          <div class="inline-title">Nova paciente rápida</div>
+          <div class="form-row r2" style="margin-bottom:10px;">
+            <div class="field"><label>Nome *</label><input id="il-pac-nome" class="fi" placeholder="Nome completo"></div>
+            <div class="field"><label>Telefone</label><input id="il-pac-tel" class="fi" placeholder="(32) 99999-9999"></div>
           </div>
-          <div class="field">
-            <label>Clínica / Local</label>
-            <select id="at-clin" class="fi" onchange="autoVal()"></select>
-            <span class="add-link" onclick="toggleInline('il-clin')">+ Cadastrar nova clínica</span>
-            <div class="inline-wrap" id="il-clin">
-              <div class="inline-title">Nova clínica rápida</div>
-              <div class="form-row r2" style="margin-bottom:10px;">
-                <div class="field"><label>Nome *</label><input id="il-clin-nome" class="fi" placeholder="Nome da clínica"></div>
-                <div class="field"><label>Endereço</label><input id="il-clin-end" class="fi" placeholder="Rua, número..."></div>
-              </div>
-              <div style="display:flex;gap:8px;">
-                <button class="btn btn-brand btn-sm" onclick="addClinInline()">Salvar</button>
-                <button class="btn btn-outline btn-sm" onclick="toggleInline('il-clin')">Cancelar</button>
-              </div>
-            </div>
+          <div style="display:flex;gap:8px;">
+            <button class="btn btn-brand btn-sm" onclick="addPacInline()">Salvar</button>
+            <button class="btn btn-outline btn-sm" onclick="toggleInline('il-pac')">Cancelar</button>
           </div>
         </div>
-        <div class="form-row r2">
-          <div class="field">
-            <label>Plano / Convênio</label>
-            <select id="at-plano" class="fi" onchange="autoVal()"></select>
-            <span class="add-link" onclick="toggleInline('il-plano')">+ Cadastrar novo plano</span>
-            <div class="inline-wrap" id="il-plano">
-              <div class="inline-title">Novo plano rápido</div>
-              <div class="form-row r2" style="margin-bottom:10px;">
-                <div class="field"><label>Nome *</label><input id="il-plano-nome" class="fi" placeholder="Nome do plano"></div>
-                <div class="field"><label>Valor (R$)</label><input id="il-plano-val" class="fi" type="number" placeholder="0,00"></div>
-              </div>
-              <div style="display:flex;gap:8px;">
-                <button class="btn btn-brand btn-sm" onclick="addPlanoInline()">Salvar</button>
-                <button class="btn btn-outline btn-sm" onclick="toggleInline('il-plano')">Cancelar</button>
-              </div>
-            </div>
+      </div>
+      <div class="field">
+        <label>Clínica / Local</label>
+        <select id="at-clin" class="fi" onchange="autoVal()"></select>
+        <span class="add-link" onclick="toggleInline('il-clin')">+ Cadastrar nova clínica</span>
+        <div class="inline-wrap" id="il-clin">
+          <div class="inline-title">Nova clínica rápida</div>
+          <div class="form-row r2" style="margin-bottom:10px;">
+            <div class="field"><label>Nome *</label><input id="il-clin-nome" class="fi" placeholder="Nome da clínica"></div>
+            <div class="field"><label>Endereço</label><input id="il-clin-end" class="fi" placeholder="Rua, número..."></div>
           </div>
-          <div class="field">
-            <label>Procedimento</label>
-            <select id="at-proc" class="fi" onchange="autoVal()"></select>
-            <span class="add-link" onclick="toggleInline('il-proc')">+ Cadastrar novo procedimento</span>
-            <div class="inline-wrap" id="il-proc">
-              <div class="inline-title">Novo procedimento rápido</div>
-              <div class="form-row r2" style="margin-bottom:10px;">
-                <div class="field"><label>Nome *</label><input id="il-proc-nome" class="fi" placeholder="Nome"></div>
-                <div class="field"><label>Valor (R$)</label><input id="il-proc-val" class="fi" type="number" placeholder="0,00"></div>
-              </div>
-              <div style="display:flex;gap:8px;">
-                <button class="btn btn-brand btn-sm" onclick="addProcInline()">Salvar</button>
-                <button class="btn btn-outline btn-sm" onclick="toggleInline('il-proc')">Cancelar</button>
-              </div>
-            </div>
+          <div style="display:flex;gap:8px;">
+            <button class="btn btn-brand btn-sm" onclick="addClinInline()">Salvar</button>
+            <button class="btn btn-outline btn-sm" onclick="toggleInline('il-clin')">Cancelar</button>
           </div>
         </div>
-        <div class="form-sec">Valores</div>
-        <div class="form-row r4">
-          <div class="field"><label>Data</label><input type="date" id="at-data" class="fi"></div>
-          <div class="field"><label>Valor plano/convênio (R$)</label><input type="number" id="at-val" step="0.01" placeholder="0,00" class="fi" oninput="calcVal()"></div>
-          <div class="field"><label>Valor procedimento (R$)</label><input type="number" id="at-vproc" step="0.01" placeholder="0,00" value="0" class="fi" oninput="calcVal()"></div>
-          <div class="field"><label>Desconto (%)</label><input type="number" id="at-desc" value="0" step="0.1" min="0" max="100" class="fi" oninput="calcVal()"></div>
-        </div>
-        <div class="form-row r4">
-          <div class="field"><label>Total</label><input type="text" id="at-tot" readonly class="fi" style="background:var(--nude);font-weight:600;color:var(--brand-d);"></div>
-          <div class="field"><label>Recebido hoje (R$)</label><input type="number" id="at-rec" value="0" step="0.01" class="fi"></div>
-          <div class="field"><label>Forma de pagamento</label>
-            <select id="at-forma" class="fi">
-              <option value="">Não recebido</option>
-              <option value="pix">📲 Pix</option>
-              <option value="dinheiro">💵 Dinheiro</option>
-              <option value="credito">💳 Crédito</option>
-              <option value="debito">💳 Débito</option>
-              <option value="transferencia">🏦 Transferência</option>
-            </select>
+      </div>
+      <div class="field">
+        <label>Plano / Convênio</label>
+        <select id="at-plano" class="fi" onchange="autoVal()"></select>
+        <span class="add-link" onclick="toggleInline('il-plano')">+ Cadastrar novo plano</span>
+        <div class="inline-wrap" id="il-plano">
+          <div class="inline-title">Novo plano rápido</div>
+          <div class="form-row r2" style="margin-bottom:10px;">
+            <div class="field"><label>Nome *</label><input id="il-plano-nome" class="fi" placeholder="Nome do plano"></div>
+            <div class="field"><label>Valor (R$)</label><input id="il-plano-val" class="fi" type="number" placeholder="0,00"></div>
           </div>
-          <div class="field"><label>Data prev. recebimento</label><input type="date" id="at-prev" class="fi"></div>
-        </div>
-        <div class="form-row r4" id="parc-row" style="display:none;">
-          <div class="field"><label>Parcelas</label>
-            <select id="at-parc" class="fi" onchange="calcParc()">
-              <option value="1">1x</option><option value="2">2x</option><option value="3">3x</option>
-              <option value="4">4x</option><option value="5">5x</option><option value="6">6x</option>
-              <option value="7">7x</option><option value="8">8x</option><option value="9">9x</option>
-              <option value="10">10x</option><option value="11">11x</option><option value="12">12x</option>
-            </select>
+          <div style="display:flex;gap:8px;">
+            <button class="btn btn-brand btn-sm" onclick="addPlanoInline()">Salvar</button>
+            <button class="btn btn-outline btn-sm" onclick="toggleInline('il-plano')">Cancelar</button>
           </div>
-          <div class="field"><label>Valor por parcela</label><input type="text" id="at-parc-val" readonly class="fi" style="background:var(--nude);"></div>
-          <div class="field"></div><div class="field"></div>
-        <div style="display:none;">
         </div>
-        <div class="field" style="margin-bottom:16px;"><label>Observação</label><input type="text" id="at-obs" placeholder="Ex: retorno em 30 dias, paciente alérgica..." class="fi"></div>
-        <div style="display:flex;gap:10px;">
-          <button class="btn btn-brand" onclick="salvarAtend()">✓ Registrar atendimento</button>
-          <button class="btn btn-outline" onclick="imprimirPront()">🖨 Imprimir prontuário</button>
+      </div>
+      <div class="field">
+        <label>Procedimento</label>
+        <select id="at-proc" class="fi" onchange="autoVal()"></select>
+        <span class="add-link" onclick="toggleInline('il-proc')">+ Cadastrar novo procedimento</span>
+        <div class="inline-wrap" id="il-proc">
+          <div class="inline-title">Novo procedimento rápido</div>
+          <div class="form-row r2" style="margin-bottom:10px;">
+            <div class="field"><label>Nome *</label><input id="il-proc-nome" class="fi" placeholder="Nome"></div>
+            <div class="field"><label>Valor (R$)</label><input id="il-proc-val" class="fi" type="number" placeholder="0,00"></div>
+          </div>
+          <div style="display:flex;gap:8px;">
+            <button class="btn btn-brand btn-sm" onclick="addProcInline()">Salvar</button>
+            <button class="btn btn-outline btn-sm" onclick="toggleInline('il-proc')">Cancelar</button>
+          </div>
         </div>
       </div>
     </div>
-    <div>
-      <div class="rec-card">
-        <div class="rec-hdr">
-          <div class="rec-title">🎙 Transcrição com IA</div>
-          <button class="rec-btn rec-start" id="rec-btn" onclick="toggleRec()">
-            <div class="rec-pulse" id="rec-pulse"></div><span id="rec-lbl">Gravar consulta</span>
-          </button>
+
+    <div class="form-sec">Valores</div>
+    <div class="form-row" style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr 1fr;gap:14px;margin-bottom:14px;">
+      <div class="field"><label>Data</label><input type="date" id="at-data" class="fi"></div>
+      <div class="field"><label>Valor plano/convênio (R$)</label><input type="number" id="at-val" step="0.01" placeholder="0,00" class="fi" oninput="calcVal()"></div>
+      <div class="field"><label>Valor procedimento (R$)</label><input type="number" id="at-vproc" step="0.01" placeholder="0,00" value="0" class="fi" oninput="calcVal()"></div>
+      <div class="field"><label>Desconto (%)</label><input type="number" id="at-desc" value="0" step="0.1" min="0" max="100" class="fi" oninput="calcVal()"></div>
+      <div class="field"><label>Total</label><input type="text" id="at-tot" readonly class="fi" style="background:var(--nude);font-weight:700;color:var(--brand-d);font-size:15px;"></div>
+      <div class="field"><label>Data prev. recebimento</label><input type="date" id="at-prev" class="fi"></div>
+    </div>
+    <div class="form-row" style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:14px;margin-bottom:14px;">
+      <div class="field"><label>Forma de pagamento</label>
+        <select id="at-forma" class="fi" onchange="showParc();autoRecebido()">
+          <option value="">Não recebido</option>
+          <option value="pix_avista">📲 Pix / à vista</option>
+          <option value="dinheiro_avista">💵 Dinheiro / à vista</option>
+          <option value="credito">💳 Crédito à vista</option>
+          <option value="credito_parc">💳 Crédito parcelado</option>
+          <option value="debito">💳 Débito</option>
+          <option value="transferencia">🏦 Transferência</option>
+        </select>
+      </div>
+      <div class="field" id="parc-field" style="display:none;"><label>Parcelas</label>
+        <select id="at-parc" class="fi" onchange="calcParc()">
+          <option value="1">1x</option><option value="2">2x</option><option value="3">3x</option>
+          <option value="4">4x</option><option value="5">5x</option><option value="6">6x</option>
+          <option value="7">7x</option><option value="8">8x</option><option value="9">9x</option>
+          <option value="10">10x</option><option value="11">11x</option><option value="12">12x</option>
+        </select>
+      </div>
+      <div class="field" id="parc-val-field" style="display:none;"><label>Valor por parcela</label><input type="text" id="at-parc-val" readonly class="fi" style="background:var(--nude);"></div>
+      <div class="field"><label>Observação</label><input type="text" id="at-obs" placeholder="Ex: retorno em 30 dias..." class="fi" oninput="parseRetorno(this.value)"></div>
+    </div>
+    <!-- Tabela de parcelas com datas -->
+    <div id="parc-datas" style="display:none;margin-bottom:14px;">
+      <div style="font-size:10px;color:var(--ink3);letter-spacing:.06em;text-transform:uppercase;font-weight:500;margin-bottom:8px;">Lançamento das parcelas no fluxo financeiro</div>
+      <div id="parc-datas-table"></div>
+    </div>
+    <div id="parc-row" style="display:none;"></div>
+    <div style="display:flex;gap:10px;margin-top:4px;">
+      <button class="btn btn-brand" style="padding:13px 32px;font-size:14px;" onclick="salvarAtend()">✓ Registrar atendimento</button>
+      <button class="btn btn-outline" onclick="imprimirPront()">🖨 Imprimir prontuário</button>
+    </div>
+  </div>
+
+  <!-- PRONTUÁRIO + GRAVAÇÃO em grid lado a lado abaixo -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+    <div class="rec-card">
+      <div class="rec-hdr">
+        <div class="rec-title">🎙 Transcrição com IA</div>
+        <button class="rec-btn rec-start" id="rec-btn" onclick="toggleRec()">
+          <div class="rec-pulse" id="rec-pulse"></div><span id="rec-lbl">Gravar consulta</span>
+        </button>
+      </div>
+      <div class="ia-bar" id="ia-bar"><div class="ia-dots"><div class="ia-d"></div><div class="ia-d"></div><div class="ia-d"></div></div><span style="font-size:12px;color:var(--brand-d);">IA organizando prontuário...</span></div>
+      <div class="rec-body" id="rec-body"><span class="rec-ph">Clique em "Gravar consulta" e fale normalmente durante a consulta. A IA transcreve e preenche o prontuário automaticamente. Funciona no Google Chrome.</span></div>
+      <div class="rec-foot">
+        <button class="btn btn-brand btn-sm" id="btn-ia" onclick="runIA()" disabled>✨ Organizar com IA</button>
+        <button class="btn btn-outline btn-sm" onclick="clearRec()">Limpar</button>
+      </div>
+    </div>
+    <div class="form-card" style="margin-bottom:0;">
+      <div class="form-title">Prontuário SOAP</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+        <div class="pf-mb">
+          <div class="pf-lbl" style="color:var(--brand);font-size:10px;font-weight:600;">S — SUBJETIVO</div>
+          <div class="pf-val" contenteditable id="pf-q" placeholder="Paciente relata surgimento de lesão em (local), há (tempo), com (características: prurido, ardor, descamação, mudança de cor...). Nega/refere fatores desencadeantes. HPP: Nega comorbidades, alergias e medicações contínuas."></div>
         </div>
-        <div class="ia-bar" id="ia-bar"><div class="ia-dots"><div class="ia-d"></div><div class="ia-d"></div><div class="ia-d"></div></div><span style="font-size:12px;color:var(--brand-d);">IA organizando prontuário...</span></div>
-        <div class="rec-body" id="rec-body"><span class="rec-ph">Clique em "Gravar consulta" e fale normalmente durante a consulta. A IA transcreve e preenche o prontuário automaticamente. Funciona no Google Chrome.</span></div>
-        <div class="rec-foot">
-          <button class="btn btn-brand btn-sm" id="btn-ia" onclick="runIA()" disabled>✨ Organizar com IA</button>
-          <button class="btn btn-outline btn-sm" onclick="clearRec()">Limpar</button>
+        <div class="pf-mb">
+          <div class="pf-lbl" style="color:var(--blue);font-size:10px;font-weight:600;">O — OBJETIVO</div>
+          <div class="pf-val" contenteditable id="pf-e" placeholder="BEG, LOTE, corado(a), hidratado(a). AR: MVUD s/ RA. AC: RR, 2T, BNF.&#10;Exame dermatológico: Lesão em (região), caracterizada por (tipo: mácula/pápula/placa/nódulo/vesícula), coloração (…), bordas (…), superfície (…), tamanho (…), com/sem sinais inflamatórios. Distribuição: localizada/disseminada."></div>
+        </div>
+        <div class="pf-mb">
+          <div class="pf-lbl" style="color:var(--amber);font-size:10px;font-weight:600;">A — AVALIAÇÃO</div>
+          <div class="pf-val" contenteditable id="pf-hd" placeholder="Hipóteses diagnósticas:&#10;1. …&#10;2. …&#10;3. …"></div>
+        </div>
+        <div class="pf-mb">
+          <div class="pf-lbl" style="color:var(--green);font-size:10px;font-weight:600;">P — PLANO</div>
+          <div class="pf-val" contenteditable id="pf-c" placeholder="Orientações gerais (higiene, evitar fatores desencadeantes...).&#10;Prescrição: (tópica/oral, se aplicável).&#10;Exames: (se necessário).&#10;Retorno em (tempo) ou se piora."></div>
+        </div>
+        <div style="display:grid;grid-template-columns:110px 1fr;gap:10px;" class="pf-mb">
+          <div><div class="pf-lbl">CID</div><div class="pf-val" contenteditable id="pf-cid" placeholder="L70.0"></div></div>
+          <div><div class="pf-lbl">Descrição CID</div><div class="pf-val" contenteditable id="pf-cidd" placeholder="Acne vulgar..."></div></div>
+        </div>
+        <div class="pf-mb">
+          <div class="pf-lbl">História / Evolução</div>
+          <div class="pf-val" contenteditable id="pf-h" placeholder="Evolução desde última consulta ou início do quadro..."></div>
         </div>
       </div>
-      <div class="form-card">
-        <div class="form-title">Prontuário</div>
-        <div class="pf-mb"><div class="pf-lbl">Queixa principal</div><div class="pf-val" contenteditable id="pf-q" placeholder="Motivo da consulta..."></div></div>
-        <div class="pf-mb"><div class="pf-lbl">História / Evolução</div><div class="pf-val" contenteditable id="pf-h" placeholder="Evolução dos sintomas..."></div></div>
-        <div class="pf-mb"><div class="pf-lbl">Exame físico / Dermatológico</div><div class="pf-val" contenteditable id="pf-e" placeholder="Achados ao exame..."></div></div>
-        <div class="pf-mb"><div class="pf-lbl">Hipótese diagnóstica</div><div class="pf-val" contenteditable id="pf-hd" placeholder="Diagnóstico..."></div></div>
-        <div style="display:grid;grid-template-columns:110px 1fr;gap:12px;margin-bottom:12px;">
-          <div><div class="pf-lbl">CID</div><div class="pf-val" contenteditable id="pf-cid" placeholder="Ex: L70.0"></div></div>
-          <div><div class="pf-lbl">Descrição CID</div><div class="pf-val" contenteditable id="pf-cidd" placeholder="Descrição..."></div></div>
-        </div>
-        <div class="pf-mb"><div class="pf-lbl">Conduta / Tratamento</div><div class="pf-val" contenteditable id="pf-c" placeholder="Conduta adotada..."></div></div>
-        <div><div class="pf-lbl">Prescrição</div><div class="pf-val" contenteditable id="pf-p" placeholder="Medicamentos prescritos..."></div></div>
-      </div>
+      <div><div class="pf-lbl">Prescrição</div><div class="pf-val" contenteditable id="pf-p" placeholder="Medicamentos prescritos, posologia e duração..."></div></div>
     </div>
   </div>
 </div>
@@ -647,12 +662,30 @@ textarea.fi{resize:none;height:68px;line-height:1.5;}
     <div class="kpi-card dark"><div class="kpi-lbl">A receber</div><div class="kpi-val amber" id="fin-pend">—</div></div>
     <div class="kpi-card"><div class="kpi-lbl">Atendimentos</div><div class="kpi-val" id="fin-count">—</div></div>
   </div>
-  <div class="chips" id="fin-chips">
-    <span class="chip-lbl">Filtrar:</span>
-    <div class="chip on" onclick="filterFin('todas',this)">Todas as clínicas</div>
+  <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:10px;">
+    <div class="chips" id="fin-chips" style="margin-bottom:0;">
+      <span class="chip-lbl">Clínica:</span>
+      <div class="chip on" onclick="filterFin('todas',this)">Todas as clínicas</div>
+    </div>
+    <div style="display:flex;gap:8px;align-items:center;margin-left:auto;">
+      <span class="chip-lbl">Período:</span>
+      <select id="fin-per" class="fi" style="padding:6px 10px;font-size:12px;width:auto;" onchange="filterFinData()">
+        <option value="todos">Todos</option>
+        <option value="hoje">Hoje</option>
+        <option value="semana">Esta semana</option>
+        <option value="mes">Este mês</option>
+        <option value="ano">Este ano</option>
+        <option value="personalizado">Personalizado</option>
+      </select>
+      <span id="fin-custom-dates" style="display:none;gap:6px;align-items:center;">
+        <input type="date" id="fin-de" class="fi" style="padding:6px 10px;font-size:12px;width:130px;" onchange="filterFinData()">
+        <span style="font-size:12px;color:var(--ink3);">até</span>
+        <input type="date" id="fin-ate" class="fi" style="padding:6px 10px;font-size:12px;width:130px;" onchange="filterFinData()">
+      </span>
+    </div>
   </div>
   <div class="card tbl-wrap">
-    <table><thead><tr><th>#</th><th>Data</th><th>Paciente</th><th>Clínica</th><th>Plano</th><th>Procedimento</th><th>Faturamento</th><th>Recebido</th><th>A receber</th><th>Forma</th><th>Status</th></tr></thead>
+    <table><thead><tr><th>#</th><th>Data</th><th>Paciente</th><th>Clínica</th><th>Plano</th><th>Procedimento</th><th>Faturamento</th><th>Recebido</th><th>A receber</th><th>Forma</th><th>Status</th><th></th></tr></thead>
     <tbody id="fin-tbody"></tbody></table>
   </div>
 </div>
@@ -692,6 +725,7 @@ textarea.fi{resize:none;height:68px;line-height:1.5;}
 
 <!-- HISTÓRICO -->
 <div class="page" id="pg-hist">
+  <div id="hist-analytics" style="margin-bottom:14px;"></div>
   <div class="search" style="width:260px;margin-bottom:14px;"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><input placeholder="Buscar paciente..." id="hist-search" oninput="filterHist()"></div>
   <div class="hist-wrap">
     <div class="hist-list" id="hist-list"></div>
@@ -796,33 +830,89 @@ textarea.fi{resize:none;height:68px;line-height:1.5;}
 <div class="modal-bg" id="m-proc" onclick="closeModal('m-proc',event)">
   <div class="modal">
     <div class="modal-title">Novo procedimento</div>
-    <div class="form-row r2"><div class="field"><label>Nome *</label><input id="npr-nome" class="fi" placeholder="Ex: Toxina Botulínica"></div><div class="field"><label>Categoria</label><select id="npr-cat" class="fi"><option>Toxina botulínica</option><option>Preenchimento</option><option>Bioestimulador</option><option>MMP / Intradermoterapia</option><option>Crioterapia</option><option>Consulta</option><option>Outro</option></select></div></div>
-    <div class="form-row r2"><div class="field"><label>Valor padrão (R$)</label><input id="npr-val" type="number" step="0.01" placeholder="0,00" class="fi"></div><div class="field"><label>Unidade</label><input id="npr-uni" class="fi" placeholder="sessão, UI, ml"></div></div>
+    <div class="form-row r2"><div class="field"><label>Nome *</label><input id="npr-nome" class="fi" placeholder="Ex: Toxina Botulínica"></div><div class="field"><label>Categoria</label><select id="npr-cat" class="fi"><option value="Toxina botulínica">Toxina botulínica</option><option value="Preenchimento">Preenchimento</option><option value="Bioestimulador">Bioestimulador</option><option value="MMP / Intradermoterapia">MMP / Intradermoterapia</option><option value="Crioterapia">Crioterapia</option><option value="Consulta">Consulta</option><option value="Outro">Outro</option></select></div></div>
+    <div class="form-row r2"><div class="field"><label>Valor padrão (R$)</label><input id="npr-val" type="number" step="0.01" placeholder="0,00" class="fi"></div><div class="field"><label>Unidade</label><input id="npr-uni" class="fi" placeholder="Ex: sessão, UI, ml"></div></div>
     <div class="modal-foot"><button class="btn btn-outline" onclick="closeModal('m-proc')">Cancelar</button><button class="btn btn-brand" onclick="salvarProc()">Cadastrar</button></div>
   </div>
 </div>
 
 <div class="modal-bg" id="m-msg" onclick="closeModal('m-msg',event)">
-  <div class="modal">
-    <div class="modal-title">Mensagem WhatsApp</div>
-    <div class="field" style="margin-bottom:10px;"><label>Texto da mensagem</label>
-      <textarea id="msg-txt" class="fi" style="height:140px;">Olá {nome}! 👋
+  <div class="modal" style="max-width:580px;">
+    <div class="modal-title">Mensagens automáticas</div>
+
+    <div style="display:flex;gap:8px;margin-bottom:16px;">
+      <button class="btn btn-brand btn-sm" id="tab-lembrete" onclick="switchTab('lembrete')">📅 Lembrete de consulta</button>
+      <button class="btn btn-outline btn-sm" id="tab-agradecimento" onclick="switchTab('agradecimento')">💌 Agradecimento pós-consulta</button>
+    </div>
+
+    <div id="tab-content-lembrete">
+      <div class="field" style="margin-bottom:10px;"><label>Texto da mensagem de lembrete</label>
+        <textarea id="msg-txt" class="fi" style="height:160px;">Olá {nome}! 👋
 
 Lembrando sua consulta com a Dra. Paula Henriques amanhã, {data} às {hora}.
 
-Local: {clinica}
-Endereço: {endereco}
+📍 Local: {clinica}
+📌 Endereço: {endereco}
 
 Confirme respondendo esta mensagem. 🌸
 
-Dra. Paula Henriques — Dermatologia</textarea>
+━━━━━━━━━━━━━━
+Dra. Paula Henriques — Dermatologia
+📷 Instagram: https://www.instagram.com/dra.paulahenriques/</textarea>
+      </div>
+      <div style="background:var(--nude);border-radius:var(--rs);padding:10px 12px;font-size:11px;color:var(--ink3);">Variáveis disponíveis: {nome} {data} {hora} {clinica} {endereco}</div>
     </div>
-    <div style="background:var(--nude);border-radius:var(--rs);padding:10px 12px;font-size:11px;color:var(--ink3);">Variáveis: {nome} {data} {hora} {clinica} {endereco}</div>
-    <div class="modal-foot"><button class="btn btn-outline" onclick="closeModal('m-msg')">Cancelar</button><button class="btn btn-brand" onclick="closeModal('m-msg');toast('Mensagem salva!','s')">Salvar</button></div>
+
+    <div id="tab-content-agradecimento" style="display:none;">
+      <div style="background:var(--amber-l);border:1px solid rgba(122,78,8,.2);border-radius:var(--rs);padding:10px 13px;font-size:12px;color:var(--amber);margin-bottom:12px;">
+        ⏰ Esta mensagem é enviada manualmente via WhatsApp ~1h após a consulta. Clique em "Enviar agradecimento" no histórico do atendimento.
+      </div>
+      <div class="field" style="margin-bottom:10px;"><label>Texto da mensagem de agradecimento</label>
+        <textarea id="msg-agra" class="fi" style="height:180px;">Olá {nome}! 🌸
+
+Foi um prazer receber você hoje na Clínica! Espero que tenha gostado da consulta com a Dra. Paula. 💕
+
+Fique à vontade para tirar dúvidas por aqui a qualquer momento.
+
+Se quiser acompanhar dicas de skincare e cuidados com a pele, siga nosso Instagram:
+👇 https://www.instagram.com/dra.paulahenriques/
+
+Até a próxima! ✨
+Dra. Paula Henriques — Dermatologia</textarea>
+      </div>
+      <div style="background:var(--nude);border-radius:var(--rs);padding:10px 12px;font-size:11px;color:var(--ink3);">Variável disponível: {nome}</div>
+    </div>
+
+    <div class="modal-foot">
+      <button class="btn btn-outline" onclick="closeModal('m-msg')">Cancelar</button>
+      <button class="btn btn-brand" onclick="salvarMensagens()">Salvar mensagens</button>
+    </div>
   </div>
 </div>
 
 <div class="toast" id="toast"></div>
+
+<!-- MODAL PÓS-ATENDIMENTO -->
+<div class="modal-bg" id="m-pos" style="z-index:700;">
+  <div class="modal" style="max-width:460px;text-align:center;">
+    <div style="font-size:40px;margin-bottom:12px;">✅</div>
+    <div class="modal-title" style="text-align:center;border:none;padding:0;margin-bottom:8px;">Atendimento registrado!</div>
+    <div style="font-size:13px;color:var(--ink3);margin-bottom:20px;" id="pos-info">Consulta salva com sucesso.</div>
+    <div style="background:var(--nude);border-radius:var(--r);padding:16px;margin-bottom:20px;text-align:left;">
+      <div style="font-size:11px;font-weight:600;color:var(--ink3);letter-spacing:.05em;text-transform:uppercase;margin-bottom:10px;">💌 Enviar mensagem de agradecimento</div>
+      <div style="font-size:13px;color:var(--ink2);margin-bottom:12px;" id="pos-pac-nome">—</div>
+      <div style="font-size:12px;color:var(--ink3);margin-bottom:12px;line-height:1.6;" id="pos-msg-preview"></div>
+      <button id="pos-wa-btn" class="btn btn-brand" style="width:100%;justify-content:center;gap:8px;" onclick="enviarPosAtend()">
+        <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:none;stroke:white;stroke-width:2;"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        Enviar via WhatsApp
+      </button>
+    </div>
+    <div style="display:flex;gap:10px;justify-content:center;">
+      <button class="btn btn-outline" onclick="closeModal('m-pos');clearAtend()">Novo atendimento</button>
+      <button class="btn btn-brand" onclick="closeModal('m-pos');clearAtend();nav('fin',document.querySelector('[onclick*=\'fin\']'))">Ver financeiro</button>
+    </div>
+  </div>
+</div>
 
 <script>
 // ============================================================
@@ -897,7 +987,7 @@ function showApp(user) {
 // ============================================================
 async function loadAll() {
   await Promise.all([loadPacs(), loadClins(), loadPlans(), loadProcs(), loadAtends(), loadAgenda()]);
-  renderDash(); renderFin(); renderClinTable(); renderPlanTable(); renderProcTable(); renderHistList(pacs);
+  renderDash(); renderFin(); renderClinTable(); renderPlanTable(); renderProcTable(); renderHistList(pacs); renderAnalytics();
 }
 async function refreshAll() {
   const icon = $('ref-icon');
@@ -1048,6 +1138,120 @@ function renderDash() {
 }
 
 // ============================================================
+// FINANCEIRO — FILTRO DE DATA
+// ============================================================
+let finDataFilter = 'todos';
+function filterFinData() {
+  const per = $('fin-per').value;
+  const customEl = $('fin-custom-dates');
+  customEl.style.display = per === 'personalizado' ? 'flex' : 'none';
+  finDataFilter = per;
+  renderFinTable();
+}
+function getFinDateRange() {
+  const per = $('fin-per')?.value || 'todos';
+  const now = new Date();
+  const today = now.toISOString().split('T')[0];
+  if (per === 'hoje') return [today, today];
+  if (per === 'semana') {
+    const start = new Date(now); start.setDate(now.getDate() - now.getDay());
+    const end   = new Date(now); end.setDate(now.getDate() + (6 - now.getDay()));
+    return [start.toISOString().split('T')[0], end.toISOString().split('T')[0]];
+  }
+  if (per === 'mes') {
+    return [`${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-01`, today];
+  }
+  if (per === 'ano') return [`${now.getFullYear()}-01-01`, today];
+  if (per === 'personalizado') {
+    const de = $('fin-de')?.value;
+    const ate = $('fin-ate')?.value;
+    if (de && ate) return [de, ate];
+  }
+  return null;
+}
+
+// ============================================================
+// EDIÇÃO DE REGISTROS
+// ============================================================
+function editarPac(id) {
+  const p = pacs.find(x=>x.id===id);
+  if (!p) return;
+  const nome = prompt('Nome da paciente:', p.nome);
+  if (nome === null) return;
+  const tel = prompt('Telefone:', p.telefone||'');
+  if (tel === null) return;
+  SB.from('pacientes').update({nome:nome.trim(), telefone:tel||null}).eq('id',id).then(({error})=>{
+    if (error) { toast('Erro: '+error.message,'e'); return; }
+    toast('Paciente atualizada!','s');
+    loadPacs();
+  });
+}
+function editarClin(id) {
+  const c = clins.find(x=>x.id===id);
+  if (!c) return;
+  const nome = prompt('Nome da clínica:', c.nome);
+  if (nome === null) return;
+  SB.from('clinicas').update({nome:nome.trim()}).eq('id',id).then(({error})=>{
+    if (error) { toast('Erro: '+error.message,'e'); return; }
+    toast('Clínica atualizada!','s');
+    loadClins();
+  });
+}
+function editarAtend(id) {
+  const a = atends.find(x=>x.id===id);
+  if (!a) return;
+  const rec = prompt('Valor recebido (R$):', a.valor_recebido||0);
+  if (rec === null) return;
+  const status = parseFloat(rec) >= parseFloat(a.plano_total||0) ? 'recebido' : parseFloat(rec) > 0 ? 'parcial' : 'pendente';
+  const pend = Math.max(0, parseFloat(a.plano_total||0) - parseFloat(rec));
+  SB.from('atendimentos').update({valor_recebido:parseFloat(rec)||0, valor_a_receber:pend, status_pagamento:status}).eq('id',id).then(async ({error})=>{
+    if (error) { toast('Erro: '+error.message,'e'); return; }
+    toast('Atendimento atualizado!','s');
+    await loadAtends();
+    renderDash(); renderFin();
+  });
+}
+
+// ============================================================
+// ANALYTICS DO HISTÓRICO
+// ============================================================
+function renderAnalytics() {
+  const el = $('hist-analytics');
+  if (!el || !atends.length) return;
+
+  // Top planos
+  const planCount = {};
+  atends.forEach(a=>{ if(a.pln?.nome){ planCount[a.pln.nome]=(planCount[a.pln.nome]||0)+1; }});
+  const topPlanos = Object.entries(planCount).sort((a,b)=>b[1]-a[1]).slice(0,3);
+
+  // Top procedimentos
+  const procCount = {};
+  atends.forEach(a=>{ if(a.prc?.nome){ procCount[a.prc.nome]=(procCount[a.prc.nome]||0)+1; }});
+  const topProcs = Object.entries(procCount).sort((a,b)=>b[1]-a[1]).slice(0,3);
+
+  // Top pacientes por faturamento
+  const pacFat = {};
+  atends.forEach(a=>{ if(a.pac?.nome){ pacFat[a.pac.nome]=(pacFat[a.pac.nome]||0)+parseFloat(a.plano_total||0); }});
+  const topPacs = Object.entries(pacFat).sort((a,b)=>b[1]-a[1]).slice(0,3);
+
+  el.innerHTML = `
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:16px;">
+    <div class="kpi-card">
+      <div class="kpi-lbl">Plano mais usado</div>
+      ${topPlanos.map((p,i)=>`<div style="display:flex;justify-content:space-between;align-items:center;padding:4px 0;border-bottom:1px solid var(--border);"><span style="font-size:12px;color:var(--ink2);">${i+1}. ${p[0]}</span><span style="font-size:11px;font-weight:600;color:var(--brand);">${p[1]}×</span></div>`).join('')}
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-lbl">Procedimento mais feito</div>
+      ${topProcs.length ? topProcs.map((p,i)=>`<div style="display:flex;justify-content:space-between;align-items:center;padding:4px 0;border-bottom:1px solid var(--border);"><span style="font-size:12px;color:var(--ink2);">${i+1}. ${p[0]}</span><span style="font-size:11px;font-weight:600;color:var(--brand);">${p[1]}×</span></div>`).join('') : '<div style="font-size:12px;color:var(--ink3);padding-top:8px;">Nenhum procedimento registrado</div>'}
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-lbl">Maior faturamento por paciente</div>
+      ${topPacs.map((p,i)=>`<div style="display:flex;justify-content:space-between;align-items:center;padding:4px 0;border-bottom:1px solid var(--border);"><span style="font-size:12px;color:var(--ink2);">${i+1}. ${p[0]}</span><span style="font-size:11px;font-weight:600;color:var(--green);">R$ ${fmt(p[1])}</span></div>`).join('')}
+    </div>
+  </div>`;
+}
+
+// ============================================================
 // FINANCEIRO
 // ============================================================
 function filterFin(id, el) {
@@ -1057,14 +1261,6 @@ function filterFin(id, el) {
   renderFinTable();
 }
 function renderFin() {
-  const fat  = atends.reduce((s,a)=>s+(parseFloat(a.plano_total)||0),0);
-  const rec  = atends.reduce((s,a)=>s+(parseFloat(a.valor_recebido)||0),0);
-  const pend = atends.reduce((s,a)=>s+(parseFloat(a.valor_a_receber)||0),0);
-  $('fin-fat').textContent   = 'R$ '+fmt(fat);
-  $('fin-rec').textContent   = 'R$ '+fmt(rec);
-  $('fin-pend').textContent  = 'R$ '+fmt(pend);
-  $('fin-count').textContent = atends.length;
-
   // Build chips
   const chips = $('fin-chips');
   chips.querySelectorAll('.chip[data-clin]').forEach(c=>c.remove());
@@ -1079,10 +1275,22 @@ function renderFin() {
   renderFinTable();
 }
 function renderFinTable() {
-  const lista = finFilter==='todas' ? atends : atends.filter(a=>a.clinica_id===finFilter);
+  let lista = finFilter==='todas' ? atends : atends.filter(a=>a.clinica_id===finFilter);
+  const range = getFinDateRange();
+  if (range) {
+    lista = lista.filter(a => a.data_atendimento >= range[0] && a.data_atendimento <= range[1]);
+  }
+  // Atualiza KPIs com a lista filtrada
+  const fat  = lista.reduce((s,a)=>s+(parseFloat(a.plano_total)||0),0);
+  const rec  = lista.reduce((s,a)=>s+(parseFloat(a.valor_recebido)||0),0);
+  const pend = lista.reduce((s,a)=>s+(parseFloat(a.valor_a_receber)||0),0);
+  $('fin-fat').textContent   = 'R$ '+fmt(fat);
+  $('fin-rec').textContent   = 'R$ '+fmt(rec);
+  $('fin-pend').textContent  = 'R$ '+fmt(pend);
+  $('fin-count').textContent = lista.length;
   const tbody = $('fin-tbody');
-  if (!lista.length) { tbody.innerHTML='<tr><td colspan="11" class="empty">Nenhum lançamento encontrado</td></tr>'; return; }
-  const formas = {pix:'📲 Pix',dinheiro:'💵 Dinheiro',credito:'💳 Crédito',debito:'💳 Débito',transferencia:'🏦 Transferência'};
+  if (!lista.length) { tbody.innerHTML='<tr><td colspan="12" class="empty">Nenhum lançamento encontrado</td></tr>'; return; }
+  const formas = {pix_avista:'📲 Pix/à vista',dinheiro_avista:'💵 Dinheiro/à vista',credito:'💳 Crédito',credito_parc:'💳 Crédito parc.',debito:'💳 Débito',transferencia:'🏦 Transferência',pix:'📲 Pix',dinheiro:'💵 Dinheiro'};
   tbody.innerHTML = lista.map((a,i) => {
     const dt = new Date(a.data_atendimento+'T12:00:00').toLocaleDateString('pt-BR');
     const s  = a.status_pagamento;
@@ -1101,6 +1309,7 @@ function renderFinTable() {
       <td style="color:var(--amber);font-weight:600;">R$ ${fmt(a.valor_a_receber)}</td>
       <td>${forma}</td>
       <td><span class="bdg ${bdg}">${lbl}</span></td>
+      <td><button class="btn btn-outline btn-sm" onclick="editarAtend('${a.id}')">Editar</button></td>
     </tr>`;
   }).join('');
 }
@@ -1126,7 +1335,10 @@ function renderPacTable(lista) {
       <td>${ca.length}</td>
       <td style="font-weight:600;">R$ ${fmt(fat)}</td>
       <td><span class="bdg ${pend>0?'bdg-amber':'bdg-green'}">${pend>0?'Pendente':'Em dia'}</span></td>
-      <td><button class="btn btn-red" onclick="delReg('pacientes','${p.id}','${esc(p.nome)}')">Excluir</button></td>
+      <td><div style="display:flex;gap:6px;">
+        <button class="btn btn-outline btn-sm" onclick="editarPac('${p.id}')">Editar</button>
+        <button class="btn btn-red" onclick="delReg('pacientes','${p.id}','${esc(p.nome)}')">Excluir</button>
+      </div></td>
     </tr>`;
   }).join('');
 }
@@ -1169,7 +1381,10 @@ function renderClinTable() {
       <td style="font-weight:600;">R$ ${fmt(fat)}</td>
       <td style="color:var(--green);font-weight:600;">R$ ${fmt(rec)}</td>
       <td style="color:var(--amber);font-weight:600;">R$ ${fmt(pen)}</td>
-      <td><button class="btn btn-red" onclick="delReg('clinicas','${c.id}','${esc(c.nome)}')">Excluir</button></td>
+      <td><div style="display:flex;gap:6px;">
+        <button class="btn btn-outline btn-sm" onclick="editarClin('${c.id}')">Editar</button>
+        <button class="btn btn-red" onclick="delReg('clinicas','${c.id}','${esc(c.nome)}')">Excluir</button>
+      </div></td>
     </tr>`;
   }).join('');
 }
@@ -1242,14 +1457,19 @@ function renderProcTable() {
 }
 async function salvarProc() {
   const nome = $('npr-nome').value.trim();
-  if (!nome) { toast('Informe o nome','e'); return; }
-  const {error} = await SB.from('procedimentos').insert({
-    nome, categoria:$('npr-cat').value,
-    valor_padrao:parseFloat($('npr-val').value)||null
-  });
-  if (error) { toast('Erro: '+error.message,'e'); return; }
+  if (!nome) { toast('Informe o nome do procedimento','e'); return; }
+  const payload = {
+    nome,
+    categoria: $('npr-cat').value || 'Outro',
+    valor_padrao: parseFloat($('npr-val').value)||null,
+  };
+  const uni = $('npr-uni')?.value?.trim();
+  if (uni) payload.unidade = uni;
+  const {error} = await SB.from('procedimentos').insert(payload);
+  if (error) { toast('Erro ao salvar: '+error.message,'e'); console.error('proc err',error); return; }
   closeModal('m-proc'); toast('Procedimento cadastrado!','s');
-  ['npr-nome','npr-val','npr-uni'].forEach(id=>$(id).value='');
+  $('npr-nome').value=''; $('npr-val').value='';
+  const uni2 = $('npr-uni'); if(uni2) uni2.value='';
   await loadProcs();
 }
 
@@ -1258,6 +1478,25 @@ async function salvarProc() {
 // ============================================================
 async function delReg(table, id, nome) {
   if (!confirm(`Excluir "${nome}"?\nEsta ação não pode ser desfeita.`)) return;
+
+  // Limpar referências de FK antes de excluir para evitar violação de constraint
+  if (table === 'clinicas') {
+    await SB.from('agenda').update({clinica_id: null}).eq('clinica_id', id);
+    await SB.from('atendimentos').update({clinica_id: null}).eq('clinica_id', id);
+  }
+  if (table === 'pacientes') {
+    await SB.from('agenda').update({paciente_id: null}).eq('paciente_id', id);
+    await SB.from('atendimentos').update({paciente_id: null}).eq('paciente_id', id);
+  }
+  if (table === 'planos') {
+    await SB.from('pacientes').update({plano_id: null}).eq('plano_id', id);
+    await SB.from('atendimentos').update({plano_id: null}).eq('plano_id', id);
+  }
+  if (table === 'procedimentos') {
+    await SB.from('agenda').update({procedimento_id: null}).eq('procedimento_id', id);
+    await SB.from('atendimentos').update({procedimento_id: null}).eq('procedimento_id', id);
+  }
+
   const {error} = await SB.from(table).delete().eq('id', id);
   if (error) { toast('Erro: '+error.message,'e'); return; }
   toast('Excluído!', 's');
@@ -1393,15 +1632,25 @@ function autoVal() {
   const prVal = parseFloat(prSel.options[prSel.selectedIndex]?.dataset?.val)||0;
   if (pVal) $('at-val').value = pVal.toFixed(2);
   if (prVal) $('at-vproc').value = prVal.toFixed(2);
-  // Auto set 90 days for CIA
+  // Auto 90 dias para clínica CIA (busca pelo nome, não UUID fixo)
   const clinId = $('at-clin').value;
-  const CIA = '11111111-1111-1111-1111-111111111111';
-  if (clinId === CIA) {
-    const d = new Date($('at-data').value||new Date());
+  const clinNome = ($('at-clin').options[$('at-clin').selectedIndex]?.text||'').toUpperCase();
+  if (clinId && clinNome.includes('CIA')) {
+    const dataAt = $('at-data').value;
+    const d = dataAt ? new Date(dataAt+'T12:00:00') : new Date();
     d.setDate(d.getDate()+90);
     $('at-prev').value = d.toISOString().split('T')[0];
   }
   calcVal();
+}
+function autoRecebido() {
+  const forma = $('at-forma').value;
+  // Pix/à vista e Dinheiro/à vista → preenche recebido com o total automaticamente
+  if (forma === 'pix_avista' || forma === 'dinheiro_avista') {
+    const tot = parseFloat(($('at-tot').value||'').replace('R$ ','').replace(',','.'))||0;
+    if (tot > 0) $('at-rec').value = tot.toFixed(2);
+  }
+  showParc();
 }
 function calcVal() {
   const vPlano = parseFloat($('at-val').value)||0;
@@ -1414,43 +1663,69 @@ function calcVal() {
 async function salvarAtend() {
   const data = $('at-data').value;
   if (!data) { toast('Informe a data','e'); return; }
-  const val  = parseFloat($('at-val').value)||0;
-  const vProc2 = parseFloat($('at-vproc').value)||0;
-  const desc = parseFloat($('at-desc').value)||0;
-  const rec  = parseFloat($('at-rec').value)||0;
-  const sub  = val + vProc2;
-  const tot  = Math.max(0, sub - (sub * desc/100));
-  const pend = Math.max(0, tot - rec);
-  const status = rec>=tot&&tot>0 ? 'recebido' : rec>0 ? 'parcial' : 'pendente';
+  const val    = parseFloat($('at-val').value)||0;
+  const vProc  = parseFloat($('at-vproc').value)||0;
+  const desc   = parseFloat($('at-desc').value)||0;
+  const sub    = val + vProc;
+  const tot    = Math.max(0, sub - (sub * desc/100));
+  const forma  = $('at-forma').value;
+  const isParc = forma === 'credito_parc';
+  const nParc  = parseInt($('at-parc')?.value)||1;
+  // Para parcelado: nada recebido agora, tudo a receber
+  const rec    = isParc ? 0 : (forma === 'pix_avista' || forma === 'dinheiro_avista' ? tot : 0);
+  const pend   = Math.max(0, tot - rec);
+  const status = rec >= tot && tot > 0 ? 'recebido' : rec > 0 ? 'parcial' : 'pendente';
 
-  // Using correct column names from real DB
-  const vProc = parseFloat($('at-vproc').value)||0;
   const payload = {
-    data_atendimento : data,
-    paciente_id      : $('at-pac').value||null,
-    plano_id         : $('at-plano').value||null,
-    id_do_procedimento: $('at-proc').value||null,
-    clinica_id       : $('at-clin').value||null,
-    quantidade_pacientes: 1,
-    valor_plano      : val,
-    valor_procedimento: vProc,
-    total_plano      : tot,
-    valor_recebido   : rec,
-    valor_a_receber  : pend,
-    status_pagamento : status,
-    dados_recebimento: $('at-forma').value||null,
-    data_prevista_recebimento: $('at-prev').value||null,
-    observacao       : $('at-obs').value||null,
+    data_atendimento          : data,
+    paciente_id               : $('at-pac').value||null,
+    plano_id                  : $('at-plano').value||null,
+    procedimento_id           : $('at-proc').value||null,
+    clinica_id                : $('at-clin').value||null,
+    valor_plano               : val,
+    valor_procedimento        : vProc,
+    total_plano               : tot,
+    valor_recebido            : rec,
+    valor_a_receber           : pend,
+    status_pagamento          : isParc ? 'pendente' : status,
+    dados_recebimento         : forma||null,
+    data_prevista_recebimento : $('at-prev').value||null,
+    observacao                : $('at-obs').value||null,
   };
-  // Remove nulls for clean insert
   Object.keys(payload).forEach(k => payload[k]===null && delete payload[k]);
 
   const {data:atData, error} = await SB.from('atendimentos').insert(payload).select();
   if (error) { toast('Erro: '+error.message,'e'); console.error(error); return; }
 
-  // Save prontuario if has transcript
+  // Lançar parcelas automaticamente no fluxo financeiro (tabela parcelas se existir, senão atendimentos extras)
+  if (isParc && nParc > 1 && tot > 0) {
+    const vlParc = tot / nParc;
+    const base   = new Date(data+'T12:00:00');
+    for (let i = 1; i <= nParc; i++) {
+      const d = new Date(base);
+      d.setMonth(d.getMonth() + i);
+      const parcPayload = {
+        data_atendimento          : d.toISOString().split('T')[0],
+        paciente_id               : payload.paciente_id||null,
+        plano_id                  : payload.plano_id||null,
+        clinica_id                : payload.clinica_id||null,
+        valor_plano               : 0,
+        valor_procedimento        : 0,
+        total_plano               : vlParc,
+        valor_recebido            : 0,
+        valor_a_receber           : vlParc,
+        status_pagamento          : 'pendente',
+        dados_recebimento         : `credito_parc_${i}de${nParc}`,
+        observacao                : `Parcela ${i}/${nParc} — ref. atendimento ${new Date(data+'T12:00:00').toLocaleDateString('pt-BR')}`,
+      };
+      Object.keys(parcPayload).forEach(k => parcPayload[k]===null && delete parcPayload[k]);
+      try { await SB.from('atendimentos').insert(parcPayload); } catch(e) { console.log('parcela err',e); }
+    }
+  }
+
+  // Salvar prontuário
   const pacId = $('at-pac').value;
-  if (pacId && transcript.trim()) {
+  if (pacId) {
     const pront = {
       paciente_id           : pacId,
       data_consulta         : data,
@@ -1464,19 +1739,56 @@ async function salvarAtend() {
       prescricao            : $('pf-p').textContent.trim()||null,
     };
     Object.keys(pront).forEach(k => pront[k]===null && delete pront[k]);
-    try { await SB.from('prontuarios').insert(pront); } catch(e) { console.log('Pront err',e); }
+    try { await SB.from('prontuarios').insert(pront); } catch(e) {}
   }
 
-  toast('Atendimento registrado!','s');
-  clearAtend();
+  // Retorno na agenda
+  const retData = window._retornoData;
+  if (retData && pacId) {
+    try {
+      await SB.from('agenda').insert({
+        paciente_id: pacId, clinica_id: $('at-clin').value||null,
+        data_consulta: retData, hora: '08:00', status: 'pendente',
+        observacao: `Retorno automático (${window._retornoDias} dias)`
+      });
+    } catch(e) {}
+    window._retornoData = null; window._retornoDias = null;
+  }
+
   await loadAtends();
   renderDash(); renderFin(); renderClinTable(); renderPlanTable(); renderProcTable();
+
+  // Mostrar modal pós-atendimento
+  const pacSel = $('at-pac');
+  const pacNome = pacSel.options[pacSel.selectedIndex]?.text || '';
+  const pacObj  = pacs.find(p=>p.id===pacId);
+  const tel     = (pacObj?.telefone||'').replace(/\D/g,'');
+  const dfmt    = new Date(data+'T12:00:00').toLocaleDateString('pt-BR');
+  window._posAtendNome = pacNome;
+  window._posAtendTel  = tel;
+  $('pos-info').textContent = `${pacNome} · ${dfmt} · R$ ${tot.toFixed(2).replace('.',',')}${isParc?' · '+nParc+'x':''}`;
+  $('pos-pac-nome').textContent = pacNome || 'Paciente sem nome';
+  const msgAgra = getMsgAgradecimento(pacNome);
+  $('pos-msg-preview').textContent = msgAgra.substring(0,120)+'...';
+  $('pos-wa-btn').style.display = tel ? 'flex' : 'none';
+  openModal('m-pos');
+}
+function enviarPosAtend() {
+  const nome = window._posAtendNome || '';
+  const tel  = window._posAtendTel  || '';
+  if (!tel) { toast('Sem telefone cadastrado','e'); return; }
+  const msg = getMsgAgradecimento(nome);
+  window.open(`https://wa.me/55${tel}?text=${encodeURIComponent(msg)}`, '_blank');
+  closeModal('m-pos');
+  clearAtend();
 }
 function clearAtend() {
   ['at-pac','at-clin','at-plano','at-proc','at-forma'].forEach(id=>{const el=$(id);if(el)el.value='';});
   ['at-val','at-vproc','at-obs','at-prev'].forEach(id=>{const el=$(id);if(el)el.value='';});
-  $('at-rec').value='0'; $('at-desc').value='0'; $('at-tot').value='—';
-  const pr=$('parc-row');if(pr)pr.style.display='none';
+  $('at-desc').value='0'; $('at-tot').value='—';
+  const pf=$('parc-field');if(pf)pf.style.display='none';
+  const pvf=$('parc-val-field');if(pvf)pvf.style.display='none';
+  const pd=$('parc-datas');if(pd)pd.style.display='none';
   clearRec();
   ['pf-q','pf-h','pf-e','pf-hd','pf-cid','pf-cidd','pf-c','pf-p'].forEach(id=>{const el=$(id);if(el)el.textContent='';});
 }
@@ -1525,12 +1837,14 @@ function verHist(pacId) {
       <div style="padding:14px;text-align:center;"><div style="font-size:9px;color:var(--ink3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;">Recebido</div><div style="font-family:var(--fd);font-size:24px;color:var(--green);">R$ ${fmt(rec)}</div></div>
     </div>
     ${ca.length ? `<div class="tbl-wrap"><table>
-      <thead><tr><th>Data</th><th>Procedimento</th><th>Clínica</th><th>Plano</th><th>Faturamento</th><th>Recebido</th><th>Status</th></tr></thead>
+      <thead><tr><th>Data</th><th>Procedimento</th><th>Clínica</th><th>Plano</th><th>Faturamento</th><th>Recebido</th><th>Status</th><th></th></tr></thead>
       <tbody>${ca.map(a=>{
         const dt  = new Date(a.data_atendimento+'T12:00:00').toLocaleDateString('pt-BR');
         const s   = a.status_pagamento;
         const bdg = s==='recebido'?'bdg-green':s==='parcial'?'bdg-blue':'bdg-amber';
         const lbl = s==='recebido'?'Recebido':s==='parcial'?'Parcial':'A receber';
+        const tel = (pac.telefone||'').replace(/\D/g,'');
+        const waAgra = tel ? `onclick="enviarAgradecimento('${esc(pac.nome)}','${tel}')"` : `onclick="toast('Sem telefone cadastrado','e')"`;
         return `<tr>
           <td>${dt}</td>
           <td>${a.prc?.nome||'—'}</td>
@@ -1539,6 +1853,7 @@ function verHist(pacId) {
           <td style="font-weight:600;">R$ ${fmt(a.plano_total)}</td>
           <td style="color:var(--green);font-weight:600;">R$ ${fmt(a.valor_recebido)}</td>
           <td><span class="bdg ${bdg}">${lbl}</span></td>
+          <td><button class="sa sa-wa" style="font-size:10px;padding:4px 10px;background:#D5F0E2;color:#155C35;border:none;border-radius:20px;cursor:pointer;" ${waAgra}>💌 Agradecer</button></td>
         </tr>`;
       }).join('')}</tbody>
     </table></div>` : '<div class="empty">Nenhum atendimento registrado</div>'}`;
@@ -1584,7 +1899,7 @@ async function runIA() {
   $('ia-bar').classList.add('show');
   $('btn-ia').disabled=true;
   try {
-    const prompt='Você é assistente médico de dermatologia. Analise a transcrição e extraia as informações médicas. Responda APENAS em JSON válido:\n{"queixa_principal":"","historia_doenca_atual":"","exame_fisico":"","hipotese_diagnostica":"","cid_codigo":"","cid_descricao":"","conduta":"","prescricao":""}\n\nTranscrição:\n'+transcript;
+    const prompt='Você é assistente médico especializado em dermatologia. Analise a transcrição da consulta e organize em formato SOAP dermatológico. Responda APENAS em JSON válido, sem markdown:\n{"queixa_principal":"(S - Subjetivo: queixa do paciente, tempo de início, características da lesão, prurido/ardor/dor, HPP, alergias, medicações)","historia_doenca_atual":"(Evolução desde última consulta ou início do quadro)","exame_fisico":"(O - Objetivo: estado geral BEG/MEG, LOTE, corado/hipocorado. AR: MVUD s/RA. AC: RR 2T BNF. Exame dermatológico: localização, tipo de lesão, coloração, bordas, tamanho, sinais inflamatórios, distribuição)","hipotese_diagnostica":"(A - Avaliação: hipóteses diagnósticas numeradas)","cid_codigo":"(código CID-10)","cid_descricao":"(descrição do CID)","conduta":"(P - Plano: orientações gerais, prescrição, exames solicitados, retorno)","prescricao":"(medicamentos com nome, dose, via, posologia e duração)"}\n\nTranscrição:\n'+transcript;
     const r = await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key='+GEMINI, {
       method:'POST', headers:{'Content-Type':'application/json'},
       body:JSON.stringify({contents:[{parts:[{text:prompt}]}]})
@@ -1662,25 +1977,20 @@ async function criarUsuario() {
   const msg   = $('inv-msg');
   msg.textContent = '';
   if (!email || !pass) { msg.textContent = 'Preencha e-mail e senha.'; msg.style.color='var(--red)'; return; }
-  if (pass.length < 6) { msg.textContent = 'Senha deve ter mínimo 6 caracteres.'; msg.style.color='var(--red)'; return; }
-  
-  msg.textContent = 'Criando usuário...'; msg.style.color='var(--brand)';
-  
-  const {data, error} = await SB.auth.admin?.createUser({
-    email, password: pass, email_confirm: true
-  }) || await SB.auth.signUp({email, password: pass});
-  
-  if (error) { 
-    msg.textContent = 'Erro: ' + error.message; 
-    msg.style.color = 'var(--red)'; 
-    return; 
+  if (pass.length < 6) { msg.textContent = 'Senha mínima: 6 caracteres.'; msg.style.color='var(--red)'; return; }
+  msg.textContent = 'Criando acesso...'; msg.style.color='var(--brand)';
+  // signUp cria o usuário e envia e-mail de confirmação automaticamente
+  const {error} = await SB.auth.signUp({email, password: pass, options:{emailRedirectTo: window.location.href}});
+  if (error) {
+    msg.textContent = 'Erro: ' + error.message;
+    msg.style.color = 'var(--red)';
+    return;
   }
-  msg.textContent = '✓ Usuário criado com sucesso!'; 
+  msg.textContent = '✓ Convite enviado! ' + email + ' receberá um e-mail para confirmar o acesso.';
   msg.style.color = 'var(--green)';
   $('inv-email').value = '';
   $('inv-pass').value = '';
-  setTimeout(() => { msg.textContent = ''; }, 4000);
-  loadUsers();
+  setTimeout(() => { msg.textContent = ''; }, 6000);
 }
 
 async function loadUsers() {
@@ -1723,18 +2033,91 @@ async function buscaCEP(cep) {
   finally { $('nc-cep-load').style.display='none'; }
 }
 
-// PARCELAMENTO
+function parseRetorno(obs) {
+  if (!obs) return;
+  // Detecta padrões: "retorno em X dias", "retornar em X dias", "voltar em X dias"
+  const m = obs.match(/(?:retorn[ao]r?\s+em|voltar\s+em)\s+(\d+)\s+dias?/i);
+  if (!m) return;
+  const dias = parseInt(m[1]);
+  const dataAt = $('at-data').value;
+  if (!dataAt) return;
+  const d = new Date(dataAt+'T12:00:00');
+  d.setDate(d.getDate()+dias);
+  const iso = d.toISOString().split('T')[0];
+  const fmt2 = d.toLocaleDateString('pt-BR');
+  toast(`📅 Lembrete de retorno em ${fmt2} será salvo na agenda`, 's');
+  // Armazena para usar no salvarAtend
+  window._retornoData = iso;
+  window._retornoDias = dias;
+}
 function showParc() {
   const forma = $('at-forma').value;
-  const row = $('parc-row');
-  if (row) row.style.display = forma==='credito_parc' ? 'grid' : 'none';
+  const isParc = forma === 'credito_parc';
+  const pf = $('parc-field'); if(pf) pf.style.display = isParc ? 'block' : 'none';
+  const pvf = $('parc-val-field'); if(pvf) pvf.style.display = isParc ? 'block' : 'none';
   calcParc();
 }
 function calcParc() {
-  const tot = parseFloat($('at-tot').value.replace('R$ ','').replace(',','.'))||0;
+  const tot  = parseFloat(($('at-tot').value||'').replace('R$ ','').replace(',','.'))||0;
   const parc = parseInt($('at-parc')?.value)||1;
-  const pp = $('at-parc-val');
-  if (pp && tot>0) pp.value = 'R$ '+(tot/parc).toFixed(2).replace('.',',')+'/parcela';
+  const pp   = $('at-parc-val');
+  if (pp && tot > 0) pp.value = 'R$ '+(tot/parc).toFixed(2).replace('.',',')+'/parcela';
+
+  // Gerar tabela de datas das parcelas
+  const dataAt = $('at-data').value;
+  const parcDatas = $('parc-datas');
+  const parcTable = $('parc-datas-table');
+  if (!dataAt || parc <= 1 || tot <= 0) {
+    if(parcDatas) parcDatas.style.display='none';
+    return;
+  }
+  const vlParcela = tot / parc;
+  const base = new Date(dataAt+'T12:00:00');
+  let html = '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:8px;">';
+  for (let i = 1; i <= parc; i++) {
+    const d = new Date(base);
+    d.setMonth(d.getMonth() + i);
+    const dfmt = d.toLocaleDateString('pt-BR');
+    html += `<div style="background:var(--nude);border:1px solid var(--border);border-radius:var(--rs);padding:8px 12px;">
+      <div style="font-size:10px;color:var(--ink3);margin-bottom:3px;">${i}ª parcela</div>
+      <div style="font-size:13px;font-weight:600;color:var(--brand-d);">R$ ${vlParcela.toFixed(2).replace('.',',')}</div>
+      <div style="font-size:11px;color:var(--ink3);">📅 ${dfmt}</div>
+    </div>`;
+  }
+  html += '</div>';
+  if(parcTable) parcTable.innerHTML = html;
+  if(parcDatas) parcDatas.style.display = 'block';
+}
+
+// ============================================================
+// MENSAGENS WHATSAPP
+// ============================================================
+function switchTab(tab) {
+  ['lembrete','agradecimento'].forEach(t => {
+    $('tab-content-'+t).style.display = t===tab ? 'block' : 'none';
+    $('tab-'+t).className = 'btn btn-sm ' + (t===tab ? 'btn-brand' : 'btn-outline');
+  });
+}
+function salvarMensagens() {
+  const txt = $('msg-txt')?.value;
+  const agra = $('msg-agra')?.value;
+  if (txt) localStorage.setItem('msg_lembrete', txt);
+  if (agra) localStorage.setItem('msg_agradecimento', agra);
+  closeModal('m-msg');
+  toast('Mensagens salvas!', 's');
+}
+function getMsgLembrete() {
+  return localStorage.getItem('msg_lembrete') || $('msg-txt')?.value || '';
+}
+function getMsgAgradecimento(nome) {
+  const tpl = localStorage.getItem('msg_agradecimento') || $('msg-agra')?.value || '';
+  return tpl.replace(/{nome}/g, nome);
+}
+function enviarAgradecimento(nome, tel) {
+  if (!tel) { toast('Paciente sem telefone cadastrado','e'); return; }
+  const t = tel.replace(/\D/g,'');
+  const msg = getMsgAgradecimento(nome);
+  window.open(`https://wa.me/55${t}?text=${encodeURIComponent(msg)}`, '_blank');
 }
 
 // ============================================================
