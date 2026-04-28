@@ -27,17 +27,34 @@
 html,body{height:100%;overflow:hidden;background:var(--nude2);font-family:var(--fb);color:var(--ink);-webkit-font-smoothing:antialiased;}
 
 /* LOGIN */
-#login-screen{position:fixed;inset:0;background:linear-gradient(160deg,#C4A090 0%,#9E6B52 55%,#6B3E28 100%);display:flex;align-items:center;justify-content:center;z-index:1000;padding:20px;}
-.login-box{background:rgba(255,255,255,.97);border-radius:16px;padding:36px 28px;width:100%;max-width:400px;box-shadow:0 24px 60px rgba(26,15,10,.3);}
-.login-logo{width:200px;height:auto;display:block;margin:0 auto 24px;}
+#login-screen{position:fixed;inset:0;display:flex;z-index:1000;}
+.login-left{width:55%;background:linear-gradient(160deg,#C4A090 0%,#9E6B52 55%,#6B3E28 100%);display:flex;align-items:center;justify-content:center;padding:60px;position:relative;overflow:hidden;}
+.login-left::before{content:'';position:absolute;inset:0;background:url("https://raw.githubusercontent.com/drapaulahenriques/clinica-paula/main/PH%20-%20SUBMARCA.png") center/60% no-repeat;opacity:.06;}
+.login-left-content{position:relative;z-index:1;max-width:420px;text-align:left;}
+.login-brand-img{width:280px;height:280px;object-fit:cover;border-radius:50%;border:3px solid rgba(255,255,255,.25);margin-bottom:32px;display:block;margin-left:auto;margin-right:auto;}
+.login-tagline{font-family:var(--fd);font-size:32px;font-weight:300;color:white;line-height:1.3;margin-bottom:14px;}
+.login-desc{font-size:14px;color:rgba(255,255,255,.65);line-height:1.7;margin-bottom:32px;}
+.login-features{display:flex;flex-direction:column;gap:12px;}
+.login-feat{display:flex;align-items:center;gap:12px;font-size:13px;color:rgba(255,255,255,.8);}
+.login-feat-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.6);flex-shrink:0;}
+.login-right{width:45%;background:var(--white);display:flex;align-items:center;justify-content:center;padding:60px;}
+.login-form-wrap{width:100%;max-width:360px;}
+.login-logo-form{width:220px;height:auto;display:block;margin:0 auto 28px;}
+.login-form-title{font-family:var(--fd);font-size:26px;font-weight:300;color:var(--ink);margin-bottom:6px;text-align:center;}
+.login-form-sub{font-size:13px;color:var(--ink3);text-align:center;margin-bottom:28px;}
+.login-crm{font-size:10px;color:var(--ink3);text-align:center;margin-top:20px;letter-spacing:.03em;}
 .lf{margin-bottom:14px;}
 .lf label{font-size:10px;color:var(--ink3);display:block;margin-bottom:5px;letter-spacing:.05em;text-transform:uppercase;font-weight:500;}
-.linput{width:100%;background:var(--nude);border:1.5px solid var(--border);border-radius:var(--rs);padding:12px 13px;font-size:14px;color:var(--ink);font-family:var(--fb);outline:none;}
-.linput:focus{border-color:var(--brand);}
-.lbtn{width:100%;padding:13px;background:var(--brand);color:white;border:none;border-radius:var(--rs);font-size:14px;font-weight:500;cursor:pointer;font-family:var(--fb);margin-top:4px;transition:background .2s;}
+.linput{width:100%;background:var(--nude);border:1.5px solid var(--border);border-radius:var(--rs);padding:12px 13px;font-size:14px;color:var(--ink);font-family:var(--fb);outline:none;transition:border-color .2s;}
+.linput:focus{border-color:var(--brand);background:var(--white);}
+.lbtn{width:100%;padding:14px;background:var(--brand);color:white;border:none;border-radius:var(--rs);font-size:14px;font-weight:500;cursor:pointer;font-family:var(--fb);margin-top:4px;transition:background .2s;}
 .lbtn:hover{background:var(--brand-d);}
-.lbtn-g{width:100%;padding:11px;background:transparent;color:var(--brand);border:1.5px solid var(--brand);border-radius:var(--rs);font-size:13px;cursor:pointer;font-family:var(--fb);margin-top:8px;}
+.lbtn-g{width:100%;padding:12px;background:transparent;color:var(--brand);border:1.5px solid var(--brand);border-radius:var(--rs);font-size:13px;cursor:pointer;font-family:var(--fb);margin-top:8px;}
 #l-msg{font-size:12px;text-align:center;margin:8px 0;min-height:16px;}
+@media(max-width:768px){
+  .login-left{display:none;}
+  .login-right{width:100%;padding:32px 24px;}
+}
 
 /* APP LAYOUT */
 .app{display:none;height:100vh;overflow:hidden;}
@@ -335,13 +352,31 @@ textarea.fi{resize:none;height:68px;line-height:1.5;}
 
 <!-- LOGIN -->
 <div id="login-screen">
-  <div class="login-box">
-    <img src="https://raw.githubusercontent.com/drapaulahenriques/clinica-paula/main/PH%20-%20LOGOTIPO.png" class="login-logo" alt="Logo" onerror="this.style.display='none'">
-    <div class="lf"><label>E-mail</label><input class="linput" type="email" id="l-email" placeholder="paula@email.com" autocomplete="email"></div>
-    <div class="lf" style="margin-bottom:0;"><label>Senha</label><input class="linput" type="password" id="l-pass" placeholder="••••••••" onkeydown="if(event.key==='Enter')doLogin()"></div>
-    <div id="l-msg"></div>
-    <button class="lbtn" onclick="doLogin()">Entrar</button>
-    <button class="lbtn-g" onclick="doSignup()">Criar conta</button>
+  <div class="login-left">
+    <div class="login-left-content">
+      <img src="https://raw.githubusercontent.com/drapaulahenriques/clinica-paula/main/PH%20-%20SUBMARCA.png" class="login-brand-img" alt="PH" onerror="this.style.display='none'">
+      <div class="login-tagline">Beleza com delicadeza e naturalidade.</div>
+      <div class="login-desc">Gestão inteligente para quem cuida com excelência. Seu consultório organizado, seus pacientes bem atendidos.</div>
+      <div class="login-features">
+        <div class="login-feat"><div class="login-feat-dot"></div>Dashboard com relatórios em tempo real</div>
+        <div class="login-feat"><div class="login-feat-dot"></div>Prontuário com transcrição por IA</div>
+        <div class="login-feat"><div class="login-feat-dot"></div>Agenda integrada com WhatsApp</div>
+        <div class="login-feat"><div class="login-feat-dot"></div>Gestão financeira por clínica</div>
+      </div>
+    </div>
+  </div>
+  <div class="login-right">
+    <div class="login-form-wrap">
+      <img src="https://raw.githubusercontent.com/drapaulahenriques/clinica-paula/main/PH%20-%20LOGOTIPO.png" class="login-logo-form" alt="Logo" onerror="this.style.display='none'">
+      <div class="login-form-title">Acessar o sistema</div>
+      <div class="login-form-sub">Entre com suas credenciais</div>
+      <div class="lf"><label>E-mail</label><input class="linput" type="email" id="l-email" placeholder="paula@email.com" autocomplete="email"></div>
+      <div class="lf" style="margin-bottom:4px;"><label>Senha</label><input class="linput" type="password" id="l-pass" placeholder="••••••••" onkeydown="if(event.key==='Enter')doLogin()"></div>
+      <div id="l-msg"></div>
+      <button class="lbtn" onclick="doLogin()">Entrar</button>
+      <button class="lbtn-g" onclick="doSignup()">Criar conta</button>
+      <div class="login-crm">CRM MG 98077 · (032) 99819-9107 · @dra.paulahenriques</div>
+    </div>
   </div>
 </div>
 
